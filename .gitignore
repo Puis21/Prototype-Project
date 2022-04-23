@@ -25,6 +25,16 @@
 *.a
 *.lib
 
+#added by ME
+*.pdb
+*.bin
+*.exp
+*.log
+*.lib.response
+*.dll.response
+*.state
+*.bin
+
 # Executables
 *.exe
 *.out

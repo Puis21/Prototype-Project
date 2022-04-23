@@ -816,3 +816,214 @@ LogConfig: CVar [[QualityLevelMapping:high]] deferred - dummy variable created
 [2022.04.23-01.32.12:100][581]LogSlate: Window 'Plugins' being destroyed
 [2022.04.23-01.32.12:106][581]LogSlate: Window 'Plugins' being destroyed
 [2022.04.23-01.32.12:106][581]LogDirectoryWatcher: A directory notification for '../../../Engine/Plugins/' was aborted.
+[2022.04.23-01.33.35:108][703]LogDerivedDataCache: C:/Users/GenTl/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:00.063 and deleted 0 file(s) with total size 0 MiB.
+[2022.04.23-01.41.30:988][338]LogLiveCoding: Display: Console will be hidden but remain running in the background. Restart to disable completely.
+[2022.04.23-01.41.30:999][339]LogLiveCoding: Display: Console will be hidden but remain running in the background. Restart to disable completely.
+[2022.04.23-01.41.36:647][  4]Candidate modules for hot reload:
+[2022.04.23-01.41.36:647][  4]  PrototypeProject
+[2022.04.23-01.41.36:651][  4]Launching UnrealBuildTool... [E:/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -ModuleWithSuffix=PrototypeProject,9498 PrototypeProjectEditor Win64 Development -Project="C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject" "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject"  -IgnoreJunk]
+[2022.04.23-01.41.36:654][  4]Warning: Starting HotReload took  0.1s.
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: New page: Compilation - Apr 23, 2022, 7:41:39 AM
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Creating makefile for PrototypeProjectEditor (.uproject file is newer)
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Building PrototypeProjectEditor...
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Using Visual Studio 2019 14.29.30133 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+[2022.04.23-01.41.39:485][294]CompilerResultsLog:   Executing up to 8 processes, one per physical core
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Building 4 actions with 4 processes...
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: [1/4] Compile PrototypeProjectProjectile.cpp
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: [2/4] Link UnrealEditor-PrototypeProject-9498.lib
+[2022.04.23-01.41.39:485][294]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9498.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9498.exp
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: [3/4] Link UnrealEditor-PrototypeProject-9498.dll
+[2022.04.23-01.41.39:485][294]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9498.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9498.suppressed.exp
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: [4/4] WriteMetadata PrototypeProjectEditor.target
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Total time in Parallel executor: 1.53 seconds
+[2022.04.23-01.41.39:485][294]CompilerResultsLog: Total execution time: 2.75 seconds
+[2022.04.23-01.41.39:486][294]LogMainFrame: MainFrame: Module compiling took 2.874 seconds
+[2022.04.23-01.41.39:583][294]Display: HotReload took  3.0s.
+[2022.04.23-01.41.39:584][294]Display: Reload/Re-instancing Complete: 1 package changed, 5 classes unchanged, 5 functions remapped
+[2022.04.23-01.42.04:771][263]Candidate modules for hot reload:
+[2022.04.23-01.42.04:771][263]  PrototypeProject
+[2022.04.23-01.42.04:775][263]Launching UnrealBuildTool... [E:/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -ModuleWithSuffix=PrototypeProject,6652 PrototypeProjectEditor Win64 Development -Project="C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject" "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject"  -IgnoreJunk]
+[2022.04.23-01.42.04:777][263]Warning: Starting HotReload took  0.0s.
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: New page: Compilation - Apr 23, 2022, 7:42:06 AM
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Building PrototypeProjectEditor...
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Using Visual Studio 2019 14.29.30133 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+[2022.04.23-01.42.06:697][442]CompilerResultsLog:   Executing up to 8 processes, one per physical core
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Building 4 actions with 4 processes...
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: [1/4] Compile PrototypeProjectProjectile.cpp
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: [2/4] Link UnrealEditor-PrototypeProject-6652.lib
+[2022.04.23-01.42.06:697][442]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6652.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6652.exp
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: [3/4] Link UnrealEditor-PrototypeProject-6652.dll
+[2022.04.23-01.42.06:697][442]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6652.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6652.suppressed.exp
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: [4/4] WriteMetadata PrototypeProjectEditor.target
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Total time in Parallel executor: 1.28 seconds
+[2022.04.23-01.42.06:697][442]CompilerResultsLog: Total execution time: 1.85 seconds
+[2022.04.23-01.42.06:697][442]LogMainFrame: MainFrame: Module compiling took 1.959 seconds
+[2022.04.23-01.42.06:735][442]Re-instancing PrototypeProjectProjectile after reload.
+[2022.04.23-01.42.06:775][442]Display: HotReload took  2.0s.
+[2022.04.23-01.42.06:775][442]Display: Reload/Re-instancing Complete: 1 package changed, 5 classes unchanged, 5 functions remapped
+[2022.04.23-01.42.07:213][493]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Display: GenerateStreaming started...
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Display: GetPartitionedActors started...
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Display: ValidateSingleActorReferer started...
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Display: ValidateSingleActorReferer took 0 us
+[2022.04.23-01.42.07:217][493]LogWorldPartition: Display: GetPartitionedActors took 39 us
+[2022.04.23-01.42.07:218][493]LogWorldPartition: Display: GenerateStreaming took 250 us
+[2022.04.23-01.42.07:218][493]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2022.04.23-01.42.07:218][493]PIE: New page: PIE session: FirstPersonMap (Apr 23, 2022, 7:42:07 AM)
+[2022.04.23-01.42.07:244][493]LogPlayLevel: Creating play world package: /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap
+[2022.04.23-01.42.07:248][493]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2022.04.23-01.42.07:248][493]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004158s)
+[2022.04.23-01.42.07:248][493]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FirstPerson/Maps/FirstPersonMap.FirstPersonMap to /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap.FirstPersonMap (0.004221s)
+[2022.04.23-01.42.07:248][493]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.04.23-01.42.07:248][493]LogAIModule: Creating AISystem for world FirstPersonMap
+[2022.04.23-01.42.07:248][493]LogWorldPartition: Display: WorldPartition initialize started...
+[2022.04.23-01.42.07:248][493]LogWorldPartition: UWorldPartition::Initialize(IsEditor=0, IsGame=0, IsCooking=0)
+[2022.04.23-01.42.07:250][493]LogWorldPartition: Display: WorldPartition initialize took 1 ms
+[2022.04.23-01.42.07:250][493]LogPlayLevel: PIE: World Init took: (0.001824s)
+[2022.04.23-01.42.07:262][493]LogUObjectHash: Compacting FUObjectHashTables data took   0.39ms
+[2022.04.23-01.42.07:263][493]LogAudio: Display: Creating Audio Device:                 Id: 3, Scope: Unique, Realtime: True
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2022.04.23-01.42.07:263][493]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.04.23-01.42.07:263][493]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.04.23-01.42.07:264][493]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.04.23-01.42.07:264][493]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.04.23-01.42.07:264][493]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.04.23-01.42.07:265][493]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2022.04.23-01.42.07:283][493]LogAudioMixer: Display: Using Audio Hardware Device Speakers (THX Spatial Audio)
+[2022.04.23-01.42.07:283][493]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.04.23-01.42.07:283][493]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.04.23-01.42.07:283][493]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.04.23-01.42.07:285][493]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=3
+[2022.04.23-01.42.07:285][493]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=8, Samples=8192, InstanceID=3
+[2022.04.23-01.42.07:285][493]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=3
+[2022.04.23-01.42.07:285][493]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=3
+[2022.04.23-01.42.07:285][493]LogInit: FAudioDevice initialized.
+[2022.04.23-01.42.07:285][493]LogAudio: Display: Audio Device (ID: 3) registered with world 'FirstPersonMap'.
+[2022.04.23-01.42.07:297][493]LogLoad: Game class is 'PrototypeProjectGameMode'
+[2022.04.23-01.42.07:299][493]LogWorld: Bringing World /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap.FirstPersonMap up for play (max tick rate 0) at 2022.04.23-04.42.07
+[2022.04.23-01.42.07:299][493]LogWorld: Bringing up level for play took: 0.001804
+[2022.04.23-01.42.07:299][493]LogOnline: OSS: Created online subsystem instance for: :Context_2
+[2022.04.23-01.42.07:301][493]LogWorldPartition: New Streaming Source: PlayerController_0 -> Position: X=900.000 Y=850.000 Z=98.337
+[2022.04.23-01.42.07:301][493]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.04.23-01.42.07:301][493]PIE: Server logged in
+[2022.04.23-01.42.07:302][493]PIE: Play in editor total start time 0.085 seconds.
+[2022.04.23-01.42.11:793][  1]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.23-01.42.11:793][  1]LogWorld: BeginTearingDown for /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap
+[2022.04.23-01.42.11:793][  1]LogWorld: UWorld::CleanupWorld for FirstPersonMap, bSessionEnded=true, bCleanupResources=true
+[2022.04.23-01.42.11:793][  1]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.23-01.42.11:800][  1]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2022.04.23-01.42.11:801][  1]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.23-01.42.11:807][  1]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.04.23-01.42.11:807][  1]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=3
+[2022.04.23-01.42.11:807][  1]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=3
+[2022.04.23-01.42.11:810][  1]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.23-01.42.11:811][  1]LogUObjectHash: Compacting FUObjectHashTables data took   0.35ms
+[2022.04.23-01.42.11:862][  2]LogPlayLevel: Display: Destroying online subsystem :Context_2
+[2022.04.23-01.42.17:698][219]Candidate modules for hot reload:
+[2022.04.23-01.42.17:698][219]  PrototypeProject
+[2022.04.23-01.42.17:703][219]Launching UnrealBuildTool... [E:/UE_5.0/Engine/Binaries/DotNET/UnrealBuildTool/UnrealBuildTool.exe  -ModuleWithSuffix=PrototypeProject,9674 PrototypeProjectEditor Win64 Development -Project="C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject" "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/PrototypeProject.uproject"  -IgnoreJunk]
+[2022.04.23-01.42.17:704][219]Warning: Starting HotReload took  0.0s.
+[2022.04.23-01.42.19:594][392]CompilerResultsLog: New page: Compilation - Apr 23, 2022, 7:42:19 AM
+[2022.04.23-01.42.19:594][392]CompilerResultsLog: Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Building PrototypeProjectEditor...
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Using Visual Studio 2019 14.29.30133 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+[2022.04.23-01.42.19:595][392]CompilerResultsLog:   Executing up to 8 processes, one per physical core
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Building 4 actions with 4 processes...
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: [1/4] Compile PrototypeProjectProjectile.cpp
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: [2/4] Link UnrealEditor-PrototypeProject-9674.lib
+[2022.04.23-01.42.19:595][392]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9674.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9674.exp
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: [3/4] Link UnrealEditor-PrototypeProject-9674.dll
+[2022.04.23-01.42.19:595][392]CompilerResultsLog:    Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9674.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9674.suppressed.exp
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: [4/4] WriteMetadata PrototypeProjectEditor.target
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Total time in Parallel executor: 1.26 seconds
+[2022.04.23-01.42.19:595][392]CompilerResultsLog: Total execution time: 1.82 seconds
+[2022.04.23-01.42.19:595][392]LogMainFrame: MainFrame: Module compiling took 1.921 seconds
+[2022.04.23-01.42.19:621][392]Re-instancing PrototypeProjectProjectile after reload.
+[2022.04.23-01.42.19:660][392]Display: HotReload took  2.0s.
+[2022.04.23-01.42.19:660][392]Display: Reload/Re-instancing Complete: 1 package changed, 5 classes unchanged, 5 functions remapped
+[2022.04.23-01.42.20:166][452]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: GenerateStreaming started...
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: GetPartitionedActors started...
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: ValidateSingleActorReferer started...
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: ValidateSingleActorReferer took 0 us
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: GetPartitionedActors took 42 us
+[2022.04.23-01.42.20:171][452]LogWorldPartition: Display: GenerateStreaming took 262 us
+[2022.04.23-01.42.20:171][452]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2022.04.23-01.42.20:171][452]PIE: New page: PIE session: FirstPersonMap (Apr 23, 2022, 7:42:20 AM)
+[2022.04.23-01.42.20:193][452]LogPlayLevel: Creating play world package: /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap
+[2022.04.23-01.42.20:197][452]LogWorldPartition: Initial Data Layer Effective States Activated() Loaded()
+[2022.04.23-01.42.20:197][452]LogPlayLevel: PIE: StaticDuplicateObject took: (0.004242s)
+[2022.04.23-01.42.20:197][452]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/FirstPerson/Maps/FirstPersonMap.FirstPersonMap to /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap.FirstPersonMap (0.004310s)
+[2022.04.23-01.42.20:197][452]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2022.04.23-01.42.20:197][452]LogAIModule: Creating AISystem for world FirstPersonMap
+[2022.04.23-01.42.20:198][452]LogWorldPartition: Display: WorldPartition initialize started...
+[2022.04.23-01.42.20:198][452]LogWorldPartition: UWorldPartition::Initialize(IsEditor=0, IsGame=0, IsCooking=0)
+[2022.04.23-01.42.20:198][452]LogWorldPartition: Display: WorldPartition initialize took 1 ms
+[2022.04.23-01.42.20:198][452]LogPlayLevel: PIE: World Init took: (0.001849s)
+[2022.04.23-01.42.20:210][452]LogUObjectHash: Compacting FUObjectHashTables data took   0.35ms
+[2022.04.23-01.42.20:211][452]LogAudio: Display: Creating Audio Device:                 Id: 4, Scope: Unique, Realtime: True
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Max Channels (voices):				  0
+[2022.04.23-01.42.20:211][452]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.04.23-01.42.20:211][452]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.04.23-01.42.20:212][452]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.04.23-01.42.20:212][452]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.04.23-01.42.20:212][452]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.04.23-01.42.20:213][452]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2022.04.23-01.42.20:230][452]LogAudioMixer: Display: Using Audio Hardware Device Speakers (THX Spatial Audio)
+[2022.04.23-01.42.20:230][452]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.04.23-01.42.20:230][452]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.04.23-01.42.20:230][452]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.04.23-01.42.20:231][452]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=4
+[2022.04.23-01.42.20:231][452]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=8, Samples=8192, InstanceID=4
+[2022.04.23-01.42.20:233][452]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=4
+[2022.04.23-01.42.20:233][452]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=4
+[2022.04.23-01.42.20:233][452]LogInit: FAudioDevice initialized.
+[2022.04.23-01.42.20:233][452]LogAudio: Display: Audio Device (ID: 4) registered with world 'FirstPersonMap'.
+[2022.04.23-01.42.20:245][452]LogLoad: Game class is 'PrototypeProjectGameMode'
+[2022.04.23-01.42.20:247][452]LogWorld: Bringing World /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap.FirstPersonMap up for play (max tick rate 0) at 2022.04.23-04.42.20
+[2022.04.23-01.42.20:247][452]LogWorld: Bringing up level for play took: 0.001806
+[2022.04.23-01.42.20:248][452]LogOnline: OSS: Created online subsystem instance for: :Context_3
+[2022.04.23-01.42.20:249][452]LogWorldPartition: New Streaming Source: PlayerController_0 -> Position: X=900.000 Y=850.000 Z=98.337
+[2022.04.23-01.42.20:249][452]LogWorldPartition: Warning: Invalid world bounds, grid partitioning will use a runtime grid with 1 cell.
+[2022.04.23-01.42.20:250][452]PIE: Server logged in
+[2022.04.23-01.42.20:250][452]PIE: Play in editor total start time 0.08 seconds.
+[2022.04.23-01.42.26:173][135]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.23-01.42.26:173][135]LogWorld: BeginTearingDown for /Game/FirstPerson/Maps/UEDPIE_0_FirstPersonMap
+[2022.04.23-01.42.26:173][135]LogWorld: UWorld::CleanupWorld for FirstPersonMap, bSessionEnded=true, bCleanupResources=true
+[2022.04.23-01.42.26:173][135]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.23-01.42.26:179][135]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2022.04.23-01.42.26:181][135]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.23-01.42.26:186][135]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.04.23-01.42.26:186][135]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=4
+[2022.04.23-01.42.26:187][135]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=4
+[2022.04.23-01.42.26:189][135]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.23-01.42.26:190][135]LogUObjectHash: Compacting FUObjectHashTables data took   0.36ms
+[2022.04.23-01.42.26:243][136]LogPlayLevel: Display: Destroying online subsystem :Context_3
+[2022.04.23-01.43.05:393][510]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
+[2022.04.23-01.43.05:398][510]LogPackageLocalizationCache: Processed 30 localized package path(s) for 1 prioritized culture(s) in 0.002247 seconds
+[2022.04.23-01.43.05:398][510]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/3/AI/0XWE3RNM2XQC0ST1KXG02O_Auto1
+[2022.04.23-01.43.05:398][510]LogSavePackage: Moving 'C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Saved/0XWE3RNM2XQC0ST1KXG02O_Auto152A0EFA442C3C499149B94A06D725E57.tmp' to 'C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Saved/Autosaves/Game/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/3/AI/0XWE3RNM2XQC0ST1KXG02O_Auto1.uasset'
+[2022.04.23-01.43.05:400][510]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/KU/12YG9I1QW2GU72MG8QQX1K_Auto1
+[2022.04.23-01.43.05:400][510]LogSavePackage: Moving 'C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Saved/12YG9I1QW2GU72MG8QQX1K_Auto183BD924F4FF939ED6DC044A5D5A7D00A.tmp' to 'C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Saved/Autosaves/Game/__ExternalActors__/FirstPerson/Maps/FirstPersonMap/A/KU/12YG9I1QW2GU72MG8QQX1K_Auto1.uasset'
+[2022.04.23-01.43.05:401][510]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/FirstPerson/Maps/FirstPersonMap' took 0.012
+[2022.04.23-01.43.05:401][510]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.012
