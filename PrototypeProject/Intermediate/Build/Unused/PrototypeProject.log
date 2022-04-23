@@ -1,0 +1,16 @@
+﻿  Using bundled DotNet SDK
+  Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
+  Building PrototypeProjectEditor...
+  Using Visual Studio 2019 14.29.30133 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
+    Executing up to 8 processes, one per physical core
+  Building 4 actions with 4 processes...
+  [1/4] Compile PrototypeProjectProjectile.cpp
+  [2/4] Link UnrealEditor-PrototypeProject.lib
+     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.exp
+  [3/4] Link UnrealEditor-PrototypeProject.dll
+     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.exp
+  [4/4] WriteMetadata PrototypeProjectEditor.target
+  Total time in Parallel executor: 1.09 seconds
+  Total execution time: 1.45 seconds
