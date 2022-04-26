@@ -1,0 +1,67 @@
+[
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProject.Build.cs",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProject.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProject.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectCharacter.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectCharacter.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectGameMode.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectGameMode.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectProjectile.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\PrototypeProjectProjectile.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\TP_PickUpComponent.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\TP_PickUpComponent.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\TP_WeaponComponent.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject\\TP_WeaponComponent.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\bin\\HostX64\\x64\\cl.exe\" @C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject\\PrototypeProject.211.rsp",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	}
+]

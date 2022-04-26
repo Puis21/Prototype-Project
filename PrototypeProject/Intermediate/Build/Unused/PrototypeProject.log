@@ -1,16 +1,13 @@
-﻿  Using bundled DotNet SDK
+﻿  Cleaning PrototypeProjectEditor and UnrealHeaderTool binaries...
+UnrealBuildTool : error : Unable to delete C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject.dll (Unable to delete C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject.dll - Access is denied.
+                          Processes with open handles to file:
+                            17616: C:\UE_5.0\Engine\Binaries\Win64\UnrealEditor.exe (started 4/24/2022 11:11:35 PM))
+  Using bundled DotNet SDK
   Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
-  Building PrototypeProjectEditor...
-  Using Visual Studio 2019 14.29.30133 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
-    Executing up to 8 processes, one per physical core
-  Building 4 actions with 4 processes...
-  [1/4] Compile PrototypeProjectProjectile.cpp
-  [2/4] Link UnrealEditor-PrototypeProject.lib
-     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.exp
-  [3/4] Link UnrealEditor-PrototypeProject.dll
-     Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.exp
-  [4/4] WriteMetadata PrototypeProjectEditor.target
-  Total time in Parallel executor: 1.09 seconds
-  Total execution time: 1.45 seconds
+  Creating makefile for PrototypeProjectEditor (no existing makefile)
+  Parsing headers for PrototypeProjectEditor
+    Running UnrealHeaderTool "C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\PrototypeProject.uproject" "C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\PrototypeProjectEditor\Development\PrototypeProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  Reflection code generated for PrototypeProjectEditor in 1.0339019 seconds
+UnrealBuildTool : error : Unable to build while Live Coding is active. Exit the editor and game, or press Ctrl+Alt+F11 if iterating on code in the editor or game
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.MakeFile.Targets(50,5): error MSB3073: The command "C:\UE_5.0\Engine\Build\BatchFiles\Rebuild.bat PrototypeProjectEditor Win64 Development -Project="C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\PrototypeProject.uproject" -WaitMutex -FromMsBuild" exited with code -1.

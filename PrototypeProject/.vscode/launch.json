@@ -1,0 +1,152 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch PrototypeProject (Debug)",
+			"request": "launch",
+			"program": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+			"preLaunchTask": "PrototypeProject Win64 Debug Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProject (DebugGame)",
+			"request": "launch",
+			"program": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+			"preLaunchTask": "PrototypeProject Win64 DebugGame Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProject (Development)",
+			"request": "launch",
+			"program": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Binaries\\Win64\\UnrealGame.exe",
+			"preLaunchTask": "PrototypeProject Win64 Development Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProject (Test)",
+			"request": "launch",
+			"program": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+			"preLaunchTask": "PrototypeProject Win64 Test Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProject (Shipping)",
+			"request": "launch",
+			"program": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+			"preLaunchTask": "PrototypeProject Win64 Shipping Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProjectEditor (Debug)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+			"preLaunchTask": "PrototypeProjectEditor Win64 Debug Build",
+			"args": [
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProjectEditor (DebugGame)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+			"preLaunchTask": "PrototypeProjectEditor Win64 DebugGame Build",
+			"args": [
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch PrototypeProjectEditor (Development)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+			"preLaunchTask": "PrototypeProjectEditor Win64 Development Build",
+			"args": [
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-game",
+				"-engine"
+			],
+			"console": "externalTerminal",
+			"stopAtEntry": false,
+			"cwd": "C:\\UE_5.0"
+		}
+	]
+}

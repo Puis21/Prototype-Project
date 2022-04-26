@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "PrototypeProjectEditor Editor Win64 Development (PrototypeProject)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_PrototypeProject.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Win32",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\.vscode\\compileCommands_Default.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

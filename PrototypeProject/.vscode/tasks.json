@@ -1,0 +1,707 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "PrototypeProject Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject Win64 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject Win64 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject Win64 Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject IOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject IOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject IOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject IOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Test",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProject IOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProject IOS Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProject",
+				"IOS",
+				"Shipping",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProjectEditor Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProjectEditor Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"PrototypeProjectEditor Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "PrototypeProjectEditor Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"PrototypeProjectEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\PrototypeProject.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		}
+	]
+}
