@@ -8,6 +8,8 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
 #include "Components/PlayerMovementComponent.h"
+#include "Components/GrapplingHookComponent.h"
+#include "Components/SlideComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
@@ -30,13 +32,16 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 
 	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
 	Mesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh1P"));
-	Mesh1P->SetOnlyOwnerSee(true);
+	//Mesh1P->SetOnlyOwnerSee(true);
 	Mesh1P->SetupAttachment(FirstPersonCameraComponent);
 	Mesh1P->bCastDynamicShadow = false;
 	Mesh1P->CastShadow = false;
 	Mesh1P->SetRelativeRotation(FRotator(1.9f, -19.19f, 5.2f));
 	Mesh1P->SetRelativeLocation(FVector(-0.5f, -4.4f, -155.7f));
 
+	m_ACGrapplingHookComponent = CreateDefaultSubobject<UGrapplingHookComponent>(TEXT("Grappling Hook Component"));
+
+	m_ACSlideComponent = CreateDefaultSubobject<USlideComponent>(TEXT("Slide Component"));
 }
 
 void APlayerCharacter::PostInitializeComponents()
@@ -86,6 +91,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	// Bind fire event
 	//PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &APlayerCharacter::OnPrimaryAction);
 
+	//Grapple
+	PlayerInputComponent->BindAction("Grapple", IE_Pressed, this, &APlayerCharacter::GrappleButtonPressed);
+
 	//Sprint Event
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::SprintButtonPressed);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &APlayerCharacter::SprintButtonReleased);
@@ -107,6 +115,7 @@ void APlayerCharacter::Landed(const FHitResult& Hit)
 	if (m_ACPlayerMovementComponent)
 	{
 		m_ACPlayerMovementComponent->SetJumpCounter(0);
+		m_ACPlayerMovementComponent->OnLanded( Hit );
 	}
 
 }
@@ -137,16 +146,24 @@ void APlayerCharacter::SprintButtonReleased()
 
 void APlayerCharacter::CrouchButtonPressed()
 {
-	if(m_ACPlayerMovementComponent)
+	if(m_ACPlayerMovementComponent && m_ACSlideComponent)
 	{
-		if(!m_ACPlayerMovementComponent->GetIsCrounching())
-		{	
-			m_ACPlayerMovementComponent->StartCrouching();
+		if (!m_ACSlideComponent->GetIsCrouched())
+		{
+			m_ACSlideComponent->StartCrouching();
 		}
 		else
 		{
-			m_ACPlayerMovementComponent->UnCrouching();
+			m_ACSlideComponent->UnCrouching();
 		}
+	}
+}
+
+void APlayerCharacter::GrappleButtonPressed()
+{
+	if (m_ACGrapplingHookComponent)
+	{
+		m_ACGrapplingHookComponent->AttemptGrapple();
 	}
 }
 

@@ -43,7 +43,14 @@
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementcomponent.generated.h",
             "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\timelinecomponent.h",
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\timelinecomponent.generated.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\playermovementcomponent.generated.h"
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\playermovementcomponent.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\grapplinghookcomponent.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\grapplestate.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\grapplinghookcomponent.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\slidecomponent.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\parkourmovementcomponent.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\parkourmovementcomponent.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\slidecomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

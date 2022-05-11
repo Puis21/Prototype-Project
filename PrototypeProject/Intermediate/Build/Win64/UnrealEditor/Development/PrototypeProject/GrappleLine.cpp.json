@@ -1,0 +1,17 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\grappleline.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\prototypeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\development\\prototypeproject\\definitions.prototypeproject.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\grappleline.h",
+            "c:\\ue_5.0\\engine\\plugins\\runtime\\cablecomponent\\source\\cablecomponent\\classes\\cableactor.h",
+            "c:\\ue_5.0\\engine\\plugins\\runtime\\cablecomponent\\intermediate\\build\\win64\\unrealeditor\\inc\\cablecomponent\\cableactor.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\grappleline.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -12,7 +12,10 @@ class USceneComponent;
 class UCameraComponent;
 class UAnimMontage;
 class USoundBase;
+class UCapsuleComponent;
 class UPlayerMovementComponent;
+class UGrapplingHookComponent;
+class USlideComponent;
 
 UCLASS(config = Game)
 class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
@@ -23,14 +26,20 @@ public:
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
-	class USkeletalMeshComponent* Mesh1P;
+	USkeletalMeshComponent* Mesh1P;
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* FirstPersonCameraComponent;
+	UCameraComponent* FirstPersonCameraComponent;
 
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "First Person Character Movement Component")
-	class UPlayerMovementComponent* m_ACPlayerMovementComponent;
+	UPlayerMovementComponent* m_ACPlayerMovementComponent;
+
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Grappling Hook Component")
+	UGrapplingHookComponent* m_ACGrapplingHookComponent;
+
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Slide Component")
+	USlideComponent* m_ACSlideComponent;
 
 protected:
 
@@ -67,6 +76,8 @@ protected:
 
 	void CrouchButtonPressed();
 
+	void GrappleButtonPressed();
+
 	//void CrouchButtonReleased();
 
 public:	
@@ -91,5 +102,9 @@ public:
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
+
+
+	UPlayerMovementComponent* GetCustomMovementComponent() const { return m_ACPlayerMovementComponent; }
 
 };

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="..\..\PrototypeProject.uproject" />
     <Filter Include="Source">
@@ -11,6 +11,8 @@
     <None Include="..\..\Source\PrototypeProjectEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.ignore" />
+    <None Include="..\..\PrototypeProject.code-workspace" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,9 +31,18 @@
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
+    <Filter Include="Config\HoloLens">
+      <UniqueIdentifier>{4C8DD267-CDE7-336F-8602-F5F485D22BAB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\HoloLens\HoloLensEngine.ini">
+      <Filter>Config\HoloLens</Filter>
+    </None>
     <Filter Include="Source\PrototypeProject">
       <UniqueIdentifier>{74D29382-7659-3E04-B021-FD3DA9468F79}</UniqueIdentifier>
     </Filter>
+    <ClInclude Include="..\..\Source\PrototypeProject\GrappleState.h">
+      <Filter>Source\PrototypeProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\PrototypeProject\PrototypeProject.Build.cs">
       <Filter>Source\PrototypeProject</Filter>
     </None>
@@ -70,6 +81,75 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\TP_WeaponComponent.h">
       <Filter>Source\PrototypeProject</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player">
+      <UniqueIdentifier>{2FCA11FC-C487-32CF-B751-B620BBB622B6}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleHook.cpp">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleHook.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleLine.cpp">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleLine.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleTarget.cpp">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleTarget.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\PlayerCharacter.cpp">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\PlayerCharacter.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\Components">
+      <UniqueIdentifier>{B5F7DEC3-B5A7-3455-821D-1D0033288880}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\CustomMovementComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\CustomMovementComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\GrapplingHookComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\GrapplingHookComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\ParkourMovementComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\ParkourMovementComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\PlayerMovementComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\PlayerMovementComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\SlideComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\SlideComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\TESTS">
+      <UniqueIdentifier>{EAD693DB-D039-300E-BA8A-EF16583BEB7F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\TESTS\TestGrapple.cpp">
+      <Filter>Source\PrototypeProject\TESTS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\TESTS\TestGrapple.h">
+      <Filter>Source\PrototypeProject\TESTS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
