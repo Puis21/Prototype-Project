@@ -142,6 +142,12 @@
     <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\SlideComponent.h">
       <Filter>Source\PrototypeProject\Player\Components</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\VautingComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\VautingComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
     <Filter Include="Source\PrototypeProject\TESTS">
       <UniqueIdentifier>{EAD693DB-D039-300E-BA8A-EF16583BEB7F}</UniqueIdentifier>
     </Filter>

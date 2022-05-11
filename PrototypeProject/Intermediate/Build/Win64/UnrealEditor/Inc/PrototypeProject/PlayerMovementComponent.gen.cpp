@@ -11,7 +11,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 // Cross Module References
 	PROTOTYPEPROJECT_API UEnum* Z_Construct_UEnum_PrototypeProject_EMovementState();
 	UPackage* Z_Construct_UPackage__Script_PrototypeProject();
-	PROTOTYPEPROJECT_API UEnum* Z_Construct_UEnum_PrototypeProject_EVaultingState();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UPlayerMovementComponent_NoRegister();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UPlayerMovementComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UCharacterMovementComponent();
@@ -85,67 +84,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		}
 		return Z_Registration_Info_UEnum_EMovementState.InnerSingleton;
 	}
-	static FEnumRegistrationInfo Z_Registration_Info_UEnum_EVaultingState;
-	static UEnum* EVaultingState_StaticEnum()
-	{
-		if (!Z_Registration_Info_UEnum_EVaultingState.OuterSingleton)
-		{
-			Z_Registration_Info_UEnum_EVaultingState.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_PrototypeProject_EVaultingState, Z_Construct_UPackage__Script_PrototypeProject(), TEXT("EVaultingState"));
-		}
-		return Z_Registration_Info_UEnum_EVaultingState.OuterSingleton;
-	}
-	template<> PROTOTYPEPROJECT_API UEnum* StaticEnum<EVaultingState>()
-	{
-		return EVaultingState_StaticEnum();
-	}
-	struct Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics
-	{
-		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FEnumParams EnumParams;
-	};
-	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enumerators[] = {
-		{ "EVaultingState::Ready", (int64)EVaultingState::Ready },
-		{ "EVaultingState::WantsToVault", (int64)EVaultingState::WantsToVault },
-		{ "EVaultingState::Vaulting", (int64)EVaultingState::Vaulting },
-		{ "EVaultingState::Unavailable", (int64)EVaultingState::Unavailable },
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enum_MetaDataParams[] = {
-		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
-		{ "Ready.DisplayName", "Ready" },
-		{ "Ready.Name", "EVaultingState::Ready" },
-		{ "Unavailable.DisplayName", "Unavailable" },
-		{ "Unavailable.Name", "EVaultingState::Unavailable" },
-		{ "Vaulting.DisplayName", "Vaulting" },
-		{ "Vaulting.Name", "EVaultingState::Vaulting" },
-		{ "WantsToVault.DisplayName", "WantsToVault" },
-		{ "WantsToVault.Name", "EVaultingState::WantsToVault" },
-	};
-#endif
-	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::EnumParams = {
-		(UObject*(*)())Z_Construct_UPackage__Script_PrototypeProject,
-		nullptr,
-		"EVaultingState",
-		"EVaultingState",
-		Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enumerators,
-		UE_ARRAY_COUNT(Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enumerators),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EEnumFlags::None,
-		(uint8)UEnum::ECppForm::EnumClass,
-		METADATA_PARAMS(Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enum_MetaDataParams))
-	};
-	UEnum* Z_Construct_UEnum_PrototypeProject_EVaultingState()
-	{
-		if (!Z_Registration_Info_UEnum_EVaultingState.InnerSingleton)
-		{
-			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_EVaultingState.InnerSingleton, Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::EnumParams);
-		}
-		return Z_Registration_Info_UEnum_EVaultingState.InnerSingleton;
-	}
 	void UPlayerMovementComponent::StaticRegisterNativesUPlayerMovementComponent()
 	{
 	}
@@ -194,10 +132,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 #endif
 		static void NewProp_m_bIsSprinting_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_m_bIsSprinting;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fHorizontalDistance_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fHorizontalDistance;
 		static const UECodeGen_Private::FBytePropertyParams NewProp_eMovementState_Underlying;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_eMovementState_MetaData[];
@@ -221,10 +155,8 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_iJumpCounter_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
 		{ "Category", "Custom Movement | Jumping" },
-		{ "Comment", "/*float m_fStandingCapsuleHalfHeight;\n\x09""float m_fStandingCameraZOffSet;\n\x09""bool m_bIsCrouching;*/" },
 		{ "DisplayName", "Jump Count" },
 		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
-		{ "ToolTip", "float m_fStandingCapsuleHalfHeight;\n       float m_fStandingCameraZOffSet;\n       bool m_bIsCrouching;" },
 	};
 #endif
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_iJumpCounter = { "m_iJumpCounter", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, m_iJumpCounter), METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_iJumpCounter_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_iJumpCounter_MetaData)) };
@@ -301,19 +233,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		((UPlayerMovementComponent*)Obj)->m_bIsSprinting = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting = { "m_bIsSprinting", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UPlayerMovementComponent), &Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_SetBit, METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fHorizontalDistance_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Custom Movement | Vaulting" },
-		{ "ClampMax", "200.0" },
-		{ "ClampMin", "0.0" },
-		{ "DisplayName", "Vaulting Horizontal Distance" },
-		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
-		{ "UIMax", "200.0" },
-		{ "UIMin", "0.0" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fHorizontalDistance = { "m_fHorizontalDistance", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, m_fHorizontalDistance), METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fHorizontalDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fHorizontalDistance_MetaData)) };
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData[] = {
@@ -331,7 +250,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fSprintMinForward,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fHorizontalDistance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState,
 	};
@@ -373,12 +291,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo[] = {
 		{ EMovementState_StaticEnum, TEXT("EMovementState"), &Z_Registration_Info_UEnum_EMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4046139049U) },
-		{ EVaultingState_StaticEnum, TEXT("EVaultingState"), &Z_Registration_Info_UEnum_EVaultingState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 607175493U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 1677229705U) },
+		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 2581234374U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_1206055101(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_3787104924(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo));

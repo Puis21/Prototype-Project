@@ -16,6 +16,7 @@ class UCapsuleComponent;
 class UPlayerMovementComponent;
 class UGrapplingHookComponent;
 class USlideComponent;
+class UVautingComponent;
 
 UCLASS(config = Game)
 class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
@@ -40,6 +41,9 @@ public:
 
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Slide Component")
 	USlideComponent* m_ACSlideComponent;
+
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Vault Component")
+	UVautingComponent* m_ACVaultComponent;
 
 protected:
 

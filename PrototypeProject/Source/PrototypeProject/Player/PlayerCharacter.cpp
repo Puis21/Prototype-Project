@@ -10,6 +10,7 @@
 #include "Components/PlayerMovementComponent.h"
 #include "Components/GrapplingHookComponent.h"
 #include "Components/SlideComponent.h"
+#include "Components/VautingComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
@@ -42,6 +43,8 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 	m_ACGrapplingHookComponent = CreateDefaultSubobject<UGrapplingHookComponent>(TEXT("Grappling Hook Component"));
 
 	m_ACSlideComponent = CreateDefaultSubobject<USlideComponent>(TEXT("Slide Component"));
+
+	m_ACVaultComponent = CreateDefaultSubobject<UVautingComponent>(TEXT("Vault Component"));
 }
 
 void APlayerCharacter::PostInitializeComponents()
