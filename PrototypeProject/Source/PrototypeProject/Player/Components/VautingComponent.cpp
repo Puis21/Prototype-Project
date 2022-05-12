@@ -11,16 +11,17 @@
 UVautingComponent::UVautingComponent():
 m_fHorizontalDistance(200.f),
 m_iMinVaultingHeight(50.f),
-m_iMaxVaultingHeight(170.f)
+m_iMaxVaultingHeight(170.f),
+m_fVaultingSpeed(0.3f)
 {
 	PrimaryComponentTick.bCanEverTick = true;
+
+	m_eVaultingState = EVaultingState::Ready;
 }
 
 void UVautingComponent::BeginPlay()
 {
 	Super::BeginPlay();
-
-	m_eVaultingState = EVaultingState::Ready;
 
 }
 
@@ -30,16 +31,55 @@ void UVautingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 
 	switch (m_eVaultingState)
 	{
-	case EVaultingState::Vaulting:
+	case EVaultingState::Ready:
 	{
-
+		CanVault();
 	}
 	break;
-
-	default:
-		break;
+	case EVaultingState::Vaulting:
+	{
+		VaultingInterpolation(DeltaTime);
+	}
+	break;
 	}
 
+}
+
+void UVautingComponent::Vault()
+{
+	// reset vault progress so that it always starts from the beginning
+	m_fVaultProgress = 0.f;
+	// store location of the player character when the vault was initiated
+	// is later on used to interpolate from the current location to the target location on top of the vaultable object
+	m_v3VaultStartLocation = GetPlayer()->GetActorLocation();
+
+	// set the vaulting state to be vaulting
+	m_eVaultingState = EVaultingState::Vaulting;
+}
+
+void UVautingComponent::VaultingInterpolation(float DeltaTime)
+{
+	const float fMinVaultProgress = 0.f;
+	const float fMaxVaultProgress = 1.f;
+
+	// increase vault progress every frame
+	m_fVaultProgress += (DeltaTime / m_fVaultingSpeed);
+	// clamp the new progress value between 0 and 1
+	m_fVaultProgress = FMath::Clamp(m_fVaultProgress, fMinVaultProgress, fMaxVaultProgress);
+
+	GetPlayer()->SetActorLocation(UKismetMathLibrary::VLerp(m_v3VaultStartLocation, m_v3VaultEndLocation, m_fVaultProgress));
+
+	// if VaultProgress is higher or equal to 1.f then set the VaultingState to ready,
+	// meaning that it's ready to be used again
+	if (m_fVaultProgress >= 1.f)
+	{
+		m_eVaultingState = EVaultingState::Ready;
+
+	/*	if (GetPlayer() != nullptr)
+		{
+			GetPlayer()->InitiatePlayerActionStateSwitch(EPlayerActionState::NoAction);
+		}*/
+	}
 }
 
 bool UVautingComponent::CanVault()
@@ -77,7 +117,7 @@ bool UVautingComponent::CanVault()
 				FHitResult sVerticalHitResult;
 				if (GetWorld() && GetWorld()->LineTraceSingleByChannel(sVerticalHitResult, vTraceStartLocation, vTraceEndLocation, ECC_Visibility, Params))
 				{
-					DrawDebugLine(GetWorld(), vTraceStartLocation, vTraceEndLocation, FColor::Red, true, 10.f);
+					//DrawDebugLine(GetWorld(), vTraceStartLocation, vTraceEndLocation, FColor::Red, true, 10.f);
 					// The Trace should always be in front of the player 
 					FVector TraceStartLocation = sVerticalHitResult.Location;// +(m_pOwningCharacter->GetActorForwardVector() * m_fVaultingDistance);
 

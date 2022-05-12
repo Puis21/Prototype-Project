@@ -12,7 +12,7 @@ UENUM(BlueprintType)
 enum class EVaultingState : uint8
 {
 	Ready			UMETA(DisplayName = "Ready"),
-	WantsToVault		UMETA(DisplayName = "WantsToVault"),
+	Hanging			UMETA(DisplayName = "Hanging"),
 	Vaulting		UMETA(DisplayName = "Vaulting"),
 	Unavailable		UMETA(DisplayName = "Unavailable")
 };
@@ -31,6 +31,10 @@ public:
 
 	bool CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitResult HitResult);
 
+	void Vault();
+
+	void VaultingInterpolation(float DeltaTime);
+
 protected:
 
 	virtual void BeginPlay();
@@ -46,9 +50,16 @@ private:
 	DisplayName = "Vaulting Horizontal Distance")
 	float m_fHorizontalDistance;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Vaulting", meta = (AllowPrivateAccess = "true"), DisplayName = "Vaulting Speed")
+	float m_fVaultingSpeed;
+
+	float m_fVaultProgress;
+
 	int m_iMinVaultingHeight;
 
 	int m_iMaxVaultingHeight;
 
+
+	FVector m_v3VaultStartLocation;
 	FVector m_v3VaultEndLocation;
 };

@@ -107,7 +107,7 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
-
+	UVautingComponent* GetVaultingComponent() const { return m_ACVaultComponent; }
 
 	UPlayerMovementComponent* GetCustomMovementComponent() const { return m_ACPlayerMovementComponent; }
 

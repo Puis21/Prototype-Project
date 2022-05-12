@@ -38,13 +38,15 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 	};
 	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enumerators[] = {
 		{ "EVaultingState::Ready", (int64)EVaultingState::Ready },
-		{ "EVaultingState::WantsToVault", (int64)EVaultingState::WantsToVault },
+		{ "EVaultingState::Hanging", (int64)EVaultingState::Hanging },
 		{ "EVaultingState::Vaulting", (int64)EVaultingState::Vaulting },
 		{ "EVaultingState::Unavailable", (int64)EVaultingState::Unavailable },
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
+		{ "Hanging.DisplayName", "Hanging" },
+		{ "Hanging.Name", "EVaultingState::Hanging" },
 		{ "ModuleRelativePath", "Player/Components/VautingComponent.h" },
 		{ "Ready.DisplayName", "Ready" },
 		{ "Ready.Name", "EVaultingState::Ready" },
@@ -52,8 +54,6 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 		{ "Unavailable.Name", "EVaultingState::Unavailable" },
 		{ "Vaulting.DisplayName", "Vaulting" },
 		{ "Vaulting.Name", "EVaultingState::Vaulting" },
-		{ "WantsToVault.DisplayName", "WantsToVault" },
-		{ "WantsToVault.Name", "EVaultingState::WantsToVault" },
 	};
 #endif
 	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_PrototypeProject_EVaultingState_Statics::EnumParams = {
@@ -94,6 +94,10 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fHorizontalDistance_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fHorizontalDistance;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fVaultingSpeed_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fVaultingSpeed;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -123,8 +127,18 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance = { "m_fHorizontalDistance", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UVautingComponent, m_fHorizontalDistance), METADATA_PARAMS(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Vaulting" },
+		{ "DisplayName", "Vaulting Speed" },
+		{ "ModuleRelativePath", "Player/Components/VautingComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed = { "m_fVaultingSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UVautingComponent, m_fVaultingSpeed), METADATA_PARAMS(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UVautingComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UVautingComponent_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UVautingComponent>::IsAbstract,
@@ -163,12 +177,12 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::EnumInfo[] = {
-		{ EVaultingState_StaticEnum, TEXT("EVaultingState"), &Z_Registration_Info_UEnum_EVaultingState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3971523341U) },
+		{ EVaultingState_StaticEnum, TEXT("EVaultingState"), &Z_Registration_Info_UEnum_EVaultingState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3957932423U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UVautingComponent, UVautingComponent::StaticClass, TEXT("UVautingComponent"), &Z_Registration_Info_UClass_UVautingComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVautingComponent), 3772771339U) },
+		{ Z_Construct_UClass_UVautingComponent, UVautingComponent::StaticClass, TEXT("UVautingComponent"), &Z_Registration_Info_UClass_UVautingComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVautingComponent), 2138115770U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_3783429220(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_3853010802(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::EnumInfo));

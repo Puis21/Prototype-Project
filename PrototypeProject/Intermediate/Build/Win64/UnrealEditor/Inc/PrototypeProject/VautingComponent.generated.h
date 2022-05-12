@@ -89,7 +89,7 @@ template<> PROTOTYPEPROJECT_API UClass* StaticClass<class UVautingComponent>();
 
 #define FOREACH_ENUM_EVAULTINGSTATE(op) \
 	op(EVaultingState::Ready) \
-	op(EVaultingState::WantsToVault) \
+	op(EVaultingState::Hanging) \
 	op(EVaultingState::Vaulting) \
 	op(EVaultingState::Unavailable) 
 

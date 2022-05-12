@@ -10,6 +10,7 @@ class APlayerCharacter;
 class UCameraComponent;
 class UCharacterMovementComponent;
 class USlideComponent;
+class UVautingComponent;
 
 UENUM(BlueprintType)
 enum class EMovementState : uint8
@@ -65,6 +66,8 @@ private:
 	UCharacterMovementComponent* m_pCharacterMovement;
 
 	USlideComponent* m_pSlideComponent;
+
+	UVautingComponent* m_pVaultingComponent;
 
 	EMovementMode MoveMode;
 

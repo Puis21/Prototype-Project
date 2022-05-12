@@ -4,6 +4,7 @@
 #include "PlayerMovementComponent.h"
 #include "PrototypeProject/Player/PlayerCharacter.h"
 #include "PrototypeProject/Player/Components/SlideComponent.h"
+#include "PrototypeProject/Player/Components/VautingComponent.h"
 #include <Components/CapsuleComponent.h>
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -35,6 +36,7 @@ void UPlayerMovementComponent::BeginPlay()
 	}
 
 	m_pSlideComponent = m_pPlayerCharacter->GetSlideComponent();
+	m_pVaultingComponent = m_pPlayerCharacter->GetVaultingComponent();
 
 	StartMovementStateSwitch(EMovementState::Walking);
 
@@ -82,23 +84,33 @@ void UPlayerMovementComponent::ResolveMovement()
 
 void UPlayerMovementComponent::PlayerJump()
 {
-	if (m_bIsJumping)
-	{
-		m_bIsJumping = false;
-	}
-	else
-	{
-		m_bIsJumping = true;
-		if (m_iJumpCounter <= 1)
+	if(m_pVaultingComponent)
+	{ 
+		if (m_pVaultingComponent->CanVault())
 		{
-			m_pPlayerCharacter->LaunchCharacter(FVector(0, 0 , m_fJumpHeight), false, true);
-			m_iJumpCounter++;
+			m_pVaultingComponent->Vault();
 		}
-	}
+		else
+		{
+			if (m_bIsJumping)
+			{
+				m_bIsJumping = false;
+			}
+			else
+			{
+				m_bIsJumping = true;
+				if (m_iJumpCounter < 1)
+				{
+					m_pPlayerCharacter->LaunchCharacter(FVector(0, 0, m_fJumpHeight), false, true);
+					m_iJumpCounter++;
+				}
+			}
 
-	if (m_pSlideComponent->GetIsCrouched())
-	{
-		m_pSlideComponent->UnCrouching();
+			if (m_pSlideComponent->GetIsCrouched())
+			{
+				m_pSlideComponent->UnCrouching();
+			}
+		}
 	}
 }
 
@@ -108,7 +120,7 @@ void UPlayerMovementComponent::OnLanded(const FHitResult& Hit)
 	{
 		// Try starting slide, if the player has speed and is holding both Sprint and Crouch keybinds
 		m_pSlideComponent->SlideOnLand(Hit.Normal);
-		UE_LOG(LogTemp, Log, TEXT("alo"));
+		//UE_LOG(LogTemp, Log, TEXT("alo"));
 		// If not sliding yet, means can't slide.
 		// Resort to ResolveMovementMode, which will detect which mode it should transition to
 		if (eMovementState != EMovementState::Sliding)
