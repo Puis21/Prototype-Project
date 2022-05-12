@@ -16,8 +16,15 @@ public class PrototypeProject : ModuleRules
 			"HeadMountedDisplay",
 			"UMG",
             "Slate",
-            "SlateCore"
+            "SlateCore",
+			"CableComponent"
 		});
-    }
+
+		PrivateDependencyModuleNames.AddRange(new string[] {
+			"CableComponent"
+		});
+
+	}
+
 
 }

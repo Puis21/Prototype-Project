@@ -82,6 +82,15 @@
     <ClInclude Include="..\..\Source\PrototypeProject\TP_WeaponComponent.h">
       <Filter>Source\PrototypeProject</Filter>
     </ClInclude>
+    <Filter Include="Source\PrototypeProject\Interactables">
+      <UniqueIdentifier>{9E2068FE-B268-384C-9D64-A8708350C284}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Interactables\Zipline.cpp">
+      <Filter>Source\PrototypeProject\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Interactables\Zipline.h">
+      <Filter>Source\PrototypeProject\Interactables</Filter>
+    </ClInclude>
     <Filter Include="Source\PrototypeProject\Player">
       <UniqueIdentifier>{2FCA11FC-C487-32CF-B751-B620BBB622B6}</UniqueIdentifier>
     </Filter>
@@ -151,6 +160,12 @@
     <Filter Include="Source\PrototypeProject\TESTS">
       <UniqueIdentifier>{EAD693DB-D039-300E-BA8A-EF16583BEB7F}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\TESTS\TestActor.cpp">
+      <Filter>Source\PrototypeProject\TESTS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\TESTS\TestActor.h">
+      <Filter>Source\PrototypeProject\TESTS</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\TESTS\TestGrapple.cpp">
       <Filter>Source\PrototypeProject\TESTS</Filter>
     </ClCompile>

@@ -1,16 +1,19 @@
 C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Inc\PrototypeProject\PlayerCharacter.gen.cpp
 /I .
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
+/I ..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\UnrealEditor\Inc\CableComponent
+/I ..\Plugins\Runtime\CableComponent\Source
+/I ..\Plugins\Runtime\CableComponent\Source\CableComponent\Classes
 /I Runtime
+/I Runtime\TraceLog\Public
+/I Runtime\Core\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
+/I Runtime\CoreUObject\Public
+/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine
 /I ..\Shaders\Shared
 /I Runtime\Engine\Classes
 /I Runtime\Engine\Public
-/I Runtime\TraceLog\Public
-/I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreOnline
 /I Runtime\CoreOnline\Public
-/I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject
-/I Runtime\CoreUObject\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\NetCore
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -251,9 +254,6 @@ C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Inte
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
-/I ..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\UnrealEditor\Inc\CableComponent
-/I ..\Plugins\Runtime\CableComponent\Source
-/I ..\Plugins\Runtime\CableComponent\Source\CableComponent\Classes
 /I C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Inc\PrototypeProject
 /I C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Source
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality

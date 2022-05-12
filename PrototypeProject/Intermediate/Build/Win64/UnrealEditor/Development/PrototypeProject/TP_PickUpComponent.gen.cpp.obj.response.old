@@ -251,6 +251,9 @@ C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Inte
 /I Runtime\ClothingSystemRuntimeInterface\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController
 /I Developer\AnimationDataController\Public
+/I ..\Plugins\Runtime\CableComponent\Intermediate\Build\Win64\UnrealEditor\Inc\CableComponent
+/I ..\Plugins\Runtime\CableComponent\Source
+/I ..\Plugins\Runtime\CableComponent\Source\CableComponent\Classes
 /I C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Inc\PrototypeProject
 /I C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Source
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AugmentedReality
