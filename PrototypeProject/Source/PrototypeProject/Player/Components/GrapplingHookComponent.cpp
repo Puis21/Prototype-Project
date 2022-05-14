@@ -4,7 +4,7 @@
 #include "GrapplingHookComponent.h"
 #include "PrototypeProject/Player/PlayerCharacter.h"
 #include "Kismet/GameplayStatics.h"
-#include "Camera/CameraComponent.h"
+#include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
 #include "PrototypeProject/Player/GrappleTarget.h"
 #include "PrototypeProject/Player/GrappleHook.h"
 #include "PrototypeProject/Player/GrappleLine.h"

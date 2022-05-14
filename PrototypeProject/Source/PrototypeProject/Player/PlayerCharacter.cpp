@@ -3,6 +3,7 @@
 
 #include "PlayerCharacter.h"
 #include "Animation/AnimInstance.h"
+#include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/InputComponent.h"
@@ -11,6 +12,7 @@
 #include "Components/GrapplingHookComponent.h"
 #include "Components/SlideComponent.h"
 #include "Components/VautingComponent.h"
+#include "Engine/SkeletalMeshSocket.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
@@ -26,7 +28,7 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 	TurnRate = 45.f;
 
 	// Create a CameraComponent	
-	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FirstPersonCameraComponent = CreateDefaultSubobject<UPlayerCameraComponent>(TEXT("FirstPersonCamera"));
 	FirstPersonCameraComponent->SetupAttachment(GetCapsuleComponent());
 	FirstPersonCameraComponent->SetRelativeLocation(FVector(-39.56f, 1.75f, 64.f)); // Position the camera
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;

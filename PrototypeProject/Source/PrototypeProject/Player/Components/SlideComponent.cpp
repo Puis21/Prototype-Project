@@ -4,22 +4,27 @@
 #include "SlideComponent.h"
 #include "PrototypeProject/Player/PlayerCharacter.h"
 #include "PrototypeProject/Player/Components/PlayerMovementComponent.h"
-#include "Camera/CameraComponent.h"
+#include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
 #include <Components/CapsuleComponent.h>
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Camera/CameraComponent.h"
 
 
 USlideComponent::USlideComponent():
 m_bIsCrouching(false),
+m_bIsSliding(false),
 m_fCrouchCapsuleRadius(15.f),
+m_fCrouchingCapsuleHalfHeight(45.f),
+m_fCrouchingCameraZOffset(35.f),
+m_fMaxCrouchSpeed(300.f),
 //Slide Declarations
 m_fFloorSlopeInfluenceMultiplier(330000.0f),
 m_fSlideUpCounterForce(2.0f),
 m_fSlidingTerminalSpeed(5000.f),
 m_fSlidingBrakingDeceleration(1424.f),
 m_fAutoSlideFloorAngle(23.f),
-m_fSlideInitialSpeedBoost(100000.f),
+m_fSlideInitialSpeedBoost(50000.f),
 m_fMaxAngleToSlideUpFromSprint(25.f)
 {
 	
@@ -58,7 +63,8 @@ void USlideComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 	{
 		m_CrouchingTimeline.TickTimeline(DeltaTime);
 	}
-
+	
+	//UE_LOG(LogTemp, Log, TEXT("Can Stand %s"), CanStand() ? TEXT("true") : TEXT("false"));
 	//CLEAN
 	EMovementState eMovementState = GetCharacterMovementComponent()->GetMovementState();
 
@@ -69,7 +75,6 @@ void USlideComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 
 	if (eMovementState == EMovementState::Sliding)
 	{
-
 		// Get Current Player Velocity
 		FVector v3CurrentPlayerVelocity = (GetPlayer()->GetActorLocation() - m_v3LastUpdateLocation) / GetWorld()->GetDeltaSeconds();
 		// Get Current Floor Normal
@@ -327,7 +332,7 @@ void USlideComponent::StartSliding(bool bFromSprint)
 {
 
 	Crouching();
-
+	m_bIsSliding = true;
 	// Apply initial speed boost if applicable
 	if (bFromSprint)
 	{
@@ -373,6 +378,8 @@ void USlideComponent::StopSliding()
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Yellow, TEXT("Ended Slide"));
 	}
+
+	m_bIsSliding = false;
 
 	// Reset ground friction and deceleration values
 	GetCharacterMovementComponent()->GroundFriction = m_fWalkGroundFriction;
@@ -474,7 +481,6 @@ bool USlideComponent::GetCanOccupyStandingSpace() const
 	//{
 	//	return true;
 	//}
-
 	UCapsuleComponent* PlayerCapsuleComponent = GetPlayer()->GetCapsuleComponent();
 	if (PlayerCapsuleComponent)
 	{

@@ -8,6 +8,7 @@
 #include <Components/CapsuleComponent.h>
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
 #include "Camera/CameraComponent.h"
 
 UPlayerMovementComponent::UPlayerMovementComponent():
@@ -58,7 +59,7 @@ void UPlayerMovementComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 
 	//UE_LOG(LogTemp, Log, TEXT("MyBool is %f"), MaxWalkSpeed);
 	//UE_LOG(LogTemp, Log, TEXT("my enum: %s"), *UEnum::GetValueAsName(eMovementState).ToString());
-	//UE_LOG(LogTemp, Log, TEXT("Crouched %s"), m_bIsCrouching ? TEXT("true") : TEXT("false"));
+	//UE_LOG(LogTemp, Log, TEXT("Crouched %s"), m_bIsJumping ? TEXT("true") : TEXT("false"));
 
 }
 
@@ -95,6 +96,7 @@ void UPlayerMovementComponent::PlayerJump()
 			if (m_bIsJumping)
 			{
 				m_bIsJumping = false;
+				//UE_LOG(LogTemp, Log, TEXT("alo"));
 			}
 			else
 			{
@@ -103,6 +105,7 @@ void UPlayerMovementComponent::PlayerJump()
 				{
 					m_pPlayerCharacter->LaunchCharacter(FVector(0, 0, m_fJumpHeight), false, true);
 					m_iJumpCounter++;
+
 				}
 			}
 
@@ -113,6 +116,7 @@ void UPlayerMovementComponent::PlayerJump()
 		}
 	}
 }
+
 
 void UPlayerMovementComponent::OnLanded(const FHitResult& Hit)
 {
@@ -200,7 +204,7 @@ void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementStat
 		break;
 		case EMovementState::Crouching:
 		{
-			SetMaxSpeed(m_fMaxCrouchSpeed);
+			SetMaxSpeed(GetSlideComponent()->GetCrouchSpeed());
             m_pSlideComponent->Crouching();
 		}
 		break;

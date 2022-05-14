@@ -81,7 +81,8 @@ private:
 	float m_fStandingCapsuleHalfHeight;
 	float m_fStandingCameraZOffSet;
 	bool m_bIsCrouching;
-	//Slide variables
+	bool m_bIsSliding;
+
 	FVector m_v3LastUpdateLocation;
 
 	FVector m_v3OnLandedFloorNormal;
@@ -112,5 +113,6 @@ private:
 public:
 
 	FORCEINLINE bool GetIsCrouched() const { return m_bIsCrouching; }
-
+	FORCEINLINE bool GetIsSliding() const { return m_bIsSliding; }
+	FORCEINLINE float GetCrouchSpeed() const { return m_fMaxCrouchSpeed; }
 };

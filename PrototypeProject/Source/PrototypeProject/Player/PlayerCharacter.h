@@ -9,7 +9,7 @@
 class UInputComponent;
 class USkeletalMeshComponent;
 class USceneComponent;
-class UCameraComponent;
+
 class UAnimMontage;
 class USoundBase;
 class UCapsuleComponent;
@@ -17,6 +17,7 @@ class UPlayerMovementComponent;
 class UGrapplingHookComponent;
 class USlideComponent;
 class UVautingComponent;
+class UPlayerCameraComponent;
 
 UCLASS(config = Game)
 class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
@@ -26,12 +27,12 @@ class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
 public:
 
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
-	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
+	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly,Category = Mesh)
 	USkeletalMeshComponent* Mesh1P;
 
 	/** First person camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FirstPersonCameraComponent;
+	UPlayerCameraComponent* FirstPersonCameraComponent;
 
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "First Person Character Movement Component")
 	UPlayerMovementComponent* m_ACPlayerMovementComponent;
@@ -105,7 +106,7 @@ public:
 	/** Returns Mesh1P subobject **/
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
-	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+	UPlayerCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
 	UVautingComponent* GetVaultingComponent() const { return m_ACVaultComponent; }
 

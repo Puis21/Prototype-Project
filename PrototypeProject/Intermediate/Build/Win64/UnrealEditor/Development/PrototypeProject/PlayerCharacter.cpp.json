@@ -14,8 +14,12 @@
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\playercharacter.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\camera\\playercameracomponent.h",
             "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\cameracomponent.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\timelinecomponent.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\timelinecomponent.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\playercameracomponent.generated.h",
             "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
             "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
             "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
@@ -48,11 +52,11 @@
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\slidecomponent.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\parkourmovementcomponent.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\parkourmovementcomponent.generated.h",
-            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\timelinecomponent.h",
-            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\timelinecomponent.generated.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\slidecomponent.generated.h",
             "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\vautingcomponent.h",
-            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\vautingcomponent.generated.h"
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\vautingcomponent.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\engine\\skeletalmeshsocket.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\skeletalmeshsocket.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

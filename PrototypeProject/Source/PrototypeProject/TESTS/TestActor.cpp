@@ -27,6 +27,7 @@ ATestActor::ATestActor()
 
 	m_pCableComponent = CreateDefaultSubobject<UCableComponent>(TEXT("Cable Component"));
 	m_pCableComponent->SetWorldLocation(MeshComp->GetComponentLocation());
+	m_pCableComponent->EndLocation = MeshComp2->GetComponentLocation();
 	m_pCableComponent->SetAttachEndToComponent(MeshComp2);
 
 }
@@ -35,6 +36,7 @@ ATestActor::ATestActor()
 void ATestActor::BeginPlay()
 {
 	Super::BeginPlay();
+	
 	
 }
 

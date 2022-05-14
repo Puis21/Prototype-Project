@@ -9,10 +9,10 @@
 #include "Kismet/KismetMathLibrary.h"
 
 UVautingComponent::UVautingComponent():
-m_fHorizontalDistance(200.f),
+m_fHorizontalDistance(100.f),
 m_iMinVaultingHeight(50.f),
 m_iMaxVaultingHeight(170.f),
-m_fVaultingSpeed(0.3f)
+m_fVaultingSpeed(0.5f)
 {
 	PrimaryComponentTick.bCanEverTick = true;
 

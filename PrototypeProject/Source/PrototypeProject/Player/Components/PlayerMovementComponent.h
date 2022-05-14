@@ -7,7 +7,8 @@
 #include "PlayerMovementComponent.generated.h"
 
 class APlayerCharacter;
-class UCameraComponent;
+
+class UPlayerCameraComponent;
 class UCharacterMovementComponent;
 class USlideComponent;
 class UVautingComponent;
@@ -61,7 +62,7 @@ private:
 	
 	APlayerCharacter* m_pPlayerCharacter;
 
-	UCameraComponent* m_pCameraComponent;
+	UPlayerCameraComponent* m_pCameraComponent;
 
 	UCharacterMovementComponent* m_pCharacterMovement;
 
@@ -83,13 +84,10 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom Movement | Walking", meta = (AllowPrivateAccess = "true"), DisplayName = "Walk Speed")
 	float m_fMaxWalkSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom Movement | Walking", meta = (AllowPrivateAccess = "true"), DisplayName = "Sprint Speed")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom Movement | Sprint", meta = (AllowPrivateAccess = "true"), DisplayName = "Sprint Speed")
 	float m_fMaxSprintSpeed;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom Movement | Walking", meta = (AllowPrivateAccess = "true"), DisplayName = "Crouch Speed")
-	float m_fMaxCrouchSpeed;
-
-	UPROPERTY(Category = "Movement | Sprint", EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.88", ClampMax = "1.0", AllowPrivateAccess = "true"), DisplayName = "Minimum value of forwards axis to begin sprint")
+	UPROPERTY(Category = "Custom Movement | Sprint", EditAnywhere, BlueprintReadWrite, meta = (ClampMin = "0.88", ClampMax = "1.0", AllowPrivateAccess = "true"), DisplayName = "Minimum value of forwards axis to begin sprint")
 	float m_fSprintMinForward;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Movement | Walking", meta = (AllowPrivateAccess = "true"), DisplayName = "Can Sprint")
@@ -105,6 +103,7 @@ public:
 	FORCEINLINE float GetPlayerSpeed() const { return MaxWalkSpeed; }
 	FORCEINLINE float GetPlayerSprintSpeed() const { return m_fMaxSprintSpeed; }
 	FORCEINLINE float GetPlayerWalkSpeed() const { return m_fMaxWalkSpeed; }
+	FORCEINLINE USlideComponent* GetSlideComponent() const { return m_pSlideComponent; }
 
 	FORCEINLINE void SetPlayerSpeed(float speed) { MaxWalkSpeed = speed; }
 

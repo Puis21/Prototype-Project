@@ -120,10 +120,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fMaxSprintSpeed;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fMaxCrouchSpeed_MetaData[];
-#endif
-		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fMaxCrouchSpeed;
-#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fSprintMinForward_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fSprintMinForward;
@@ -194,25 +190,16 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Custom Movement | Walking" },
+		{ "Category", "Custom Movement | Sprint" },
 		{ "DisplayName", "Sprint Speed" },
 		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed = { "m_fMaxSprintSpeed", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, m_fMaxSprintSpeed), METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed_MetaData[] = {
-		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Custom Movement | Walking" },
-		{ "DisplayName", "Crouch Speed" },
-		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
-	};
-#endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed = { "m_fMaxCrouchSpeed", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, m_fMaxCrouchSpeed), METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed_MetaData)) };
-#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fSprintMinForward_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Movement | Sprint" },
+		{ "Category", "Custom Movement | Sprint" },
 		{ "ClampMax", "1.0" },
 		{ "ClampMin", "0.88" },
 		{ "DisplayName", "Minimum value of forwards axis to begin sprint" },
@@ -247,7 +234,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsJumping,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxWalkSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxCrouchSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fSprintMinForward,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_Underlying,
@@ -293,9 +279,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		{ EMovementState_StaticEnum, TEXT("EMovementState"), &Z_Registration_Info_UEnum_EMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4046139049U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 2581234374U) },
+		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 3861489629U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_3787104924(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_4269970600(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo));

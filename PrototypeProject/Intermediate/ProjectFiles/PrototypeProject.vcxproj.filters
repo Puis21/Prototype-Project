@@ -112,11 +112,26 @@
     <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleTarget.h">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\PlayerAnimInstance.cpp">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\PlayerAnimInstance.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Player\PlayerCharacter.cpp">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Player\PlayerCharacter.h">
       <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\Camera">
+      <UniqueIdentifier>{8B2E1622-A53F-366D-B0E7-45903ED99F00}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCameraComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Camera</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCameraComponent.h">
+      <Filter>Source\PrototypeProject\Player\Camera</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Player\Components">
       <UniqueIdentifier>{B5F7DEC3-B5A7-3455-821D-1D0033288880}</UniqueIdentifier>

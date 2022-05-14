@@ -10,7 +10,8 @@
 
 class APlayerCharacter;
 class AGrappleTarget;
-class UCameraComponent;
+
+class UPlayerCameraComponent;
 class AActor;
 class AGrappleHook;
 class ATestGrapple;
@@ -47,7 +48,7 @@ private:
 
 	AGrappleTarget* m_pGrappleTarget;
 
-	UCameraComponent* m_pPlayerCamera;
+	UPlayerCameraComponent* m_pPlayerCamera;
 
 	class AActor* m_pOwnerActor;
 
