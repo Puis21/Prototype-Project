@@ -1,92 +1,21 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0057.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0057.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0698.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0698.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0896.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-0896.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1555.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1555.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1760.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1760.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1812.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-1812.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2040.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2040.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2851.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2851.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3360.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3360.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3364.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3364.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3571.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3571.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3761.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-3761.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4204.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4204.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4263.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4263.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4802.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-4802.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-5961.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-5961.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6521.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6521.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6557.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6557.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6776.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-6776.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7203.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7203.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7442.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7442.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7697.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7697.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7918.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-7918.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-8814.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-8814.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9528.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9528.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9872.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-0057.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-0698.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-0896.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-1555.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-1760.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-1812.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-2040.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-2851.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-3360.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-3364.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-3571.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-3761.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-4204.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-4263.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-4802.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-5961.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6521.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6557.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-6776.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-7203.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-7442.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-7697.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-7918.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-8814.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9528.lib
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9872.lib
+  Parsing headers for PrototypeProjectEditor
+    Running UnrealHeaderTool "C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\PrototypeProject.uproject" "C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\PrototypeProjectEditor\Development\PrototypeProjectEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  Reflection code generated for PrototypeProjectEditor in 0.9198612 seconds
   Building PrototypeProjectEditor...
   Using Visual Studio 2019 14.29.30143 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
     Executing up to 8 processes, one per physical core
-  Building 3 actions with 3 processes...
-  [1/3] Link UnrealEditor-PrototypeProject.lib
+  Building 6 actions with 6 processes...
+  [1/6] Compile PrototypeProject.init.gen.cpp
+  [2/6] Compile PlayerCharacterCameraManager.cpp
+  [3/6] Compile PlayerCharacterCameraManager.gen.cpp
+  [4/6] Link UnrealEditor-PrototypeProject.lib
      Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.exp
-  [2/3] Link UnrealEditor-PrototypeProject.dll
+  [5/6] Link UnrealEditor-PrototypeProject.dll
      Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.exp
-  [3/3] WriteMetadata PrototypeProjectEditor.target
-  Total time in Parallel executor: 0.79 seconds
-  Total execution time: 1.27 seconds
+  [6/6] WriteMetadata PrototypeProjectEditor.target
+  Total time in Parallel executor: 1.34 seconds
+  Total execution time: 2.68 seconds

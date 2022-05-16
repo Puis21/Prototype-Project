@@ -36,6 +36,7 @@ void UPlayerMovementComponent::BeginPlay()
         m_pCameraComponent = m_pPlayerCharacter->GetFirstPersonCameraComponent();
 	}
 
+
 	m_pSlideComponent = m_pPlayerCharacter->GetSlideComponent();
 	m_pVaultingComponent = m_pPlayerCharacter->GetVaultingComponent();
 
@@ -215,6 +216,12 @@ void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementStat
 			m_pSlideComponent->StartSliding(bSprintBoost);
 		}
 		break;
+
+	}
+
+	if (m_pCameraComponent)
+	{
+		m_pCameraComponent->UpdateFOV(eNewMovementState);
 	}
 }
 

@@ -133,15 +133,18 @@
     <ClInclude Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCameraComponent.h">
       <Filter>Source\PrototypeProject\Player\Camera</Filter>
     </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\Camera\CameraShakes">
+      <UniqueIdentifier>{AFC86035-AD67-361D-B1C5-0C80774F142C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Camera\CameraShakes\MovingCameraShake.cpp">
+      <Filter>Source\PrototypeProject\Player\Camera\CameraShakes</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Camera\CameraShakes\MovingCameraShake.h">
+      <Filter>Source\PrototypeProject\Player\Camera\CameraShakes</Filter>
+    </ClInclude>
     <Filter Include="Source\PrototypeProject\Player\Components">
       <UniqueIdentifier>{B5F7DEC3-B5A7-3455-821D-1D0033288880}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\CustomMovementComponent.cpp">
-      <Filter>Source\PrototypeProject\Player\Components</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\CustomMovementComponent.h">
-      <Filter>Source\PrototypeProject\Player\Components</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\GrapplingHookComponent.cpp">
       <Filter>Source\PrototypeProject\Player\Components</Filter>
     </ClCompile>

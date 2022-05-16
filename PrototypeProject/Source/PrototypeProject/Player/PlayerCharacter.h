@@ -18,6 +18,7 @@ class UGrapplingHookComponent;
 class USlideComponent;
 class UVautingComponent;
 class UPlayerCameraComponent;
+class UMatineeCameraShake;
 
 UCLASS(config = Game)
 class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
