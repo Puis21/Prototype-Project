@@ -5,6 +5,7 @@
 #include "PlayerCharacter.h"
 #include "PrototypeProject/Player/Components/PlayerMovementComponent.h"
 #include "PrototypeProject/Player/Components/SlideComponent.h"
+#include "PrototypeProject/Player/Components/CombatComponent.h"
 
 void UPlayerAnimInstance::NativeInitializeAnimation()
 {
@@ -30,5 +31,5 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTime)
 	bIsAccelerating = m_pOwnerPawn->GetCharacterMovement()->GetCurrentAcceleration().Size() > 0.f ? true : false;
 	bIsCrouching = m_pOwnerPawn->GetSlideComponent()->GetIsCrouched();
 	bIsSliding = m_pOwnerPawn->GetSlideComponent()->GetIsSliding();
-
+	bIsBlocking = m_pOwnerPawn->GetCombatComponent()->GetIsBlocking();
 }

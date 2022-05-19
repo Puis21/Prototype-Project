@@ -5,11 +5,13 @@
 #include "PrototypeProject/Player/PlayerCharacter.h"
 #include "PrototypeProject/Player/Components/SlideComponent.h"
 #include "PrototypeProject/Player/Components/VautingComponent.h"
+#include "PrototypeProject/Player/Components/CombatComponent.h"
 #include <Components/CapsuleComponent.h>
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Sound/SoundBase.h"
 
 UPlayerMovementComponent::UPlayerMovementComponent():
 m_iJumpCounter(0),
@@ -39,6 +41,7 @@ void UPlayerMovementComponent::BeginPlay()
 
 	m_pSlideComponent = m_pPlayerCharacter->GetSlideComponent();
 	m_pVaultingComponent = m_pPlayerCharacter->GetVaultingComponent();
+	m_pCombatComponent = m_pPlayerCharacter->GetCombatComponent();
 
 	StartMovementStateSwitch(EMovementState::Walking);
 
@@ -60,8 +63,66 @@ void UPlayerMovementComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 
 	//UE_LOG(LogTemp, Log, TEXT("MyBool is %f"), MaxWalkSpeed);
 	//UE_LOG(LogTemp, Log, TEXT("my enum: %s"), *UEnum::GetValueAsName(eMovementState).ToString());
-	//UE_LOG(LogTemp, Log, TEXT("Crouched %s"), m_bIsJumping ? TEXT("true") : TEXT("false"));
+	//UE_LOG(LogTemp, Log, TEXT("Idle? %s"), CheckIfMovingXY() ? TEXT("true") : TEXT("false"));
 
+	if (!CheckIfMovingXY())
+	{	
+		GetWorld()->GetTimerManager().SetTimer(FootstepsTimer, this, &UPlayerMovementComponent::MovingSounds, m_fFootstepsPlayRate, true);
+	}
+}
+
+void UPlayerMovementComponent::MovingSounds()
+{
+	FVector SoundPlayLocation = m_pPlayerCharacter->GetActorLocation() - FVector(0.f,0.f,70.f);
+	
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), FootStepSound, SoundPlayLocation);
+}
+
+void UPlayerMovementComponent::FootStepsPlayRate(EMovementState eSoundMovementState)
+{
+	if (eSoundMovementState == EMovementState::Walking)
+	{
+		m_fFootstepsPlayRate = 0.4f;
+		if (GetWorld()->GetTimerManager().IsTimerActive(FootstepsTimer))
+		{
+			GetWorld()->GetTimerManager().ClearTimer(FootstepsTimer);
+			GetWorld()->GetTimerManager().SetTimer(FootstepsTimer, this, &UPlayerMovementComponent::MovingSounds, m_fFootstepsPlayRate, true);
+		}
+	}
+	else if (eSoundMovementState == EMovementState::Sprinting)
+	{
+		m_fFootstepsPlayRate = 0.3f;
+		if (GetWorld()->GetTimerManager().IsTimerActive(FootstepsTimer))
+		{
+			GetWorld()->GetTimerManager().ClearTimer(FootstepsTimer);
+			GetWorld()->GetTimerManager().SetTimer(FootstepsTimer, this, &UPlayerMovementComponent::MovingSounds, m_fFootstepsPlayRate, true);
+		}
+	}
+	else if (eSoundMovementState == EMovementState::Crouching)
+	{
+		m_fFootstepsPlayRate = 0.6f;
+		if (GetWorld()->GetTimerManager().IsTimerActive(FootstepsTimer))
+		{
+			GetWorld()->GetTimerManager().ClearTimer(FootstepsTimer);
+			GetWorld()->GetTimerManager().SetTimer(FootstepsTimer, this, &UPlayerMovementComponent::MovingSounds, m_fFootstepsPlayRate, true);
+		}
+	}
+}
+
+bool UPlayerMovementComponent::CheckIfMovingXY()
+{
+	const float kfMoveForward = FGenericPlatformMath::Abs(m_pPlayerCharacter->GetInputAxisValue("Move Forward / Backward"));
+	const float kfMoveSideways = FGenericPlatformMath::Abs(m_pPlayerCharacter->GetInputAxisValue("Move Right / Left"));
+
+	if (kfMoveForward > 0 || kfMoveSideways > 0)
+	{
+		if (m_pPlayerCharacter->GetVelocity().Z == 0 && !m_pPlayerCharacter->GetSlideComponent()->GetIsSliding())
+		{
+			return true;
+		}
+
+	}
+	return false;
 }
 
 void UPlayerMovementComponent::ResolveMovement()
@@ -88,6 +149,7 @@ void UPlayerMovementComponent::PlayerJump()
 {
 	if(m_pVaultingComponent)
 	{ 
+		UE_LOG(LogTemp, Log, TEXT("alo12"));
 		if (m_pVaultingComponent->CanVault())
 		{
 			m_pVaultingComponent->Vault();
@@ -97,7 +159,7 @@ void UPlayerMovementComponent::PlayerJump()
 			if (m_bIsJumping)
 			{
 				m_bIsJumping = false;
-				//UE_LOG(LogTemp, Log, TEXT("alo"));
+				UE_LOG(LogTemp, Log, TEXT("alo1"));
 			}
 			else
 			{
@@ -212,7 +274,7 @@ void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementStat
 		case EMovementState::Sliding:
 		{
 			bool bSprintBoost = m_bIsSprinting;
-			UE_LOG(LogTemp, Log, TEXT("Initial Speed: %s"), bSprintBoost ? TEXT("true") : TEXT("false"));
+			//UE_LOG(LogTemp, Log, TEXT("Initial Speed: %s"), bSprintBoost ? TEXT("true") : TEXT("false"));
 			m_pSlideComponent->StartSliding(bSprintBoost);
 		}
 		break;
@@ -223,6 +285,8 @@ void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementStat
 	{
 		m_pCameraComponent->UpdateFOV(eNewMovementState);
 	}
+
+	FootStepsPlayRate(eNewMovementState);
 }
 
 float UPlayerMovementComponent::SetMaxSpeed(float maxSpeed)
@@ -240,5 +304,5 @@ bool UPlayerMovementComponent::CanSprint() const
 	//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Yellow, FString::Printf(TEXT("Sideways: %f"), kfAbsMoveSideways));
 	const bool kbIsMovingForward = (kfMoveForward >= m_fSprintMinForward) && (kfAbsMoveSideways <= kfMoveForward);
 
-	return (!m_bIsSprinting && kbIsMovingForward && !IsFalling() && !m_pSlideComponent->GetIsCrouched());
+	return (!m_bIsSprinting && kbIsMovingForward && !IsFalling() && !m_pSlideComponent->GetIsCrouched() && !m_pCombatComponent->GetIsBlocking());
 }

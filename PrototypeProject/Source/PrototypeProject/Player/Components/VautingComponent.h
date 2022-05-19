@@ -43,6 +43,7 @@ protected:
 
 private:
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	EVaultingState m_eVaultingState;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Custom Movement | Vaulting",

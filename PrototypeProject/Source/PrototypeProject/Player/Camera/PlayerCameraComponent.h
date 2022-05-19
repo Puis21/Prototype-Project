@@ -12,7 +12,7 @@
 enum class EMovementState : uint8;
 class UPlayerMovementComponent;
 class APlayerCharacter;
-class UMatineeCameraShake;
+class UCameraShakeBase;
 
 UCLASS()
 class PROTOTYPEPROJECT_API UPlayerCameraComponent : public UCameraComponent
@@ -41,8 +41,10 @@ private:
 	//UPROPERTY(EditAnywhere, Category = "Camera | Camera Shake", DisplayName = "Movement Camera Shake Class")
 	//TSubclassOf<UMatineeCameraShake> m_cMovementCameraShakeClass;
 
-	//UPROPERTY(EditAnywhere, Category = "Camera | Camera Shake", DisplayName = "Movement Camera Shake Class")
-	//TSubclassOf<UCameraShakeBase> CameraShake;
+	UPROPERTY(EditAnywhere, Category = "Camera | Camera Shake", DisplayName = "Movement Camera Shake Class")
+	TSubclassOf<UCameraShakeBase> CameraShake;
+
+	UCameraShakeBase* CamShake;
 
 	//TSubclassOf<UMatineeCameraShake> Matinee;
 

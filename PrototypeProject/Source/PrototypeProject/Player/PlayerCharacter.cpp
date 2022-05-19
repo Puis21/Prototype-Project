@@ -12,7 +12,7 @@
 #include "Components/GrapplingHookComponent.h"
 #include "Components/SlideComponent.h"
 #include "Components/VautingComponent.h"
-#include "Engine/SkeletalMeshSocket.h"
+#include "Components/CombatComponent.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
@@ -47,6 +47,8 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 	m_ACSlideComponent = CreateDefaultSubobject<USlideComponent>(TEXT("Slide Component"));
 
 	m_ACVaultComponent = CreateDefaultSubobject<UVautingComponent>(TEXT("Vault Component"));
+
+	m_ACCombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("Combat Component"));
 }
 
 void APlayerCharacter::PostInitializeComponents()
@@ -57,6 +59,11 @@ void APlayerCharacter::PostInitializeComponents()
 	if (pPlayerMovementComponent)
 	{
 		m_ACPlayerMovementComponent = pPlayerMovementComponent;
+	}
+
+	if (m_ACCombatComponent)
+	{
+		m_ACCombatComponent->m_pPlayerCharacter = this;
 	}
 
 }
@@ -93,8 +100,12 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	//Bind Crouch events
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &APlayerCharacter::CrouchButtonPressed);
 
-	// Bind fire event
-	//PlayerInputComponent->BindAction("PrimaryAction", IE_Pressed, this, &APlayerCharacter::OnPrimaryAction);
+	// Bind attack event
+	PlayerInputComponent->BindAction("LMB", IE_Pressed, this, &APlayerCharacter::LMBPressed);
+
+	//Bind Block Event
+	PlayerInputComponent->BindAction("RMB", IE_Pressed, this, &APlayerCharacter::RMBPressed);
+	PlayerInputComponent->BindAction("RMB", IE_Released, this, &APlayerCharacter::RMBPressed);
 
 	//Grapple
 	PlayerInputComponent->BindAction("Grapple", IE_Pressed, this, &APlayerCharacter::GrappleButtonPressed);
@@ -160,6 +171,29 @@ void APlayerCharacter::CrouchButtonPressed()
 		else
 		{
 			m_ACSlideComponent->UnCrouching();
+		}
+	}
+}
+
+void APlayerCharacter::LMBPressed()
+{
+	if (m_ACCombatComponent)
+	{
+		m_ACCombatComponent->SwordAttack();
+	}
+}
+
+void APlayerCharacter::RMBPressed()
+{
+	if (m_ACCombatComponent)
+	{
+		if (!m_ACCombatComponent->GetIsBlocking())
+		{
+			m_ACCombatComponent->StartSwordBlock();
+		}
+		else
+		{
+			m_ACCombatComponent->EndSwordBlock();
 		}
 	}
 }

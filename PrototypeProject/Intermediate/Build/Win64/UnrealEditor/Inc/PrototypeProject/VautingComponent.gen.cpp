@@ -90,6 +90,11 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UECodeGen_Private::FBytePropertyParams NewProp_m_eVaultingState_Underlying;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_eVaultingState_MetaData[];
+#endif
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_m_eVaultingState;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fHorizontalDistance_MetaData[];
 #endif
@@ -114,6 +119,15 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 		{ "ModuleRelativePath", "Player/Components/VautingComponent.h" },
 	};
 #endif
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "VautingComponent" },
+		{ "ModuleRelativePath", "Player/Components/VautingComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState = { "m_eVaultingState", nullptr, (EPropertyFlags)0x0040000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UVautingComponent, m_eVaultingState), Z_Construct_UEnum_PrototypeProject_EVaultingState, METADATA_PARAMS(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState_MetaData)) }; // 3957932423
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -137,6 +151,8 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed = { "m_fVaultingSpeed", nullptr, (EPropertyFlags)0x0040000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UVautingComponent, m_fVaultingSpeed), METADATA_PARAMS(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UVautingComponent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_eVaultingState,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fHorizontalDistance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UVautingComponent_Statics::NewProp_m_fVaultingSpeed,
 	};
@@ -180,9 +196,9 @@ void EmptyLinkFunctionForGeneratedCodeVautingComponent() {}
 		{ EVaultingState_StaticEnum, TEXT("EVaultingState"), &Z_Registration_Info_UEnum_EVaultingState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3957932423U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UVautingComponent, UVautingComponent::StaticClass, TEXT("UVautingComponent"), &Z_Registration_Info_UClass_UVautingComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVautingComponent), 2138115770U) },
+		{ Z_Construct_UClass_UVautingComponent, UVautingComponent::StaticClass, TEXT("UVautingComponent"), &Z_Registration_Info_UClass_UVautingComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVautingComponent), 1407519654U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_3853010802(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_4216591234(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_VautingComponent_h_Statics::EnumInfo));

@@ -1,0 +1,31 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\prototypeprojectcharacter.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\prototypeprojecteditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\debuggame\\prototypeproject\\definitions.prototypeproject.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\prototypeprojectcharacter.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\charactermovementreplication.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\rootmotionsource.generated.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\character.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\prototypeprojectcharacter.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\prototypeprojectprojectile.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\prototypeprojectprojectile.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\cameracomponent.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\shapecomponent.generated.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\capsulecomponent.generated.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\gameframework\\inputsettings.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\inputsettings.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -21,7 +21,10 @@ public class PrototypeProject : ModuleRules
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {
-			"CableComponent"
+			"CableComponent",
+			"GameplayAbilities",
+			"GameplayTags",
+			"GameplayTasks"
 		});
 
 	}

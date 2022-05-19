@@ -18,7 +18,7 @@ class UGrapplingHookComponent;
 class USlideComponent;
 class UVautingComponent;
 class UPlayerCameraComponent;
-class UMatineeCameraShake;
+class UCombatComponent;
 
 UCLASS(config = Game)
 class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
@@ -47,10 +47,13 @@ public:
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Vault Component")
 	UVautingComponent* m_ACVaultComponent;
 
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Combat Component")
+	UCombatComponent* m_ACCombatComponent;
+
 protected:
 
 	virtual void BeginPlay();
-	
+
 	/** Fires a projectile. */
 	//void OnPrimaryAction();
 
@@ -84,6 +87,9 @@ protected:
 
 	void GrappleButtonPressed();
 
+	void LMBPressed();
+
+	void RMBPressed();
 	//void CrouchButtonReleased();
 
 public:	
@@ -110,6 +116,7 @@ public:
 	UPlayerCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
 	UVautingComponent* GetVaultingComponent() const { return m_ACVaultComponent; }
+	UCombatComponent* GetCombatComponent() const { return m_ACCombatComponent; }
 
 	UPlayerMovementComponent* GetCustomMovementComponent() const { return m_ACPlayerMovementComponent; }
 

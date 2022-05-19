@@ -12,6 +12,8 @@ class UPlayerCameraComponent;
 class UCharacterMovementComponent;
 class USlideComponent;
 class UVautingComponent;
+class UCombatComponent;
+class USoundBase;
 
 UENUM(BlueprintType)
 enum class EMovementState : uint8
@@ -56,7 +58,13 @@ public:
 
 	bool CanSprint() const;
 
+	bool CheckIfMovingXY();
+
 	void OnLanded(const FHitResult& Hit);
+
+	void MovingSounds();
+
+	void FootStepsPlayRate(EMovementState eSoundMovementState);
 
 private:
 	
@@ -70,7 +78,17 @@ private:
 
 	UVautingComponent* m_pVaultingComponent;
 
+	UCombatComponent* m_pCombatComponent;
+
 	EMovementMode MoveMode;
+
+	FTimerHandle FootstepsTimer;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sounds | Movement", meta = (AllowPrivateAccess = "true"))
+	float m_fFootstepsPlayRate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sounds | Movement", meta = (AllowPrivateAccess = "true"))
+	USoundBase* FootStepSound;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Movement | Jumping", meta = (AllowPrivateAccess = "true"), DisplayName = "Jump Count")
 	int32 m_iJumpCounter;

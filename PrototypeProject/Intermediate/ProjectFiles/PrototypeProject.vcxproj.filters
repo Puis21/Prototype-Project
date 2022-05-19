@@ -43,6 +43,12 @@
     <ClInclude Include="..\..\Source\PrototypeProject\GrappleState.h">
       <Filter>Source\PrototypeProject</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\KatanaWeapon.cpp">
+      <Filter>Source\PrototypeProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\KatanaWeapon.h">
+      <Filter>Source\PrototypeProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\PrototypeProject\PrototypeProject.Build.cs">
       <Filter>Source\PrototypeProject</Filter>
     </None>
@@ -81,6 +87,15 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\TP_WeaponComponent.h">
       <Filter>Source\PrototypeProject</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Enemy">
+      <UniqueIdentifier>{3560B0A7-AF3C-3420-8FF7-DDFDBF9EF0FC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\BP_EnemyCharacter.cpp">
+      <Filter>Source\PrototypeProject\Enemy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\BP_EnemyCharacter.h">
+      <Filter>Source\PrototypeProject\Enemy</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Interactables">
       <UniqueIdentifier>{9E2068FE-B268-384C-9D64-A8708350C284}</UniqueIdentifier>
@@ -145,6 +160,12 @@
     <Filter Include="Source\PrototypeProject\Player\Components">
       <UniqueIdentifier>{B5F7DEC3-B5A7-3455-821D-1D0033288880}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\CombatComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\CombatComponent.h">
+      <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Player\Components\GrapplingHookComponent.cpp">
       <Filter>Source\PrototypeProject\Player\Components</Filter>
     </ClCompile>
@@ -175,6 +196,33 @@
     <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\VautingComponent.h">
       <Filter>Source\PrototypeProject\Player\Components</Filter>
     </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\Notify">
+      <UniqueIdentifier>{3ADCD2FD-5F53-309B-986D-D96053F74D62}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Notify\NotifyState_CanDamage.cpp">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Notify\NotifyState_CanDamage.h">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Notify\NotifyState_Combo.cpp">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Notify\NotifyState_Combo.h">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Notify\Notify_EndAttack.cpp">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Notify\Notify_EndAttack.h">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Notify\Notify_QueueNextAttack.cpp">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Notify\Notify_QueueNextAttack.h">
+      <Filter>Source\PrototypeProject\Player\Notify</Filter>
+    </ClInclude>
     <Filter Include="Source\PrototypeProject\TESTS">
       <UniqueIdentifier>{EAD693DB-D039-300E-BA8A-EF16583BEB7F}</UniqueIdentifier>
     </Filter>
@@ -189,6 +237,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\TESTS\TestGrapple.h">
       <Filter>Source\PrototypeProject\TESTS</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\TP_ThirdPerson">
+      <UniqueIdentifier>{432966FB-6B09-3F0E-BC5B-FC821F0976FB}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPerson.h">
+      <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonCharacter.cpp">
+      <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonCharacter.h">
+      <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonGameMode.cpp">
+      <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonGameMode.h">
+      <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

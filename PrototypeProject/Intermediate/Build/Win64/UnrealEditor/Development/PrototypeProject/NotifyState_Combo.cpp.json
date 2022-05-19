@@ -1,0 +1,19 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\notify\\notifystate_combo.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\prototypeprojecteditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\development\\prototypeproject\\definitions.prototypeproject.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\notify\\notifystate_combo.h",
+            "c:\\ue_5.0\\engine\\source\\runtime\\engine\\classes\\animation\\animnotifies\\animnotifystate.h",
+            "c:\\ue_5.0\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\animnotifystate.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\notifystate_combo.generated.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\source\\prototypeproject\\player\\components\\combatcomponent.h",
+            "c:\\users\\gentl\\onedrive\\documents\\github\\prototype-project\\prototypeproject\\intermediate\\build\\win64\\unrealeditor\\inc\\prototypeproject\\combatcomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

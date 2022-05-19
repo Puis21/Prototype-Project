@@ -4,6 +4,7 @@
 #include "PlayerCameraComponent.h"
 #include "PrototypeProject/Player/PlayerCharacter.h"
 #include "PrototypeProject/Player/Components/PlayerMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 UPlayerCameraComponent::UPlayerCameraComponent():
 m_fBaseFOV(90.f),
@@ -27,6 +28,14 @@ void UPlayerCameraComponent::BeginPlay()
 		FOVTimeline.AddInterpFloat(m_pCameraFOVCurve, FOVTimelineProgress);
 	}
 	
+	APlayerCameraManager* CameraManager = Cast<APlayerCameraManager>(UGameplayStatics::GetPlayerCameraManager(GetWorld(), 0));
+
+	if (CameraManager && CameraShake)
+	{	
+		//CamShake->StartShake(CameraManager, 1.f, ECameraShakePlaySpace::CameraLocal);
+	}
+
+
 }
 
 void UPlayerCameraComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -35,6 +44,8 @@ void UPlayerCameraComponent::TickComponent(float DeltaTime, ELevelTick TickType,
 	{
 		FOVTimeline.TickTimeline(DeltaTime);
 	}
+
+	
 }
 
 void UPlayerCameraComponent::FOVTimelineProgress(float fFOVProgress)

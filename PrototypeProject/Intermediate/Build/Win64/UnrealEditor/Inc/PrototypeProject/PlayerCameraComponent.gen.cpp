@@ -13,6 +13,8 @@ void EmptyLinkFunctionForGeneratedCodePlayerCameraComponent() {}
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UPlayerCameraComponent();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent();
 	UPackage* Z_Construct_UPackage__Script_PrototypeProject();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCurveFloat_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(UPlayerCameraComponent::execFOVTimelineProgress)
@@ -76,6 +78,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerCameraComponent() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_CameraShake_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_CameraShake;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fBaseFOV_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fBaseFOV;
@@ -113,6 +119,16 @@ void EmptyLinkFunctionForGeneratedCodePlayerCameraComponent() {}
 		{ "ModuleRelativePath", "Player/Camera/PlayerCameraComponent.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_CameraShake_MetaData[] = {
+		{ "Category", "Camera | Camera Shake" },
+		{ "Comment", "//UPROPERTY(EditAnywhere, Category = \"Camera | Camera Shake\", DisplayName = \"Movement Camera Shake Class\")\n//TSubclassOf<UMatineeCameraShake> m_cMovementCameraShakeClass;\n" },
+		{ "DisplayName", "Movement Camera Shake Class" },
+		{ "ModuleRelativePath", "Player/Camera/PlayerCameraComponent.h" },
+		{ "ToolTip", "UPROPERTY(EditAnywhere, Category = \"Camera | Camera Shake\", DisplayName = \"Movement Camera Shake Class\")\nTSubclassOf<UMatineeCameraShake> m_cMovementCameraShakeClass;" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_CameraShake = { "CameraShake", nullptr, (EPropertyFlags)0x0044000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerCameraComponent, CameraShake), Z_Construct_UClass_UCameraShakeBase_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_CameraShake_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_CameraShake_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_fBaseFOV_MetaData[] = {
 		{ "Category", "FOV" },
@@ -156,6 +172,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCameraComponent() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_pCameraFOVCurve = { "m_pCameraFOVCurve", nullptr, (EPropertyFlags)0x0040000000010001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerCameraComponent, m_pCameraFOVCurve), Z_Construct_UClass_UCurveFloat_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_pCameraFOVCurve_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_pCameraFOVCurve_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UPlayerCameraComponent_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_CameraShake,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_fBaseFOV,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_fSprintAddedFOV,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerCameraComponent_Statics::NewProp_m_fCrouchAddedFOV,
@@ -198,9 +215,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCameraComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Camera_PlayerCameraComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerCameraComponent, UPlayerCameraComponent::StaticClass, TEXT("UPlayerCameraComponent"), &Z_Registration_Info_UClass_UPlayerCameraComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerCameraComponent), 1192134373U) },
+		{ Z_Construct_UClass_UPlayerCameraComponent, UPlayerCameraComponent::StaticClass, TEXT("UPlayerCameraComponent"), &Z_Registration_Info_UClass_UPlayerCameraComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerCameraComponent), 1438228018U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Camera_PlayerCameraComponent_h_132156651(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Camera_PlayerCameraComponent_h_1252405032(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Camera_PlayerCameraComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Camera_PlayerCameraComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
