@@ -47,12 +47,14 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadWrite)
-		FVector m_v3Direction;
+	UPROPERTY(BlueprintReadOnly)
+	FVector m_v3Direction;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, meta = (ExposeOnSpawn = "true", AllowPrivateAccess = "true"))
-		float m_fProjectileSpeed;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (ExposeOnSpawn = "true", AllowPrivateAccess = "true"))
+	float m_fProjectileSpeed;
 
-	void SetGrappleTarget(AActor* Target);
+	void SetGrappleTarget(AGrappleTarget* Target);
+
+	float DistanceToTarget();
 
 };

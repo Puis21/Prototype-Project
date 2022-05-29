@@ -44,6 +44,8 @@ private:
 	bool m_bCanDamage;
 	bool m_bCanQueuNextAttack;
 
+	bool m_bStartingAbility1;
+
 	UPROPERTY(VisibleAnywhere)
 	FName ComboAttack;
 
@@ -52,6 +54,14 @@ private:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attack", meta = (AllowPrivateAccess = "true"))
 	float m_fSwingSpeed;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Ability1", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class AAbilityProjectile> AbilityClass;
+
+	AAbilityProjectile* AbilityProjectile;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Shake", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class UCameraShakeBase> ShakeClass;
 
 protected:
 	// Called when the game starts
@@ -77,9 +87,24 @@ public:
 
 	void SetDefaultComboState();
 
+	UFUNCTION(BlueprintCallable, Category = "Ability")
+	void StartFiringProj();
+
+	void ThrowTracer(FHitResult& TracerHitResult);
+
+	UFUNCTION(BlueprintCallable, Category = "Ability")
+	void ShootProjectile();
+
+	FVector HitTarget;
+
 public:
 
 	FORCEINLINE bool GetIsBlocking() const { return m_bIsBlocking; }
+	FORCEINLINE bool GetStarting() const { return m_bStartingAbility1; }
 
 	FORCEINLINE void SetCanDamage(bool CanDamage) { m_bCanDamage = CanDamage ; }
+
+	UFUNCTION(BlueprintCallable)
+	void SetStarting(bool Start) { m_bStartingAbility1 = Start; }
+
 };

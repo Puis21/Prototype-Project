@@ -14,8 +14,20 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define PROTOTYPEPROJECT_CombatComponent_generated_h
 
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_SPARSE_DATA
-#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_RPC_WRAPPERS
-#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetStarting); \
+	DECLARE_FUNCTION(execShootProjectile); \
+	DECLARE_FUNCTION(execStartFiringProj);
+
+
+#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetStarting); \
+	DECLARE_FUNCTION(execShootProjectile); \
+	DECLARE_FUNCTION(execStartFiringProj);
+
+
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_CombatComponent_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUCombatComponent(); \

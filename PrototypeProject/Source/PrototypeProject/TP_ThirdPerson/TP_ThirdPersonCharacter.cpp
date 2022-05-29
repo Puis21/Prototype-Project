@@ -8,6 +8,12 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 
+#include "PrototypeProject/Player/GAS/GASAbilitySystemComponent.h"
+#include "PrototypeProject/Player/GAS/GASGameplayAbility.h"
+#include "PrototypeProject/Player/GAS/GASAttributeSet.h"
+#include "GameplayEffectTypes.h"
+
+
 //////////////////////////////////////////////////////////////////////////
 // ATP_ThirdPersonCharacter
 
@@ -47,8 +53,15 @@ ATP_ThirdPersonCharacter::ATP_ThirdPersonCharacter()
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName); // Attach the camera to the end of the boom and let the boom adjust to match the controller orientation
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
+
+	m_ACAbilitySystemComponent = CreateDefaultSubobject<UGASAbilitySystemComponent>(TEXT("Ability System Component"));
+	m_ACAbilitySystemComponent->SetIsReplicated(true);
+	m_ACAbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Full);
+
+	Attributes = CreateDefaultSubobject<UGASAttributeSet>(TEXT("Attributes"));
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -75,6 +88,75 @@ void ATP_ThirdPersonCharacter::SetupPlayerInputComponent(class UInputComponent* 
 	// handle touch devices
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &ATP_ThirdPersonCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &ATP_ThirdPersonCharacter::TouchStopped);
+
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		const FGameplayAbilityInputBinds Binds("Confirm", "Cancel", "EGASAbilityInputID", static_cast<int32>(EGASAbilityInputID::Confirm), static_cast<int32>(EGASAbilityInputID::Cancel));
+		m_ACAbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, Binds);
+	}
+}
+
+void ATP_ThirdPersonCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+}
+
+class UAbilitySystemComponent* ATP_ThirdPersonCharacter::GetAbilitySystemComponent() const
+{
+	return m_ACAbilitySystemComponent;
+}
+
+void ATP_ThirdPersonCharacter::InitializeAttributes()
+{
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		FGameplayEffectContextHandle EffectContext = m_ACAbilitySystemComponent->MakeEffectContext();
+		EffectContext.AddSourceObject(this);
+
+		FGameplayEffectSpecHandle SpecHandle = m_ACAbilitySystemComponent->MakeOutgoingSpec(DefaultAttributeSet, 1, EffectContext);
+
+		if (SpecHandle.IsValid())
+		{
+			FActiveGameplayEffectHandle GEHandle = m_ACAbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+		}
+	}
+}
+
+void ATP_ThirdPersonCharacter::GiveStartAbilities()
+{
+	if (HasAuthority() && m_ACAbilitySystemComponent)
+	{
+		for (TSubclassOf<UGASGameplayAbility>& StartupAbility : DefaultAbilities)
+		{
+			m_ACAbilitySystemComponent->GiveAbility(
+				FGameplayAbilitySpec(StartupAbility, 1, static_cast<int32>(StartupAbility.GetDefaultObject()->AbilityInputID), this));
+		}
+	}
+}
+
+void ATP_ThirdPersonCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	m_ACAbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+	InitializeAttributes();
+	GiveStartAbilities();
+}
+
+void ATP_ThirdPersonCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	m_ACAbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+	InitializeAttributes();
+
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		const FGameplayAbilityInputBinds Binds("Confirm", "Cancel", "EGASAbilityInputID", static_cast<int32>(EGASAbilityInputID::Confirm), static_cast<int32>(EGASAbilityInputID::Cancel));
+		m_ACAbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, Binds);
+	}
 }
 
 void ATP_ThirdPersonCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)

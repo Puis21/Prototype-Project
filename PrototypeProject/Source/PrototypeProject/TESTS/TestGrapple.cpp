@@ -6,6 +6,7 @@
 #include "Components/SphereComponent.h"
 #include "PrototypeProject/Player/GrappleTarget.h"
 #include "Components/SceneComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 
 // Sets default values
@@ -24,7 +25,7 @@ m_fProjectileSpeed(5000.f)
 	m_pGrappleProjectile = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Projectile Movement Component"));
 	m_pGrappleProjectile->ProjectileGravityScale = 0.f;
 	m_pGrappleProjectile->InitialSpeed = 300.f;
-	m_pGrappleProjectile->Velocity = m_v3Direction * m_fProjectileSpeed;
+
 }
 
 // Called when the game starts or when spawned
@@ -39,9 +40,24 @@ void ATestGrapple::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	float fDistanceFromSpawn = UKismetMathLibrary::Vector_DistanceSquared(this->GetActorLocation(), m_v3StartingLocation);
+	float fDistanceFromEndStart = UKismetMathLibrary::Vector_DistanceSquared(m_v3EndingLocation, m_v3StartingLocation);
+	FVector v3Direction = m_v3Direction * UKismetMathLibrary::Vector_Distance(m_v3StartingLocation, m_v3EndingLocation);
+
+	if (fDistanceFromSpawn >= fDistanceFromEndStart)
+	{
+		this->SetActorLocation(m_v3StartingLocation + v3Direction, false, nullptr, ETeleportType::TeleportPhysics);
+		m_pGrappleProjectile->Velocity = FVector::ZeroVector;
+	}
+	else
+	{
+		m_pGrappleProjectile->Velocity = m_v3Direction * m_fProjectileSpeed;
+	}
+
+
 }
 
-void ATestGrapple::SetGrappleTarget(AActor* Target)
+void ATestGrapple::SetGrappleTarget(AGrappleTarget* Target)
 {
 	m_v3StartingLocation = this->GetActorLocation();
 	m_v3EndingLocation = Target->GetActorLocation();
@@ -49,4 +65,11 @@ void ATestGrapple::SetGrappleTarget(AActor* Target)
 	m_v3Direction.Normalize();
 
 	UE_LOG(LogTemp, Log, TEXT("Direction %s"), *m_v3Direction.ToString());
+}
+
+float ATestGrapple::DistanceToTarget()
+{
+	float v3Distance = UKismetMathLibrary::Vector_Distance(m_v3EndingLocation, this->GetActorLocation());
+
+	return v3Distance;
 }

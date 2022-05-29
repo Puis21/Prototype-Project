@@ -17,7 +17,8 @@
 // Sets default values for this component's properties
 UGrapplingHookComponent::UGrapplingHookComponent():
 m_fMaxGrappleDistance(1000.f),
-m_fPlayerGrappleSpeed(1500.f)
+m_fPlayerGrappleSpeed(1500.f),
+m_bIsGrappling(false)
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
@@ -83,70 +84,30 @@ void UGrapplingHookComponent::TickRetracted()
 	TArray<AActor*> ActorsToIgnore;
 	UClass* ActorClassFilter = AGrappleTarget::StaticClass();
 	TArray<AActor*> ActorsFound;
+	AActor* TargetActor;
 	//FindBestTarget(ActorsFound);
 
  	bool bTargetWasFound = UKismetSystemLibrary::SphereOverlapActors(GetWorld(), SpherePos, m_fMaxGrappleDistance, ObjectTypeQuery, ActorClassFilter, ActorsToIgnore, ActorsFound);
 
 	if (bTargetWasFound)
 	{
-		//FindBestTarget(ActorsFound);
-		for (AActor* CurrentTarget : ActorsFound)
+		FindBestTarget(ActorsFound, TargetActor);
+
+		CurrentGrappleTarget = Cast<AGrappleTarget>(TargetActor);
+		if (CurrentGrappleTarget)
 		{
-			FHitResult Hit;
-			FVector Start = m_pPlayerCharacter->GetActorLocation();
-			FVector End = CurrentTarget->GetActorLocation();
-
-			GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECollisionChannel::ECC_Visibility);
-
-			if (Hit.GetActor() == CurrentTarget)
-			{
-				//Calculate Angle to Target
-				FVector v3FromTargetToPlayerNormalized = CurrentTarget->GetActorLocation() - m_pPlayerCharacter->GetActorLocation();
-				v3FromTargetToPlayerNormalized.Normalize();
-				float fAngleTargetCamera = (FVector::DotProduct(m_pPlayerCamera->GetForwardVector(), v3FromTargetToPlayerNormalized));
-				float fCurrentAngle = UKismetMathLibrary::DegAcos(fAngleTargetCamera);
-				
-				GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fBestAngle));
-				GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::SanitizeFloat(fCurrentAngle));
-				if (fCurrentAngle < fBestAngle || !BestGrappleTarget)
-				{
-					BestGrappleTarget = CurrentTarget;
-					fBestAngle = fCurrentAngle;
-					if (BestGrappleTarget)
-					{
-						//BestGrappleTarget->SetActorHiddenInGame(true);
-					}
-
-					//SetCurrentTarget(BestGrappleTarget);
-					UE_LOG(LogTemp, Log, TEXT("Target: %s"), *BestGrappleTarget->GetName());
-					//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fBestAngle));
-					//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fCurrentAngle));
-				}
-
-			}
-
-				//UE_LOG(LogTemp, Log, TEXT("CurrentAngle: %f"), fBestAngle);
-				//UE_LOG(LogTemp, Log, TEXT("Target: %s"), *BestTarget->GetName());
-
-			DrawDebugLine(GetWorld(), Start, End, FColor::Red, false, -1.f, 1, 1.f);
+			SetCurrentTarget(CurrentGrappleTarget);
 		}
-	}
-	else
-	{
-		BestGrappleTarget = nullptr;
-		fBestAngle = 0.f;
-	}
-
-	//UE_LOG(LogTemp, Log, TEXT("Target: %s"), *BestTarget->GetName());
-	//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fBestAngle));
-	//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Green, FString::Printf(TEXT("Best Target: %s"), *BestTarget->GetName()));
-
-	//UE_LOG(LogTemp, Log, TEXT("Found: %s"), found ? TEXT("true") : TEXT("false"));
+	}			
+		
 }
 
 void UGrapplingHookComponent::TickFiring()
 {
-	
+	if (GrappleHook->DistanceToTarget() < 50.f)
+	{
+		m_eGrappleState = EGrappleState::EGS_OnTarget;
+	}
 }
 
 void UGrapplingHookComponent::TickNearingTarget()
@@ -156,90 +117,144 @@ void UGrapplingHookComponent::TickNearingTarget()
 
 void UGrapplingHookComponent::TickOnTarget(float DeltaTime)
 {
-	m_pPlayerCharacter->GetCustomMovementComponent()->Velocity = GetOwnerToTarget() * m_fPlayerGrappleSpeed;
+	float v3Distance = UKismetMathLibrary::Vector_Distance(m_pPlayerCharacter->GetActorLocation(), CurrentGrappleTarget->GetActorLocation());
+	if (v3Distance < 150.f)
+	{
+		StopGrapple();
+	}
+	else
+	{
+		m_pPlayerCharacter->GetCustomMovementComponent()->Velocity = GetOwnerToTarget(DeltaTime) * m_fPlayerGrappleSpeed;
+	}
+
+	//m_pPlayerCharacter->SetActorLocation(GetOwnerToTarget(DeltaTime/ 2.5f));
 }
 
 void UGrapplingHookComponent::AttemptGrapple()
 {
-	if (m_eGrappleState == EGrappleState::EGS_Retracted && BestGrappleTarget)
+	if (m_eGrappleState == EGrappleState::EGS_Retracted && CurrentGrappleTarget)
 	{
 		if (m_pGrappleHook && m_pGrappleLine)
 		{
-			FActorSpawnParameters SpawnParams;
-			//SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-
-			APawn* Instigator = nullptr;
-
-			//GetWorld()->SpawnActor<ATestGrapple>(TestGrapple, m_pOwnerActor->GetActorLocation(), m_pOwnerActor->GetActorRotation(), SpawnParams);
-			
-			//GetWorld()->SpawnActor<AGrappleHook>(m_pGrappleHook, m_pOwnerActor->GetActorLocation(), m_pOwnerActor->GetActorRotation(), SpawnParams);
-
-			ATestGrapple* GrappleHook = GetWorld()->SpawnActorDeferred<ATestGrapple>(TestGrapple, m_pPlayerCharacter->GetTransform(), m_pPlayerCharacter, Instigator, SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
-			if (GrappleHook)
+			if (!m_bIsGrappling)
 			{
-				GrappleHook->SetGrappleTarget(BestGrappleTarget);
-				UGameplayStatics::FinishSpawningActor(GrappleHook, m_pPlayerCharacter->GetTransform());
+				FActorSpawnParameters SpawnParams;
+				//SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+				APawn* Instigator = nullptr;
+
+				//GetWorld()->SpawnActor<ATestGrapple>(TestGrapple, m_pOwnerActor->GetActorLocation(), m_pOwnerActor->GetActorRotation(), SpawnParams);
+
+				//GetWorld()->SpawnActor<AGrappleHook>(m_pGrappleHook, m_pOwnerActor->GetActorLocation(), m_pOwnerActor->GetActorRotation(), SpawnParams);
+
+				GrappleHook = GetWorld()->SpawnActorDeferred<ATestGrapple>(TestGrapple, m_pPlayerCharacter->GetTransform(), m_pPlayerCharacter, Instigator, SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn);
+				if (GrappleHook)
+				{
+					GrappleHook->SetGrappleTarget(CurrentGrappleTarget);
+					UGameplayStatics::FinishSpawningActor(GrappleHook, m_pPlayerCharacter->GetTransform());
+				}
+
+				GrappleLine = GetWorld()->SpawnActor<AGrappleLine>(m_pGrappleLine, m_pPlayerCharacter->GetActorLocation(), m_pPlayerCharacter->GetActorRotation(), SpawnParams);
+
+				GrappleLine->AttachToComponent(m_pPlayerCharacter->GetMesh1P(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("hand_l"));
+
+				GrappleLine->GetCableComponent()->SetAttachEndTo(GrappleHook, FName("SceneComponent"));
+
+				m_eGrappleState = EGrappleState::EGS_Firing;
+
+				m_bIsGrappling = true;
 			}
-
-			AGrappleLine* GrappleLine = GetWorld()->SpawnActor<AGrappleLine>(m_pGrappleLine, m_pPlayerCharacter->GetActorLocation(), m_pPlayerCharacter->GetActorRotation(), SpawnParams);
-
-			GrappleLine->AttachToComponent(m_pPlayerCharacter->GetMesh1P(), FAttachmentTransformRules::SnapToTargetIncludingScale, FName("hand_l"));
-
-			GrappleLine->GetCableComponent()->SetAttachEndTo(GrappleHook, FName("SceneComponent"));
-
-			m_eGrappleState = EGrappleState::EGS_OnTarget;
+			
 		}
 	}
+	else if (m_bIsGrappling)
+	{
+		StopGrapple();
+	}
+
 }
 
-AActor* UGrapplingHookComponent::FindBestTarget(TArray<AActor*> Targets)
+void UGrapplingHookComponent::FindBestTarget(TArray<AActor*> Targets, AActor* &ActorOut)
 {
+	float fBestAngle = 0.f;
+	AActor* BestTarget = nullptr;
+	
 	for (AActor* CurrentTarget : Targets)
 	{
 		FHitResult Hit;
 		FVector Start = m_pPlayerCharacter->GetActorLocation();
 		FVector End = CurrentTarget->GetActorLocation();
 
-		GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECollisionChannel::ECC_Visibility);
+		bool TraceHit = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECollisionChannel::ECC_Visibility);
 
 		DrawDebugLine(GetWorld(), Start, End, FColor::Red);
 
-		return CurrentTarget;
+		if (TraceHit)
+		{
+			if (Hit.GetActor() == CurrentTarget)
+			{
+				FVector v3FromTargetToPlayerNormalized = CurrentTarget->GetActorLocation() - m_pPlayerCharacter->GetActorLocation();
+				v3FromTargetToPlayerNormalized.Normalize();
+				float fAngleTargetCamera = (FVector::DotProduct(m_pPlayerCamera->GetForwardVector(), v3FromTargetToPlayerNormalized));
+				float fCurrentAngle = UKismetMathLibrary::DegAcos(fAngleTargetCamera);
 
-		UE_LOG(LogTemp, Log, TEXT("Da "));
+				//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fBestAngle));
+				//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::SanitizeFloat(fCurrentAngle));
+				if (fCurrentAngle < fBestAngle || !BestTarget)
+				{
+					BestTarget = CurrentTarget;
+					fBestAngle = fCurrentAngle;
+					//SetCurrentTarget(BestGrappleTarget);
+					//UE_LOG(LogTemp, Log, TEXT("Target: %s"), *ActorOut->GetName());
+					//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fBestAngle));
+					//GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Red, FString::SanitizeFloat(fCurrentAngle));
+				}
+			}
+		}
+		//return CurrentTarget;
 	}
 
-	UE_LOG(LogTemp, Log, TEXT("Nu "));
-	return nullptr;
+	ActorOut = BestTarget;
+	//UE_LOG(LogTemp, Log, TEXT("Target: %s"), *ActorOut->GetName());
 }
 
-void UGrapplingHookComponent::SetCurrentTarget(AActor* NewGrappleTarget)
+void UGrapplingHookComponent::SetCurrentTarget(AGrappleTarget* NewGrappleTarget)
 {
 	UE_LOG(LogTemp, Log, TEXT("ALO1"));
-	if (NewGrappleTarget != LastGrappleTarget)
-	{
-		UE_LOG(LogTemp, Log, TEXT("ALO2"));
-		if (LastGrappleTarget)
-		{
-			UE_LOG(LogTemp, Log, TEXT("AL3"));
-			/*LastGrappleTarget->SetActorHiddenInGame(true);
-			LastGrappleTarget = NewGrappleTarget;
-			if (LastGrappleTarget)
-			{
-				LastGrappleTarget->SetActorHiddenInGame(false);
-			}*/
-		}
-	}
+	NewGrappleTarget->SetActorHiddenInGame(false);
+	//if (NewGrappleTarget != CurrentGrappleTarget)
+	//{
+	//	UE_LOG(LogTemp, Log, TEXT("ALO2"));
+	//	if (CurrentGrappleTarget)
+	//	{
+	//		UE_LOG(LogTemp, Log, TEXT("AL3"));
+	//		CurrentGrappleTarget->SetActorHiddenInGame(true);
+	//		CurrentGrappleTarget = NewGrappleTarget;
+	//		if (CurrentGrappleTarget)
+	//		{
+	//			CurrentGrappleTarget->SetActorHiddenInGame(false);
+	//		}
+	//	}
+	//}
 }
 
-FVector UGrapplingHookComponent::GetOwnerToTarget()
+FVector UGrapplingHookComponent::GetOwnerToTarget(float time)
 {
 	FVector v3PlayerToTargetDistance;
 	FVector v3GrappleOffSet;
-	v3GrappleOffSet = BestGrappleTarget->GetActorLocation() + FVector(0,0,100);
+	v3GrappleOffSet = CurrentGrappleTarget->GetCharacterTargetLocation();
+	//v3PlayerToTargetDistance = UKismetMathLibrary::VLerp(m_pPlayerCharacter->GetActorLocation(), v3GrappleOffSet, time);
 	v3PlayerToTargetDistance = v3GrappleOffSet - m_pPlayerCharacter->GetActorLocation();
 	v3PlayerToTargetDistance.Normalize();
 
 	return v3PlayerToTargetDistance;
 	
+}
+
+void UGrapplingHookComponent::StopGrapple()
+{
+	GrappleHook->Destroy();
+	GrappleLine->Destroy();
+	m_eGrappleState = EGrappleState::EGS_Retracted;
+	m_bIsGrappling = false;
 }

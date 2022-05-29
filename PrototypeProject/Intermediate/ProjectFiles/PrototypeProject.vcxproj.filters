@@ -28,6 +28,9 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultGameplayTags.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
@@ -118,9 +121,6 @@
     <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleLine.cpp">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClCompile>
-    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleLine.h">
-      <Filter>Source\PrototypeProject\Player</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleTarget.cpp">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClCompile>
@@ -138,6 +138,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Player\PlayerCharacter.h">
       <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\Abilities">
+      <UniqueIdentifier>{97777724-CB06-3B18-B434-D546892BD21A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PrototypeProject\Player\Abilities\Ability1">
+      <UniqueIdentifier>{368AF6A8-CD83-344D-BA2D-F18C4E7DB64B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Abilities\Ability1\AbilityProjectile.cpp">
+      <Filter>Source\PrototypeProject\Player\Abilities\Ability1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Abilities\Ability1\AbilityProjectile.h">
+      <Filter>Source\PrototypeProject\Player\Abilities\Ability1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Abilities\Ability1\ThrownProjectile.cpp">
+      <Filter>Source\PrototypeProject\Player\Abilities\Ability1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Abilities\Ability1\ThrownProjectile.h">
+      <Filter>Source\PrototypeProject\Player\Abilities\Ability1</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Player\Camera">
       <UniqueIdentifier>{8B2E1622-A53F-366D-B0E7-45903ED99F00}</UniqueIdentifier>
@@ -195,6 +213,27 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Player\Components\VautingComponent.h">
       <Filter>Source\PrototypeProject\Player\Components</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Player\GAS">
+      <UniqueIdentifier>{CBC695AA-5786-399A-9C9E-6F1E0D38FC4F}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GAS\GASAbilitySystemComponent.cpp">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GAS\GASAbilitySystemComponent.h">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GAS\GASAttributeSet.cpp">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GAS\GASAttributeSet.h">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\GAS\GASGameplayAbility.cpp">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GAS\GASGameplayAbility.h">
+      <Filter>Source\PrototypeProject\Player\GAS</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Player\Notify">
       <UniqueIdentifier>{3ADCD2FD-5F53-309B-986D-D96053F74D62}</UniqueIdentifier>
@@ -255,6 +294,11 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonGameMode.h">
       <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleLine.h">
+      <Filter>Source\PrototypeProject\TESTS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

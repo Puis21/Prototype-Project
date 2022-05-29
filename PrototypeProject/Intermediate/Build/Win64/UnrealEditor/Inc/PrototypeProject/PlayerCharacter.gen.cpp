@@ -20,6 +20,12 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_USlideComponent_NoRegister();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UVautingComponent_NoRegister();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UCombatComponent_NoRegister();
+	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UGASAbilitySystemComponent_NoRegister();
+	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UGASAttributeSet_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UGameplayEffect_NoRegister();
+	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UGASGameplayAbility_NoRegister();
+	GAMEPLAYABILITIES_API UClass* Z_Construct_UClass_UAbilitySystemInterface_NoRegister();
 // End Cross Module References
 	void APlayerCharacter::StaticRegisterNativesAPlayerCharacter()
 	{
@@ -64,10 +70,28 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_m_ACCombatComponent;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_ACAbilitySystemComponent_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_m_ACAbilitySystemComponent;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Attributes_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_Attributes;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultAttributeSet_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DefaultAttributeSet;
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DefaultAbilities_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DefaultAbilities_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_DefaultAbilities;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TurnRate_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_TurnRate;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -155,6 +179,42 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACCombatComponent = { "m_ACCombatComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, m_ACCombatComponent), Z_Construct_UClass_UCombatComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACCombatComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACCombatComponent_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACAbilitySystemComponent_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Character" },
+		{ "Comment", "//Declare Ability System Component\n" },
+		{ "DisplayName", "Ability System Component" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Player/PlayerCharacter.h" },
+		{ "ToolTip", "Declare Ability System Component" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACAbilitySystemComponent = { "m_ACAbilitySystemComponent", nullptr, (EPropertyFlags)0x00100000000a001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, m_ACAbilitySystemComponent), Z_Construct_UClass_UGASAbilitySystemComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACAbilitySystemComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACAbilitySystemComponent_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_Attributes_MetaData[] = {
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Player/PlayerCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_Attributes = { "Attributes", nullptr, (EPropertyFlags)0x0010000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, Attributes), Z_Construct_UClass_UGASAttributeSet_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_Attributes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_Attributes_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAttributeSet_MetaData[] = {
+		{ "Category", "GAS" },
+		{ "Comment", "//\x09UFUNCTION(BlueprintCallable, Category = \"Abilities\")\n//\x09void GrantAbility(TSubclassOf<UGameplayAbility> AbilityClass, int32 Level, int32 InputCode);\n" },
+		{ "ModuleRelativePath", "Player/PlayerCharacter.h" },
+		{ "ToolTip", "UFUNCTION(BlueprintCallable, Category = \"Abilities\")\nvoid GrantAbility(TSubclassOf<UGameplayAbility> AbilityClass, int32 Level, int32 InputCode);" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAttributeSet = { "DefaultAttributeSet", nullptr, (EPropertyFlags)0x0014000000010015, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, DefaultAttributeSet), Z_Construct_UClass_UGameplayEffect_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAttributeSet_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAttributeSet_MetaData)) };
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities_Inner = { "DefaultAbilities", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_UGASGameplayAbility_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities_MetaData[] = {
+		{ "Category", "GAS" },
+		{ "ModuleRelativePath", "Player/PlayerCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities = { "DefaultAbilities", nullptr, (EPropertyFlags)0x0014000000010015, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, DefaultAbilities), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_TurnRate_MetaData[] = {
 		{ "Category", "Camera" },
 		{ "Comment", "/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */" },
@@ -171,8 +231,16 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACSlideComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACVaultComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACCombatComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_m_ACAbilitySystemComponent,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_Attributes,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAttributeSet,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_DefaultAbilities,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_TurnRate,
 	};
+		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_APlayerCharacter_Statics::InterfaceParams[] = {
+			{ Z_Construct_UClass_UAbilitySystemInterface_NoRegister, (int32)VTABLE_OFFSET(APlayerCharacter, IAbilitySystemInterface), false },  // 220555618
+		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlayerCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlayerCharacter>::IsAbstract,
 	};
@@ -183,11 +251,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		DependentSingletons,
 		nullptr,
 		Z_Construct_UClass_APlayerCharacter_Statics::PropPointers,
-		nullptr,
+		InterfaceParams,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
 		UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::PropPointers),
-		0,
+		UE_ARRAY_COUNT(InterfaceParams),
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::Class_MetaDataParams))
 	};
@@ -209,9 +277,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerCharacter, APlayerCharacter::StaticClass, TEXT("APlayerCharacter"), &Z_Registration_Info_UClass_APlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacter), 1172885659U) },
+		{ Z_Construct_UClass_APlayerCharacter, APlayerCharacter::StaticClass, TEXT("APlayerCharacter"), &Z_Registration_Info_UClass_APlayerCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacter), 2847416941U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_4039432404(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_956168724(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

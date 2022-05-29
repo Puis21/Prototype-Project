@@ -15,6 +15,7 @@ void UNotifyState_Combo::NotifyBegin(USkeletalMeshComponent* MeshComp, UAnimSequ
 			m_pAMeleeComp = Cast<UCombatComponent>(Owner->GetComponentByClass(UCombatComponent::StaticClass()));
 			if (nullptr != m_pAMeleeComp)
 			{
+				m_pAMeleeComp->EndAttack();
 				m_pAMeleeComp->SetNextComboSegment(NextCombo);
 			}
 		}

@@ -8,6 +8,13 @@
 #include "Components/CapsuleComponent.h"
 #include "Engine/SkeletalMeshSocket.h"
 #include "PrototypeProject/Player/PlayerAnimInstance.h"
+#include "PrototypeProject/Player/Abilities/Ability1/ThrownProjectile.h"
+#include "PrototypeProject/Player/Abilities/Ability1/AbilityProjectile.h"
+#include "PrototypeProject/Player/Camera/PlayerCameraComponent.h"
+#include "Kismet/GameplayStatics.h"
+
+#include "PrototypeProject/PrototypeProjectProjectile.h"
+
 
 // Sets default values for this component's properties
 UCombatComponent::UCombatComponent():
@@ -69,6 +76,10 @@ void UCombatComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 	{
 		SwordAttackTrace();
 	}
+
+	FHitResult Hit;
+	ThrowTracer(Hit);
+
 }
 
 void UCombatComponent::SwordAttack()
@@ -80,7 +91,8 @@ void UCombatComponent::SwordAttack()
 		{
 			AnimInstance->Montage_Play(SwordComboMontage, m_fSwingSpeed);
 			AnimInstance->Montage_JumpToSection(ComboAttack);
-			m_bIsAttacking = true;
+			m_bIsAttacking = true;		
+			//m_pPlayerCharacter->GetCustomMovementComponent()->AddImpulse(m_pPlayerCharacter->GetFirstPersonCameraComponent()->GetForwardVector() * 800.f, true);
 		}
 		/*if (!m_bIsAttacking)
 		{
@@ -136,11 +148,11 @@ void UCombatComponent::SwordAttackTrace()
 			{
 				GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::Printf(TEXT("Hit: %s"), *Hit.GetActor()->GetName())); 
 			}
-			DrawDebugLine(World, Start, End, FColor::Green, false, 2.f);
+			//DrawDebugLine(World, Start, End, FColor::Green, false, 2.f);
 		}
 		else
 		{
-			DrawDebugLine(World, Start, End, FColor::Red, false, 2.f);
+		//	DrawDebugLine(World, Start, End, FColor::Red, false, 2.f);
 		}
 	}
 	
@@ -178,4 +190,98 @@ void UCombatComponent::SetNextComboSegment(FName Combo)
 void UCombatComponent::SetDefaultComboState()
 {
 	ComboAttack = DefaultComboAttack;
+}
+
+void UCombatComponent::StartFiringProj()
+{
+	m_bStartingAbility1 = true;
+
+	AbilityProjectile = GetWorld()->SpawnActor<AAbilityProjectile>(AbilityClass, m_pPlayerCharacter->GetMesh1P()->GetSocketTransform(FName("LeftHand_Socket")));
+
+	if (AbilityProjectile)
+	{
+		//AbilityProjectile->Throw(false);
+		const USkeletalMeshSocket* LeftHandSocket = m_pPlayerCharacter->GetMesh1P()->GetSocketByName(FName("LeftHand_Socket"));
+		if (LeftHandSocket)
+		{
+			LeftHandSocket->AttachActor(AbilityProjectile, m_pPlayerCharacter->GetMesh1P());
+		}
+		AbilityProjectile->SetOwner(m_pPlayerCharacter);
+	}
+
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Orange, FString::Printf(TEXT("Ability")));
+}
+
+void UCombatComponent::ShootProjectile()
+{
+	AbilityProjectile->Destroy();
+	
+	const USkeletalMeshSocket* HandSocket = m_pPlayerCharacter->GetMesh1P()->GetSocketByName(FName("LeftHand_Socket"));
+	FTransform SocketTransform = HandSocket->GetSocketTransform(m_pPlayerCharacter->GetMesh1P());
+
+	FVector ToTarget = HitTarget - SocketTransform.GetLocation();
+	FRotator TargetRotation = ToTarget.Rotation();
+	FActorSpawnParameters SpawnParams;
+
+	AbilityProjectile = GetWorld()->SpawnActor<AAbilityProjectile>(AbilityClass, SocketTransform.GetLocation(), TargetRotation, SpawnParams);
+
+	if (AbilityProjectile)
+	{
+		AbilityProjectile->Throw();
+		AbilityProjectile->SetOwner(m_pPlayerCharacter);
+		m_bStartingAbility1 = false;
+	}
+
+	//AbilityProjectile->Throw();
+
+}
+
+void UCombatComponent::ThrowTracer(FHitResult& TracerHitResult)
+{
+	FVector2D ViewportSize;
+	if (GEngine && GEngine->GameViewport)
+	{
+		GEngine->GameViewport->GetViewportSize(ViewportSize);
+	}
+
+	FVector2D CrosshairLocation(ViewportSize.X / 2.f, ViewportSize.Y / 2.f);
+	FVector CrosshairWorldPosition;
+	FVector CrosshairWorldDirection;
+	bool bScreenToWorld = UGameplayStatics::DeprojectScreenToWorld(
+		UGameplayStatics::GetPlayerController(this, 0),
+		CrosshairLocation,
+		CrosshairWorldPosition,
+		CrosshairWorldDirection
+	);
+
+	if (bScreenToWorld)
+	{
+		FVector Start = CrosshairWorldPosition;
+
+		FVector End = Start + CrosshairWorldDirection * 8000.f;
+
+		GetWorld()->LineTraceSingleByChannel(
+			TracerHitResult,
+			Start,
+			End,
+			ECollisionChannel::ECC_Visibility
+		);
+		if (!TracerHitResult.bBlockingHit)
+		{
+			TracerHitResult.ImpactPoint = End;
+			HitTarget = End;
+		}
+		else
+		{
+			HitTarget = TracerHitResult.ImpactPoint;
+			DrawDebugSphere(
+				GetWorld(),
+				TracerHitResult.ImpactPoint,
+				12.f,
+				12,
+				FColor::Red
+			);
+		}
+	}
+
 }

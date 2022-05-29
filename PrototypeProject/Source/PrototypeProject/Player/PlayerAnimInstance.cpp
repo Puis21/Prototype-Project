@@ -32,4 +32,5 @@ void UPlayerAnimInstance::NativeUpdateAnimation(float DeltaTime)
 	bIsCrouching = m_pOwnerPawn->GetSlideComponent()->GetIsCrouched();
 	bIsSliding = m_pOwnerPawn->GetSlideComponent()->GetIsSliding();
 	bIsBlocking = m_pOwnerPawn->GetCombatComponent()->GetIsBlocking();
+	bCasting = m_pOwnerPawn->GetCombatComponent()->GetStarting();
 }

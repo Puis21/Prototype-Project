@@ -6,8 +6,11 @@
 #include "GameFramework/Character.h"
 #include "TP_ThirdPersonCharacter.generated.h"
 
+class UGASAbilitySystemComponent;
+class UGASAttributeSet;
+
 UCLASS(config=Game)
-class ATP_ThirdPersonCharacter : public ACharacter
+class ATP_ThirdPersonCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -18,6 +21,14 @@ class ATP_ThirdPersonCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
+	//Declare Ability System Component
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Ability System Component")
+	UGASAbilitySystemComponent* m_ACAbilitySystemComponent;
+
+	UPROPERTY()
+	UGASAttributeSet* Attributes;
+
 public:
 	ATP_ThirdPersonCharacter();
 
@@ -25,8 +36,24 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Input)
 	float TurnRateGamepad;
 
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "GAS")
+	TSubclassOf<class UGameplayEffect> DefaultAttributeSet;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "GAS")
+	TArray<TSubclassOf<class UGASGameplayAbility>> DefaultAbilities;
+
+	virtual class UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+	virtual void Tick(float DeltaTime) override;
+
 protected:
 
+	virtual void InitializeAttributes();
+	virtual void GiveStartAbilities();
+
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+	
 	/** Called for forwards/backward input */
 	void MoveForward(float Value);
 

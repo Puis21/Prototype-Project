@@ -14,6 +14,12 @@
 #include "Components/VautingComponent.h"
 #include "Components/CombatComponent.h"
 
+#include "PrototypeProject/Player/GAS/GASAbilitySystemComponent.h"
+#include "PrototypeProject/Player/GAS/GASGameplayAbility.h"
+#include "PrototypeProject/Player/GAS/GASAttributeSet.h"
+#include "GameplayEffectTypes.h"
+#include "Abilities/GameplayAbility.h"
+
 // Sets default values
 APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer.SetDefaultSubobjectClass<UPlayerMovementComponent>(CharacterMovementComponentName))
@@ -49,6 +55,13 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 	m_ACVaultComponent = CreateDefaultSubobject<UVautingComponent>(TEXT("Vault Component"));
 
 	m_ACCombatComponent = CreateDefaultSubobject<UCombatComponent>(TEXT("Combat Component"));
+
+	m_ACAbilitySystemComponent = CreateDefaultSubobject<UGASAbilitySystemComponent>(TEXT("Ability System Component"));
+	m_ACAbilitySystemComponent->SetIsReplicated(true);
+	m_ACAbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Full);
+
+	Attributes = CreateDefaultSubobject<UGASAttributeSet>(TEXT("Attributes"));
+		
 }
 
 void APlayerCharacter::PostInitializeComponents()
@@ -68,11 +81,69 @@ void APlayerCharacter::PostInitializeComponents()
 
 }
 
+class UAbilitySystemComponent* APlayerCharacter::GetAbilitySystemComponent() const
+{
+	return m_ACAbilitySystemComponent;
+}
+
+void APlayerCharacter::InitializeAttributes()
+{
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		FGameplayEffectContextHandle EffectContext = m_ACAbilitySystemComponent->MakeEffectContext();
+		EffectContext.AddSourceObject(this);
+
+		FGameplayEffectSpecHandle SpecHandle = m_ACAbilitySystemComponent->MakeOutgoingSpec(DefaultAttributeSet, 1, EffectContext);
+
+		if (SpecHandle.IsValid())
+		{
+			FActiveGameplayEffectHandle GEHandle = m_ACAbilitySystemComponent->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+		}
+	}
+}
+
+void APlayerCharacter::GiveStartAbilities()
+{
+	if (HasAuthority() && m_ACAbilitySystemComponent)
+	{
+		for (TSubclassOf<UGASGameplayAbility>& StartupAbility : DefaultAbilities)
+		{
+			m_ACAbilitySystemComponent->GiveAbility(
+				FGameplayAbilitySpec(StartupAbility, 1, static_cast<int32>(StartupAbility.GetDefaultObject()->AbilityInputID), this));
+		}
+	}
+}
+
+void APlayerCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	m_ACAbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+	InitializeAttributes();
+	GiveStartAbilities();
+}
+
+void APlayerCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	m_ACAbilitySystemComponent->InitAbilityActorInfo(this, this);
+
+	InitializeAttributes();
+
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		const FGameplayAbilityInputBinds Binds("Confirm", "Cancel", "EGASAbilityInputID", static_cast<int32>(EGASAbilityInputID::Confirm), static_cast<int32>(EGASAbilityInputID::Cancel));
+		m_ACAbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, Binds);
+	}
+}
+
 // Called when the game starts or when spawned
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -121,6 +192,12 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	// "Mouse" versions handle devices that provide an absolute delta, such as a mouse.
 	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APlayerCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("Look Up / Down Mouse", this, &APlayerCharacter::LookUpAtRate);
+
+	if (m_ACAbilitySystemComponent && DefaultAttributeSet)
+	{
+		const FGameplayAbilityInputBinds Binds("Confirm", "Cancel", "EGASAbilityInputID", static_cast<int32>(EGASAbilityInputID::Confirm), static_cast<int32>(EGASAbilityInputID::Cancel));
+		m_ACAbilitySystemComponent->BindAbilityActivationToInputComponent(InputComponent, Binds);
+	}
 
 }
 

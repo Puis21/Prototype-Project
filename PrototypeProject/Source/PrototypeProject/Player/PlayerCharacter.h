@@ -4,12 +4,14 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "AbilitySystemInterface.h"
+#include "GameplayTagContainer.h"
+#include "GameplayEffectTypes.h"
 #include "PlayerCharacter.generated.h"
 
 class UInputComponent;
 class USkeletalMeshComponent;
 class USceneComponent;
-
 class UAnimMontage;
 class USoundBase;
 class UCapsuleComponent;
@@ -19,9 +21,11 @@ class USlideComponent;
 class UVautingComponent;
 class UPlayerCameraComponent;
 class UCombatComponent;
+class UGASAbilitySystemComponent;
+class UGASAttributeSet;
 
 UCLASS(config = Game)
-class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter
+class PROTOTYPEPROJECT_API APlayerCharacter : public ACharacter, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
@@ -49,6 +53,13 @@ public:
 
 	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Combat Component")
 	UCombatComponent* m_ACCombatComponent;
+
+	//Declare Ability System Component
+	UPROPERTY(Category = Character, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Ability System Component")
+	UGASAbilitySystemComponent* m_ACAbilitySystemComponent;
+
+	UPROPERTY()
+	UGASAttributeSet* Attributes;
 
 protected:
 
@@ -101,6 +112,24 @@ public:
 
 	APlayerCharacter(const FObjectInitializer& ObjectInitializer);
 	virtual void PostInitializeComponents() override;	
+
+	//Get Ability System Comp
+	virtual class UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
+	virtual void InitializeAttributes();
+	virtual void GiveStartAbilities();
+
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+
+//	UFUNCTION(BlueprintCallable, Category = "Abilities")
+	//	void GrantAbility(TSubclassOf<UGameplayAbility> AbilityClass, int32 Level, int32 InputCode);
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "GAS")
+	TSubclassOf<class UGameplayEffect> DefaultAttributeSet;
+
+	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "GAS")
+	TArray<TSubclassOf<class UGASGameplayAbility>> DefaultAbilities;
 
 public:
 

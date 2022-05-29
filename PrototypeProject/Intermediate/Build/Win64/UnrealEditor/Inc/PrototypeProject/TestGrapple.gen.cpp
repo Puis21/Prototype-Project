@@ -111,7 +111,7 @@ void EmptyLinkFunctionForGeneratedCodeTestGrapple() {}
 		{ "ModuleRelativePath", "TESTS/TestGrapple.h" },
 	};
 #endif
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction = { "m_v3Direction", nullptr, (EPropertyFlags)0x0010000000000805, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestGrapple, m_v3Direction), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction_MetaData)) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction = { "m_v3Direction", nullptr, (EPropertyFlags)0x0010000000000014, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestGrapple, m_v3Direction), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_v3Direction_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
@@ -120,7 +120,7 @@ void EmptyLinkFunctionForGeneratedCodeTestGrapple() {}
 		{ "ModuleRelativePath", "TESTS/TestGrapple.h" },
 	};
 #endif
-	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed = { "m_fProjectileSpeed", nullptr, (EPropertyFlags)0x0011000000000815, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestGrapple, m_fProjectileSpeed), METADATA_PARAMS(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed_MetaData)) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed = { "m_fProjectileSpeed", nullptr, (EPropertyFlags)0x0011000000000015, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ATestGrapple, m_fProjectileSpeed), METADATA_PARAMS(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_fProjectileSpeed_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ATestGrapple_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestGrapple_Statics::NewProp_SceneComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ATestGrapple_Statics::NewProp_m_pGrappleProjectile,
@@ -165,9 +165,9 @@ void EmptyLinkFunctionForGeneratedCodeTestGrapple() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_TESTS_TestGrapple_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ATestGrapple, ATestGrapple::StaticClass, TEXT("ATestGrapple"), &Z_Registration_Info_UClass_ATestGrapple, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestGrapple), 3062247376U) },
+		{ Z_Construct_UClass_ATestGrapple, ATestGrapple::StaticClass, TEXT("ATestGrapple"), &Z_Registration_Info_UClass_ATestGrapple, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ATestGrapple), 1610157916U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_TESTS_TestGrapple_h_1911819831(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_TESTS_TestGrapple_h_3950271302(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_TESTS_TestGrapple_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_TESTS_TestGrapple_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

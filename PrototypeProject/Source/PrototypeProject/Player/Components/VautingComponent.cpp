@@ -117,7 +117,7 @@ bool UVautingComponent::CanVault()
 				FHitResult sVerticalHitResult;
 				if (GetWorld() && GetWorld()->LineTraceSingleByChannel(sVerticalHitResult, vTraceStartLocation, vTraceEndLocation, ECC_Visibility, Params))
 				{
-					//DrawDebugLine(GetWorld(), vTraceStartLocation, vTraceEndLocation, FColor::Red, true, 10.f);
+					DrawDebugLine(GetWorld(), vTraceStartLocation, vTraceEndLocation, FColor::Red, true, 10.f);
 					// The Trace should always be in front of the player 
 					FVector TraceStartLocation = sVerticalHitResult.Location;// +(m_pOwningCharacter->GetActorForwardVector() * m_fVaultingDistance);
 
@@ -137,7 +137,7 @@ bool UVautingComponent::CanVault()
 					// line trace to determine whether there is something in front of the player in the world
 					if (GetWorld()->LineTraceSingleByChannel(HitResult, TraceStartLocation, TraceEndLocation, ECC_GameTraceChannel5, Params))
 					{
-						//DrawDebugLine(GetWorld(), TraceStartLocation, TraceEndLocation, FColor::Red, true, 10.f);
+						DrawDebugLine(GetWorld(), TraceStartLocation, TraceEndLocation, FColor::Red, true, 10.f);
 						bCanVault = CanVaultToHit(CapsuleComponent, HitResult);
 
 						return bCanVault;

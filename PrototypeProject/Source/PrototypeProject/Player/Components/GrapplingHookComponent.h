@@ -28,6 +28,7 @@ public:
 	UGrapplingHookComponent();
 
 	void AttemptGrapple();
+	void StopGrapple();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<AGrappleHook> m_pGrappleHook;
@@ -40,13 +41,19 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<ATestGrapple> TestGrapple;
 
+	ATestGrapple* GrappleHook;
+
+	AGrappleLine* GrappleLine;
+
+	bool m_bIsGrappling;
+
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	EGrappleState m_eGrappleState;
 
 	APlayerCharacter* m_pPlayerCharacter;
 
-	AGrappleTarget* m_pGrappleTarget;
+	AGrappleTarget* CurrentGrappleTarget;
 
 	UPlayerCameraComponent* m_pPlayerCamera;
 
@@ -58,11 +65,9 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Grappple", meta = (AllowPrivateAccess = "true"), DisplayName = "Gapple Speed")
 	float m_fPlayerGrappleSpeed;
 
-	float fBestAngle;
-	AActor* BestGrappleTarget;
-	AActor* LastGrappleTarget;
+	//float fBestAngle;
 
-	AGrappleTarget* BestGrapple;
+	//AGrappleTarget* BestGrappleTarget;
 
 protected:
 	// Called when the game starts
@@ -76,13 +81,14 @@ protected:
 	void TickNearingTarget();
 	void TickOnTarget(float DeltaTime);
 
-	FVector GetOwnerToTarget();
+	FVector GetOwnerToTarget(float time);
 
-	void SetCurrentTarget(AActor* NewGrappleTarget);
+	void SetCurrentTarget(AGrappleTarget* NewGrappleTarget);
 
-	AActor* FindBestTarget(TArray<AActor*> const Targets);
+	void FindBestTarget(TArray<AActor*> const Targets, AActor* &ActorOut);
 
-private:
+public:
 
 	FORCEINLINE EGrappleState GetGrappleState() const { return m_eGrappleState; }
+	FORCEINLINE bool GetIsGrappling() const { return m_bIsGrappling; }
 };
