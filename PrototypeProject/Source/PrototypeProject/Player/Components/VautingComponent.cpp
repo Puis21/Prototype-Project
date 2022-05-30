@@ -43,6 +43,7 @@ void UVautingComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	break;
 	}
 
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("Can Vault: %s"), CanVault() ? TEXT("true") : TEXT("false")));
 }
 
 void UVautingComponent::Vault()
@@ -105,7 +106,43 @@ bool UVautingComponent::CanVault()
 			FCollisionQueryParams Params;
 			Params.AddIgnoredActor(GetPlayer());
 
-			for (int i = iAmountOfHorizontalTraces; i > 0; i--)
+			FHitResult VerticalHit;
+			FVector	StartLoc = vActorLocation + vActorForwardVector * 100.f;
+			StartLoc.Z += GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+			FVector	EndLoc = vActorLocation + vActorForwardVector;
+			EndLoc.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+			
+			GetWorld()->LineTraceSingleByChannel(VerticalHit, StartLoc, EndLoc, ECC_Visibility, Params);
+			if (VerticalHit.bBlockingHit)
+			{
+				DrawDebugLine(GetWorld(), StartLoc, EndLoc, FColor::Red, false, 2.5f);
+				bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit);
+
+				FVector vSecondTraceStart = VerticalHit.Location + vActorForwardVector * 40.f;
+				vSecondTraceStart.Z += GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+				FVector vSecondTraceEnd = vSecondTraceStart; 
+				vSecondTraceEnd.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * 1.5f;
+
+				FHitResult SecondVerticalHit;
+				bool bWasHit = GetWorld()->LineTraceSingleByChannel(SecondVerticalHit, StartLoc, EndLoc, ECC_Visibility, Params);
+				if (bWasHit)
+				{
+					if (SecondVerticalHit.bBlockingHit)
+					{
+						//SecondVerticalHit.
+						GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Second Hit")));
+						GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::Printf(TEXT("Hit: %s"), *SecondVerticalHit.GetActor()->GetName()));
+						DrawDebugLine(GetWorld(), vSecondTraceStart, vSecondTraceEnd, FColor::Blue, false, 2.5);
+					}
+					else
+					{
+						GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Second NOT Hit")));
+					}
+				}
+
+				return bCanVault;
+			}
+			/*for (int i = iAmountOfHorizontalTraces; i > 0; i--)
 			{
 				if (i != iAmountOfHorizontalTraces)
 				{
@@ -137,14 +174,14 @@ bool UVautingComponent::CanVault()
 					// line trace to determine whether there is something in front of the player in the world
 					if (GetWorld()->LineTraceSingleByChannel(HitResult, TraceStartLocation, TraceEndLocation, ECC_GameTraceChannel5, Params))
 					{
-						DrawDebugLine(GetWorld(), TraceStartLocation, TraceEndLocation, FColor::Red, true, 10.f);
+						DrawDebugLine(GetWorld(), TraceStartLocation, TraceEndLocation, FColor::Blue, true, 10.f);
 						bCanVault = CanVaultToHit(CapsuleComponent, HitResult);
 
 						return bCanVault;
 
 					}
 				}
-			}
+			}*/
 		}
 	}
 
@@ -156,6 +193,8 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 	// check if the player capusle component is 90.f or higher, because anything smaller means that the player is sliding or crouching
 	if (GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() < 90.f)
 	{
+
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("Height")));
 		return false;
 	}
 
@@ -165,15 +204,17 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::SanitizeFloat(fVaultingHeight));
 	if (!(UKismetMathLibrary::InRange_FloatFloat(fVaultingHeight, m_iMinVaultingHeight, m_iMaxVaultingHeight, true, true)))
 	{
-
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("Hit Loc")));
 		return false;
+
 	}
 
 	// Make sure the surface we're vaulting to is walkable
 	if (HitResult.ImpactNormal.Z < GetPlayer()->GetCharacterMovement()->GetWalkableFloorZ())
 	{
-
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("Surface")));
 		return false;
+
 	}
 
 	// Get the Hit Location from the initial trace to check whether there is anything in front of the player
@@ -187,10 +228,11 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 
 	CapsuleTraceLocation.Z += CapsuleComponent->GetScaledCapsuleRadius();
 
-	// Make sure that there is enough room for us on top of the ledge
+	//// Make sure that there is enough room for us on top of the ledge
 	if (GetPlayer()->GetSlideComponent()->CheckCapsuleCollision(CapsuleTraceLocation, CapsuleComponent->GetScaledCapsuleHalfHeight(), CapsuleComponent->GetScaledCapsuleRadius(), false))
 	{
 
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("LedgeRoom")));
 		return false;
 	}
 
