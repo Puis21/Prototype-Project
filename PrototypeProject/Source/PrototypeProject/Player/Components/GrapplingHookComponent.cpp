@@ -220,7 +220,7 @@ void UGrapplingHookComponent::FindBestTarget(TArray<AActor*> Targets, AActor* &A
 
 void UGrapplingHookComponent::SetCurrentTarget(AGrappleTarget* NewGrappleTarget)
 {
-	UE_LOG(LogTemp, Log, TEXT("ALO1"));
+	//UE_LOG(LogTemp, Log, TEXT("ALO1"));
 	NewGrappleTarget->SetActorHiddenInGame(false);
 	//if (NewGrappleTarget != CurrentGrappleTarget)
 	//{

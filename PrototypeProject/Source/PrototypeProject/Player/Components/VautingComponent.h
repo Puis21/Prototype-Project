@@ -29,11 +29,13 @@ public:
 
 	bool CanVault();
 
-	bool CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitResult HitResult);
+	bool CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitResult HitResult, bool bIsVaulting);
 
 	void Vault();
 
 	void VaultingInterpolation(float DeltaTime);
+
+	void VaultJump();
 
 protected:
 
@@ -60,7 +62,15 @@ private:
 
 	int m_iMaxVaultingHeight;
 
+	bool m_bQueuedJump;
 
 	FVector m_v3VaultStartLocation;
 	FVector m_v3VaultEndLocation;
+
+public:
+
+	FORCEINLINE EVaultingState GetVaultingState() const { return m_eVaultingState; }
+	FORCEINLINE float GetProgress() const { return m_fVaultProgress; }
+
+	FORCEINLINE void SetVaultJump(bool isQueued) { m_bQueuedJump = isQueued; }
 };

@@ -10,9 +10,10 @@
 
 UVautingComponent::UVautingComponent():
 m_fHorizontalDistance(100.f),
-m_iMinVaultingHeight(50.f),
+m_iMinVaultingHeight(40.f),
 m_iMaxVaultingHeight(170.f),
-m_fVaultingSpeed(0.5f)
+m_fVaultingSpeed(0.5f),
+m_bQueuedJump(false)
 {
 	PrimaryComponentTick.bCanEverTick = true;
 
@@ -75,6 +76,10 @@ void UVautingComponent::VaultingInterpolation(float DeltaTime)
 	if (m_fVaultProgress >= 1.f)
 	{
 		m_eVaultingState = EVaultingState::Ready;
+		if (m_bQueuedJump)
+		{
+			VaultJump();
+		}
 
 	/*	if (GetPlayer() != nullptr)
 		{
@@ -106,41 +111,54 @@ bool UVautingComponent::CanVault()
 			FCollisionQueryParams Params;
 			Params.AddIgnoredActor(GetPlayer());
 
-			FHitResult VerticalHit;
-			FVector	StartLoc = vActorLocation + vActorForwardVector * 100.f;
-			StartLoc.Z += GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
-			FVector	EndLoc = vActorLocation + vActorForwardVector;
-			EndLoc.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
-			
-			GetWorld()->LineTraceSingleByChannel(VerticalHit, StartLoc, EndLoc, ECC_Visibility, Params);
-			if (VerticalHit.bBlockingHit)
+			FHitResult HorizontalHit;
+			FVector	StartLoc = vActorLocation;
+			StartLoc.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() / 2;
+			FVector	EndLoc = (vActorForwardVector * 120.f) + StartLoc;
+			//EndLoc.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
+
+			GetWorld()->LineTraceSingleByChannel(HorizontalHit, StartLoc, EndLoc, ECC_Visibility, Params);
+			if (HorizontalHit.bBlockingHit)
 			{
-				DrawDebugLine(GetWorld(), StartLoc, EndLoc, FColor::Red, false, 2.5f);
-				bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit);
+				//DrawDebugLine(GetWorld(), StartLoc, EndLoc, FColor::Red, false, 2.5f);
 
-				FVector vSecondTraceStart = VerticalHit.Location + vActorForwardVector * 40.f;
-				vSecondTraceStart.Z += GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight();
-				FVector vSecondTraceEnd = vSecondTraceStart; 
-				vSecondTraceEnd.Z -= GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() * 1.5f;
+				FVector WallLocation = HorizontalHit.Location;
+				FVector WallNormal = HorizontalHit.Normal;
 
-				FHitResult SecondVerticalHit;
-				bool bWasHit = GetWorld()->LineTraceSingleByChannel(SecondVerticalHit, StartLoc, EndLoc, ECC_Visibility, Params);
-				if (bWasHit)
+				FRotator Rotator = UKismetMathLibrary::MakeRotFromX(UKismetMathLibrary::GetForwardVector(GetPlayer()->GetActorRotation()));
+
+				WallNormal = (Rotator.Vector() * 10.f) + WallLocation;
+
+			    FVector Start = WallNormal;
+				FVector End = WallNormal;
+				Start.Z += 125.f;
+				//End.Z -= 100.f;
+
+				FHitResult VerticalHit;
+				if (GetWorld()->LineTraceSingleByChannel(VerticalHit, Start, End, ECC_Visibility, Params))
 				{
-					if (SecondVerticalHit.bBlockingHit)
+					//DrawDebugLine(GetWorld(), Start, End, FColor::Blue, false, 2.5f);
+					FVector WallNormal2 = (Rotator.Vector() * 35.f) + WallLocation;
+
+					FVector Start2 = WallNormal2;
+					FVector End2 = WallNormal2;
+					Start2.Z += 125.f;
+
+					FHitResult VerticalHit2;
+					if (GetWorld()->LineTraceSingleByChannel(VerticalHit2, Start2, End2, ECC_Visibility, Params))
 					{
-						//SecondVerticalHit.
-						GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Second Hit")));
-						GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::Printf(TEXT("Hit: %s"), *SecondVerticalHit.GetActor()->GetName()));
-						DrawDebugLine(GetWorld(), vSecondTraceStart, vSecondTraceEnd, FColor::Blue, false, 2.5);
+						//DrawDebugLine(GetWorld(), Start2, End2, FColor::Emerald, false, 2.5f);
+						bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit2, false);
+						return bCanVault;
 					}
-					else
+					else 
 					{
-						GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::Printf(TEXT("Second NOT Hit")));
+						bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit, true);
+						return bCanVault;
 					}
+
 				}
 
-				return bCanVault;
 			}
 			/*for (int i = iAmountOfHorizontalTraces; i > 0; i--)
 			{
@@ -188,7 +206,7 @@ bool UVautingComponent::CanVault()
 	return bCanVault;
 }
 
-bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitResult HitResult)
+bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitResult HitResult, bool bIsVaulting)
 {
 	// check if the player capusle component is 90.f or higher, because anything smaller means that the player is sliding or crouching
 	if (GetPlayer()->GetCapsuleComponent()->GetScaledCapsuleHalfHeight() < 90.f)
@@ -201,12 +219,21 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 	// check whether vaulting height, calculated from the end of the trace to the trace's hit location, is within the specified range
 	// doesn't allow vaulting when not in range
 	float fVaultingHeight = (HitResult.Location - HitResult.TraceEnd).Size();
-	//GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::SanitizeFloat(fVaultingHeight));
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, FString::SanitizeFloat(fVaultingHeight));
 	if (!(UKismetMathLibrary::InRange_FloatFloat(fVaultingHeight, m_iMinVaultingHeight, m_iMaxVaultingHeight, true, true)))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Purple, FString::Printf(TEXT("Hit Loc")));
 		return false;
 
+	}
+
+	if (fVaultingHeight <= 75)
+	{
+		m_fVaultingSpeed = 0.3f;
+	}
+	else
+	{
+		m_fVaultingSpeed = 0.5f;
 	}
 
 	// Make sure the surface we're vaulting to is walkable
@@ -236,6 +263,24 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 		return false;
 	}
 
-	m_v3VaultEndLocation = CapsuleTraceLocation;
+	if (bIsVaulting)
+	{
+		//FVector VaultTrace = HitResult.Location;
+		//VaultTrace.Z += CapsuleComponent->GetScaledCapsuleHalfHeight();
+		m_v3VaultEndLocation = CapsuleTraceLocation + (GetPlayer()->GetActorForwardVector() * 100.f);
+	}
+	else
+	{
+		m_v3VaultEndLocation = CapsuleTraceLocation;
+	}
+
 	return true;
+}
+
+void UVautingComponent::VaultJump()
+{
+	FVector Jump;
+	Jump.Z = 1000.f;
+	GetPlayer()->LaunchCharacter((GetPlayer()->GetActorForwardVector() * 1500.f) + Jump, true, true);
+	m_bQueuedJump = false;
 }

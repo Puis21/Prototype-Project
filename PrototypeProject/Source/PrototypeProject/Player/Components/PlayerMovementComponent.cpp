@@ -69,6 +69,11 @@ void UPlayerMovementComponent::TickComponent(float DeltaTime, ELevelTick TickTyp
 	{	
 		GetWorld()->GetTimerManager().SetTimer(FootstepsTimer, this, &UPlayerMovementComponent::MovingSounds, m_fFootstepsPlayRate, true);
 	}
+
+	if (eMovementState == EMovementState::Sprinting && m_pVaultingComponent->CanVault())
+	{
+		m_pVaultingComponent->Vault();
+	}
 }
 
 void UPlayerMovementComponent::MovingSounds()

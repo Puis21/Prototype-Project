@@ -215,9 +215,14 @@ void APlayerCharacter::Landed(const FHitResult& Hit)
 
 void APlayerCharacter::JumpButtonPressed()
 {
-	if (m_ACPlayerMovementComponent)
+	if (m_ACPlayerMovementComponent && m_ACVaultComponent->GetVaultingState() != EVaultingState::Vaulting)
 	{
 		m_ACPlayerMovementComponent->PlayerJump();
+	}
+
+	if (m_ACVaultComponent->GetVaultingState() == EVaultingState::Vaulting && m_ACVaultComponent->GetProgress() > 0.4)
+	{
+		m_ACVaultComponent->SetVaultJump(true);
 	}
 }
 
