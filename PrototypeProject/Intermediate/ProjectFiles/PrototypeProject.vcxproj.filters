@@ -121,6 +121,9 @@
     <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleLine.cpp">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleLine.h">
+      <Filter>Source\PrototypeProject\Player</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Player\GrappleTarget.cpp">
       <Filter>Source\PrototypeProject\Player</Filter>
     </ClCompile>
@@ -164,6 +167,12 @@
       <Filter>Source\PrototypeProject\Player\Camera</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCameraComponent.h">
+      <Filter>Source\PrototypeProject\Player\Camera</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCharacterCameraManager.cpp">
+      <Filter>Source\PrototypeProject\Player\Camera</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Player\Camera\PlayerCharacterCameraManager.h">
       <Filter>Source\PrototypeProject\Player\Camera</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Player\Camera\CameraShakes">
@@ -294,11 +303,6 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\TP_ThirdPerson\TP_ThirdPersonGameMode.h">
       <Filter>Source\PrototypeProject\TP_ThirdPerson</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\PrototypeProject\Player\GrappleLine.h">
-      <Filter>Source\PrototypeProject\TESTS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

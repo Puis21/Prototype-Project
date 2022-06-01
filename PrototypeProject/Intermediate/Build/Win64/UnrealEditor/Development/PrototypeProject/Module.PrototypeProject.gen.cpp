@@ -20,6 +20,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerAnimInstance.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerCameraComponent.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerCharacter.gen.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerCharacterCameraManager.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerMovementComponent.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PrototypeProject.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PrototypeProject.init.gen.cpp"

@@ -104,6 +104,8 @@ void UGrapplingHookComponent::TickRetracted()
 
 void UGrapplingHookComponent::TickFiring()
 {
+
+	m_pPlayerCharacter->GetCustomMovementComponent()->Velocity = FVector::ZeroVector;
 	if (GrappleHook->DistanceToTarget() < 50.f)
 	{
 		m_eGrappleState = EGrappleState::EGS_OnTarget;

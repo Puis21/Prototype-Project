@@ -6,6 +6,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Abilities/Ability1/ThrownProjectile.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/CameraShakes/MovingCameraShake.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/PlayerCameraComponent.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/PlayerCharacterCameraManager.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Components/CombatComponent.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Components/GrapplingHookComponent.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Components/ParkourMovementComponent.cpp"

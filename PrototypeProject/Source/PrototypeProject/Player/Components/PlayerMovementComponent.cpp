@@ -159,7 +159,8 @@ void UPlayerMovementComponent::PlayerJump()
 		{
 			m_pVaultingComponent->Vault();
 		}
-		else
+
+		if(!m_pVaultingComponent->CanVault() && !IsFalling())
 		{
 			if (m_bIsJumping)
 			{

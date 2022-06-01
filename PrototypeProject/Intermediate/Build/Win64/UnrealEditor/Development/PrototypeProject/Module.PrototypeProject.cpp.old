@@ -2,6 +2,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Enemy/BP_EnemyCharacter.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Interactables/Zipline.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/KatanaWeapon.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Abilities/Ability1/AbilityProjectile.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Abilities/Ability1/ThrownProjectile.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/CameraShakes/MovingCameraShake.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/PlayerCameraComponent.cpp"

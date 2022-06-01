@@ -63,6 +63,7 @@ private:
 	int m_iMaxVaultingHeight;
 
 	bool m_bQueuedJump;
+	bool m_bCanVaultJump;
 
 	FVector m_v3VaultStartLocation;
 	FVector m_v3VaultEndLocation;

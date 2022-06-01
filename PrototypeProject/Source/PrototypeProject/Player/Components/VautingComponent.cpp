@@ -13,7 +13,8 @@ m_fHorizontalDistance(100.f),
 m_iMinVaultingHeight(40.f),
 m_iMaxVaultingHeight(170.f),
 m_fVaultingSpeed(0.5f),
-m_bQueuedJump(false)
+m_bQueuedJump(false),
+m_bCanVaultJump(false)
 {
 	PrimaryComponentTick.bCanEverTick = true;
 
@@ -149,11 +150,13 @@ bool UVautingComponent::CanVault()
 					{
 						//DrawDebugLine(GetWorld(), Start2, End2, FColor::Emerald, false, 2.5f);
 						bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit2, false);
+						m_bCanVaultJump = false;
 						return bCanVault;
 					}
 					else 
 					{
 						bCanVault = CanVaultToHit(CapsuleComponent, VerticalHit, true);
+						m_bCanVaultJump = true;
 						return bCanVault;
 					}
 
@@ -278,9 +281,14 @@ bool UVautingComponent::CanVaultToHit(UCapsuleComponent* CapsuleComponent, FHitR
 }
 
 void UVautingComponent::VaultJump()
-{
-	FVector Jump;
-	Jump.Z = 1000.f;
-	GetPlayer()->LaunchCharacter((GetPlayer()->GetActorForwardVector() * 1500.f) + Jump, true, true);
-	m_bQueuedJump = false;
+{	
+	if (m_bCanVaultJump)
+	{
+		FVector Jump;
+		Jump.Z = 1000.f;
+		GetPlayer()->LaunchCharacter((GetPlayer()->GetActorForwardVector() * 1500.f) + Jump, true, true);
+		m_bQueuedJump = false;
+		m_bCanVaultJump = false;
+	}
+
 }
