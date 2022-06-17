@@ -21,7 +21,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	op(EGASAbilityInputID::None) \
 	op(EGASAbilityInputID::Confirm) \
 	op(EGASAbilityInputID::Cancel) \
-	op(EGASAbilityInputID::Throw) 
+	op(EGASAbilityInputID::Throw) \
+	op(EGASAbilityInputID::Ethereal) 
 
 enum class EGASAbilityInputID : uint8;
 template<> PROTOTYPEPROJECT_API UEnum* StaticEnum<EGASAbilityInputID>();

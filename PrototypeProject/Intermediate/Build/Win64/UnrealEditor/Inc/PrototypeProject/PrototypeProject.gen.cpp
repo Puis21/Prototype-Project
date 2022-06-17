@@ -38,12 +38,14 @@ void EmptyLinkFunctionForGeneratedCodePrototypeProject() {}
 		{ "EGASAbilityInputID::Confirm", (int64)EGASAbilityInputID::Confirm },
 		{ "EGASAbilityInputID::Cancel", (int64)EGASAbilityInputID::Cancel },
 		{ "EGASAbilityInputID::Throw", (int64)EGASAbilityInputID::Throw },
+		{ "EGASAbilityInputID::Ethereal", (int64)EGASAbilityInputID::Ethereal },
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_PrototypeProject_EGASAbilityInputID_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "Cancel.Name", "EGASAbilityInputID::Cancel" },
 		{ "Confirm.Name", "EGASAbilityInputID::Confirm" },
+		{ "Ethereal.Name", "EGASAbilityInputID::Ethereal" },
 		{ "ModuleRelativePath", "PrototypeProject.h" },
 		{ "None.Name", "EGASAbilityInputID::None" },
 		{ "Throw.Name", "EGASAbilityInputID::Throw" },
@@ -74,9 +76,9 @@ void EmptyLinkFunctionForGeneratedCodePrototypeProject() {}
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_PrototypeProject_h_Statics::EnumInfo[] = {
-		{ EGASAbilityInputID_StaticEnum, TEXT("EGASAbilityInputID"), &Z_Registration_Info_UEnum_EGASAbilityInputID, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3750927794U) },
+		{ EGASAbilityInputID_StaticEnum, TEXT("EGASAbilityInputID"), &Z_Registration_Info_UEnum_EGASAbilityInputID, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3357405947U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_PrototypeProject_h_711101287(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_PrototypeProject_h_3958049407(TEXT("/Script/PrototypeProject"),
 		nullptr, 0,
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_PrototypeProject_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_PrototypeProject_h_Statics::EnumInfo));

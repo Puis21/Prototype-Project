@@ -80,6 +80,8 @@ private:
 
 	float m_fStandingCapsuleHalfHeight;
 	float m_fStandingCameraZOffSet;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom Movement | Crouching", meta = (AllowPrivateAccess = "true"), DisplayName = "Is Crouching")
 	bool m_bIsCrouching;
 	bool m_bIsSliding;
 

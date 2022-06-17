@@ -56,7 +56,7 @@ void EmptyLinkFunctionForGeneratedCodeGASGameplayAbility() {}
 		{ "ModuleRelativePath", "Player/GAS/GASGameplayAbility.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID = { "AbilityInputID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UGASGameplayAbility, AbilityInputID), Z_Construct_UEnum_PrototypeProject_EGASAbilityInputID, METADATA_PARAMS(Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID_MetaData)) }; // 3750927794
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID = { "AbilityInputID", nullptr, (EPropertyFlags)0x0010000000000015, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UGASGameplayAbility, AbilityInputID), Z_Construct_UEnum_PrototypeProject_EGASAbilityInputID, METADATA_PARAMS(Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID_MetaData)) }; // 3357405947
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UGASGameplayAbility_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UGASGameplayAbility_Statics::NewProp_AbilityInputID,
@@ -97,9 +97,9 @@ void EmptyLinkFunctionForGeneratedCodeGASGameplayAbility() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_GAS_GASGameplayAbility_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UGASGameplayAbility, UGASGameplayAbility::StaticClass, TEXT("UGASGameplayAbility"), &Z_Registration_Info_UClass_UGASGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGASGameplayAbility), 4212190296U) },
+		{ Z_Construct_UClass_UGASGameplayAbility, UGASGameplayAbility::StaticClass, TEXT("UGASGameplayAbility"), &Z_Registration_Info_UClass_UGASGameplayAbility, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UGASGameplayAbility), 2376869956U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_GAS_GASGameplayAbility_h_4020403352(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_GAS_GASGameplayAbility_h_1352835068(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_GAS_GASGameplayAbility_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_GAS_GASGameplayAbility_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

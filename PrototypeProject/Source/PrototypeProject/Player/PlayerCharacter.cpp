@@ -13,6 +13,7 @@
 #include "Components/SlideComponent.h"
 #include "Components/VautingComponent.h"
 #include "Components/CombatComponent.h"
+#include "Kismet/KismetMathLibrary.h"
 
 #include "PrototypeProject/Player/GAS/GASAbilitySystemComponent.h"
 #include "PrototypeProject/Player/GAS/GASGameplayAbility.h"
@@ -188,6 +189,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	// Bind movement events
 	PlayerInputComponent->BindAxis("Move Forward / Backward", this, &APlayerCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Move Right / Left", this, &APlayerCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("Fly Up / Down", this, &APlayerCharacter::FlyVertical);
 
 	// "Mouse" versions handle devices that provide an absolute delta, such as a mouse.
 	PlayerInputComponent->BindAxis("Turn Right / Left Mouse", this, &APlayerCharacter::TurnAtRate);
@@ -303,6 +305,20 @@ void APlayerCharacter::MoveRight(float Value)
 	{
 		// add movement in that direction
 		AddMovementInput(GetActorRightVector(), Value);
+	}
+}
+
+//UNUSUED
+void APlayerCharacter::FlyVertical(float Value)
+{
+	FRotator Vertical = GetControlRotation();
+	FRotator Broken = UKismetMathLibrary::MakeRotator(0.f, 0.f, Vertical.Yaw);
+	FVector UpVec = UKismetMathLibrary::GetUpVector(Broken);
+	UE_LOG(LogTemp, Log, TEXT("FLYY111"));
+	if (Value != 0.f)
+	{
+		AddMovementInput(GetActorUpVector(), Value);
+		UE_LOG(LogTemp, Log, TEXT("FLYY222"));
 	}
 }
 

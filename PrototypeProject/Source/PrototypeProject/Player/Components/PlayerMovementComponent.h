@@ -24,7 +24,7 @@ enum class EMovementState : uint8
 	Sprinting	UMETA(DisplayName = "Sprinting"),
 	Crouching	UMETA(DisplayName = "Crouching"),
 	Sliding		UMETA(DisplayName = "Sliding"),
-	Vaulting	UMETA(DisplayName = "Vaulting")
+	Ethereal	UMETA(DisplayName = "Etheral")
 };
 
 UCLASS()
@@ -46,6 +46,7 @@ private:
 
 public:
 
+	UFUNCTION(BlueprintCallable, Category = "MovementState")
 	void StartMovementStateSwitch(EMovementState eNewMovementState);
 
 	void ResolveMovement();
@@ -111,6 +112,9 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Custom Movement | Walking", meta = (AllowPrivateAccess = "true"), DisplayName = "Can Sprint")
 	bool m_bIsSprinting;
 
+	UPROPERTY(BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+	bool m_bDisableStateChange;
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	EMovementState eMovementState;
@@ -124,6 +128,7 @@ public:
 	FORCEINLINE USlideComponent* GetSlideComponent() const { return m_pSlideComponent; }
 
 	FORCEINLINE void SetPlayerSpeed(float speed) { MaxWalkSpeed = speed; }
+	FORCEINLINE void SetDisabledStateChange(bool IsDisabled) { m_bDisableStateChange = IsDisabled; }
 
 	APlayerCharacter* GetPlayerChar() const { return m_pPlayerCharacter; }
 };

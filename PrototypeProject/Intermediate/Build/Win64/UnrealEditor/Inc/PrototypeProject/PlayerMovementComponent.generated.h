@@ -8,14 +8,23 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+enum class EMovementState : uint8;
 #ifdef PROTOTYPEPROJECT_PlayerMovementComponent_generated_h
 #error "PlayerMovementComponent.generated.h already included, missing '#pragma once' in PlayerMovementComponent.h"
 #endif
 #define PROTOTYPEPROJECT_PlayerMovementComponent_generated_h
 
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_SPARSE_DATA
-#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_RPC_WRAPPERS
-#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execStartMovementStateSwitch);
+
+
+#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execStartMovementStateSwitch);
+
+
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_33_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPlayerMovementComponent(); \
@@ -93,7 +102,7 @@ template<> PROTOTYPEPROJECT_API UClass* StaticClass<class UPlayerMovementCompone
 	op(EMovementState::Sprinting) \
 	op(EMovementState::Crouching) \
 	op(EMovementState::Sliding) \
-	op(EMovementState::Vaulting) 
+	op(EMovementState::Ethereal) 
 
 enum class EMovementState : uint8;
 template<> PROTOTYPEPROJECT_API UEnum* StaticEnum<EMovementState>();

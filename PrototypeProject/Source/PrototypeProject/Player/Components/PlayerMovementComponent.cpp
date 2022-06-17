@@ -20,7 +20,8 @@ m_bIsJumping(false),
 m_fMaxWalkSpeed(600.f),
 m_fMaxSprintSpeed(1000.f),
 m_fSprintMinForward(0.9f),
-m_bIsSprinting(false)
+m_bIsSprinting(false),
+m_bDisableStateChange(false)
 {
 	MaxWalkSpeed = m_fMaxWalkSpeed;
 	AirControl = 0.5f;
@@ -236,18 +237,22 @@ void UPlayerMovementComponent::StopSprinting()
 
 void UPlayerMovementComponent::StartMovementStateSwitch(EMovementState eNewMovementState)
 {
-	if (eNewMovementState != eMovementState)
+	if(!m_bDisableStateChange)
 	{
-		const TEnumAsByte<EMovementState> SurfaceEnum = eNewMovementState;
-		FString EnumAsString = UEnum::GetValueAsString(SurfaceEnum.GetValue());
-
-		if (GEngine)
+		if (eNewMovementState != eMovementState)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, EnumAsString);
+			const TEnumAsByte<EMovementState> SurfaceEnum = eNewMovementState;
+			FString EnumAsString = UEnum::GetValueAsString(SurfaceEnum.GetValue());
+
+			if (GEngine)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Red, EnumAsString);
+			}
+			eMovementState = eNewMovementState;
+			SetMovementState(eNewMovementState);
 		}
-		eMovementState = eNewMovementState;
-		SetMovementState(eNewMovementState);
 	}
+	
 }
 
 void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementState)
@@ -284,7 +289,11 @@ void UPlayerMovementComponent::SetMovementState(EMovementState& eNewMovementStat
 			m_pSlideComponent->StartSliding(bSprintBoost);
 		}
 		break;
-
+		case EMovementState::Ethereal:
+		{
+			SetMovementMode(EMovementMode::MOVE_Flying);
+			m_bDisableStateChange = true;
+		}
 	}
 
 	if (m_pCameraComponent)

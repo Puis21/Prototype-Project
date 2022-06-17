@@ -69,10 +69,12 @@ protected:
 	//void OnPrimaryAction();
 
 	/** Handles moving forward/backward */
-	void MoveForward(float Val);
+	void MoveForward(float Value);
 
 	/** Handles strafing movement, left and right */
-	void MoveRight(float Val);
+	void MoveRight(float Value);
+
+	void FlyVertical(float Value);
 
 	/**
 	 * Called via input to turn at a given rate.

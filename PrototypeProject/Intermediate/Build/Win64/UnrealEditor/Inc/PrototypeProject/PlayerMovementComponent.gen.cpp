@@ -43,13 +43,15 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		{ "EMovementState::Sprinting", (int64)EMovementState::Sprinting },
 		{ "EMovementState::Crouching", (int64)EMovementState::Crouching },
 		{ "EMovementState::Sliding", (int64)EMovementState::Sliding },
-		{ "EMovementState::Vaulting", (int64)EMovementState::Vaulting },
+		{ "EMovementState::Ethereal", (int64)EMovementState::Ethereal },
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_PrototypeProject_EMovementState_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
 		{ "Crouching.DisplayName", "Crouching" },
 		{ "Crouching.Name", "EMovementState::Crouching" },
+		{ "Ethereal.DisplayName", "Etheral" },
+		{ "Ethereal.Name", "EMovementState::Ethereal" },
 		{ "Jumping.DisplayName", "Jumping" },
 		{ "Jumping.Name", "EMovementState::Jumping" },
 		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
@@ -57,8 +59,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		{ "Sliding.Name", "EMovementState::Sliding" },
 		{ "Sprinting.DisplayName", "Sprinting" },
 		{ "Sprinting.Name", "EMovementState::Sprinting" },
-		{ "Vaulting.DisplayName", "Vaulting" },
-		{ "Vaulting.Name", "EMovementState::Vaulting" },
 		{ "Walking.Comment", "//Idle\x09\x09UMETA(DisplayName = \"Idle\"),\n" },
 		{ "Walking.DisplayName", "Walking" },
 		{ "Walking.Name", "EMovementState::Walking" },
@@ -85,8 +85,57 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		}
 		return Z_Registration_Info_UEnum_EMovementState.InnerSingleton;
 	}
+	DEFINE_FUNCTION(UPlayerMovementComponent::execStartMovementStateSwitch)
+	{
+		P_GET_ENUM(EMovementState,Z_Param_eNewMovementState);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->StartMovementStateSwitch(EMovementState(Z_Param_eNewMovementState));
+		P_NATIVE_END;
+	}
 	void UPlayerMovementComponent::StaticRegisterNativesUPlayerMovementComponent()
 	{
+		UClass* Class = UPlayerMovementComponent::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "StartMovementStateSwitch", &UPlayerMovementComponent::execStartMovementStateSwitch },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics
+	{
+		struct PlayerMovementComponent_eventStartMovementStateSwitch_Parms
+		{
+			EMovementState eNewMovementState;
+		};
+		static const UECodeGen_Private::FBytePropertyParams NewProp_eNewMovementState_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_eNewMovementState;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::NewProp_eNewMovementState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::NewProp_eNewMovementState = { "eNewMovementState", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerMovementComponent_eventStartMovementStateSwitch_Parms, eNewMovementState), Z_Construct_UEnum_PrototypeProject_EMovementState, METADATA_PARAMS(nullptr, 0) }; // 3260941622
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::NewProp_eNewMovementState_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::NewProp_eNewMovementState,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::Function_MetaDataParams[] = {
+		{ "Category", "MovementState" },
+		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPlayerMovementComponent, nullptr, "StartMovementStateSwitch", nullptr, nullptr, sizeof(Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::PlayerMovementComponent_eventStartMovementStateSwitch_Parms), Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UPlayerMovementComponent);
 	UClass* Z_Construct_UClass_UPlayerMovementComponent_NoRegister()
@@ -96,6 +145,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 	struct Z_Construct_UClass_UPlayerMovementComponent_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -137,6 +187,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 #endif
 		static void NewProp_m_bIsSprinting_SetBit(void* Obj);
 		static const UECodeGen_Private::FBoolPropertyParams NewProp_m_bIsSprinting;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_bDisableStateChange_MetaData[];
+#endif
+		static void NewProp_m_bDisableStateChange_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_m_bDisableStateChange;
 		static const UECodeGen_Private::FBytePropertyParams NewProp_eMovementState_Underlying;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_eMovementState_MetaData[];
@@ -149,6 +204,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 	UObject* (*const Z_Construct_UClass_UPlayerMovementComponent_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_UCharacterMovementComponent,
 		(UObject* (*)())Z_Construct_UPackage__Script_PrototypeProject,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UPlayerMovementComponent_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UPlayerMovementComponent_StartMovementStateSwitch, "StartMovementStateSwitch" }, // 4244446030
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::Class_MetaDataParams[] = {
@@ -245,6 +303,18 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		((UPlayerMovementComponent*)Obj)->m_bIsSprinting = 1;
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting = { "m_bIsSprinting", nullptr, (EPropertyFlags)0x0040000000020015, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UPlayerMovementComponent), &Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_SetBit, METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "PlayerMovementComponent" },
+		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
+	};
+#endif
+	void Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange_SetBit(void* Obj)
+	{
+		((UPlayerMovementComponent*)Obj)->m_bDisableStateChange = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange = { "m_bDisableStateChange", nullptr, (EPropertyFlags)0x0040000000000004, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UPlayerMovementComponent), &Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange_SetBit, METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange_MetaData)) };
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData[] = {
@@ -252,7 +322,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		{ "ModuleRelativePath", "Player/Components/PlayerMovementComponent.h" },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState = { "eMovementState", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, eMovementState), Z_Construct_UEnum_PrototypeProject_EMovementState, METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData)) }; // 4046139049
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState = { "eMovementState", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UPlayerMovementComponent, eMovementState), Z_Construct_UEnum_PrototypeProject_EMovementState, METADATA_PARAMS(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_MetaData)) }; // 3260941622
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UPlayerMovementComponent_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fFootstepsPlayRate,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_FootStepSound,
@@ -263,6 +333,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fMaxSprintSpeed,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_fSprintMinForward,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bIsSprinting,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_m_bDisableStateChange,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPlayerMovementComponent_Statics::NewProp_eMovementState,
 	};
@@ -274,11 +345,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_UPlayerMovementComponent_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_UPlayerMovementComponent_Statics::PropPointers),
 		0,
 		0x00B000A4u,
@@ -303,12 +374,12 @@ void EmptyLinkFunctionForGeneratedCodePlayerMovementComponent() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo[] = {
-		{ EMovementState_StaticEnum, TEXT("EMovementState"), &Z_Registration_Info_UEnum_EMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4046139049U) },
+		{ EMovementState_StaticEnum, TEXT("EMovementState"), &Z_Registration_Info_UEnum_EMovementState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3260941622U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 1832014772U) },
+		{ Z_Construct_UClass_UPlayerMovementComponent, UPlayerMovementComponent::StaticClass, TEXT("UPlayerMovementComponent"), &Z_Registration_Info_UClass_UPlayerMovementComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPlayerMovementComponent), 1698798555U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_2348841116(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_1595241533(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Player_Components_PlayerMovementComponent_h_Statics::EnumInfo));

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "PrototypeProject",
+			"Path": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProject.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PrototypeProjectEditor",
+			"Path": "C:\\Users\\GenTl\\OneDrive\\Documents\\GitHub\\Prototype-Project\\PrototypeProject\\Source\\PrototypeProjectEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

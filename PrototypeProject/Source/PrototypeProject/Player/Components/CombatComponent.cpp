@@ -91,7 +91,7 @@ void UCombatComponent::SwordAttack()
 		{
 			AnimInstance->Montage_Play(SwordComboMontage, m_fSwingSpeed);
 			AnimInstance->Montage_JumpToSection(ComboAttack);
-			m_bIsAttacking = true;		
+			m_bIsAttacking = true;
 			//m_pPlayerCharacter->GetCustomMovementComponent()->AddImpulse(m_pPlayerCharacter->GetFirstPersonCameraComponent()->GetForwardVector() * 800.f, true);
 		}
 		/*if (!m_bIsAttacking)
