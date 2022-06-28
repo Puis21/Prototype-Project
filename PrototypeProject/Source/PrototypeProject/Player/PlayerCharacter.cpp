@@ -14,6 +14,8 @@
 #include "Components/VautingComponent.h"
 #include "Components/CombatComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Perception/AIPerceptionStimuliSourceComponent.h"
+#include "Perception/AISense_Sight.h"
 
 #include "PrototypeProject/Player/GAS/GASAbilitySystemComponent.h"
 #include "PrototypeProject/Player/GAS/GASGameplayAbility.h"
@@ -63,6 +65,7 @@ APlayerCharacter::APlayerCharacter(const FObjectInitializer& ObjectInitializer)
 
 	Attributes = CreateDefaultSubobject<UGASAttributeSet>(TEXT("Attributes"));
 		
+	SetupStimulus();
 }
 
 void APlayerCharacter::PostInitializeComponents()
@@ -335,3 +338,9 @@ void APlayerCharacter::LookUpAtRate(float Rate)
 }
 
 
+void APlayerCharacter::SetupStimulus()
+{
+	stimulus = CreateDefaultSubobject<UAIPerceptionStimuliSourceComponent>(TEXT("Stimuli"));
+	stimulus->RegisterForSense(TSubclassOf<UAISense_Sight>());
+	stimulus->RegisterWithPerceptionSystem();
+}

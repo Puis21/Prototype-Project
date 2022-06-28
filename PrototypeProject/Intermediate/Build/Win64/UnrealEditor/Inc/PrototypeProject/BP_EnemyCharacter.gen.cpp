@@ -13,6 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeBP_EnemyCharacter() {}
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_ABP_EnemyCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_PrototypeProject();
+	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
 // End Cross Module References
 	void ABP_EnemyCharacter::StaticRegisterNativesABP_EnemyCharacter()
 	{
@@ -28,6 +29,11 @@ void EmptyLinkFunctionForGeneratedCodeBP_EnemyCharacter() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BehaviorTree_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -42,6 +48,17 @@ void EmptyLinkFunctionForGeneratedCodeBP_EnemyCharacter() {}
 		{ "ModuleRelativePath", "Enemy/BP_EnemyCharacter.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABP_EnemyCharacter_Statics::NewProp_BehaviorTree_MetaData[] = {
+		{ "AlowPrivateAccess", "true" },
+		{ "Category", "Behavior Tree" },
+		{ "ModuleRelativePath", "Enemy/BP_EnemyCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABP_EnemyCharacter_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABP_EnemyCharacter, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABP_EnemyCharacter_Statics::NewProp_BehaviorTree_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ABP_EnemyCharacter_Statics::NewProp_BehaviorTree_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABP_EnemyCharacter_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABP_EnemyCharacter_Statics::NewProp_BehaviorTree,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ABP_EnemyCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ABP_EnemyCharacter>::IsAbstract,
 	};
@@ -51,11 +68,11 @@ void EmptyLinkFunctionForGeneratedCodeBP_EnemyCharacter() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_ABP_EnemyCharacter_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_ABP_EnemyCharacter_Statics::PropPointers),
 		0,
 		0x009000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_ABP_EnemyCharacter_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_ABP_EnemyCharacter_Statics::Class_MetaDataParams))
@@ -78,9 +95,9 @@ void EmptyLinkFunctionForGeneratedCodeBP_EnemyCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BP_EnemyCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABP_EnemyCharacter, ABP_EnemyCharacter::StaticClass, TEXT("ABP_EnemyCharacter"), &Z_Registration_Info_UClass_ABP_EnemyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABP_EnemyCharacter), 2027322219U) },
+		{ Z_Construct_UClass_ABP_EnemyCharacter, ABP_EnemyCharacter::StaticClass, TEXT("ABP_EnemyCharacter"), &Z_Registration_Info_UClass_ABP_EnemyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABP_EnemyCharacter), 2729691644U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BP_EnemyCharacter_h_406447329(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BP_EnemyCharacter_h_980096226(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BP_EnemyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BP_EnemyCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

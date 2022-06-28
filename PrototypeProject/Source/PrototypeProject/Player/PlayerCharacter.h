@@ -133,11 +133,15 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditDefaultsOnly, Category = "GAS")
 	TArray<TSubclassOf<class UGASGameplayAbility>> DefaultAbilities;
 
-public:
-
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	float TurnRate;
+
+private:
+ 
+	class UAIPerceptionStimuliSourceComponent* stimulus;
+
+	void SetupStimulus();
 
 public:
 

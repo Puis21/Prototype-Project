@@ -17,7 +17,9 @@ public class PrototypeProject : ModuleRules
 			"UMG",
             "Slate",
             "SlateCore",
-			"CableComponent"
+			"CableComponent",
+			"NavigationSystem",
+			"AIModule"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] {

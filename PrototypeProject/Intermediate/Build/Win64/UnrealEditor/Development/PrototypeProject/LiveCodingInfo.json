@@ -3,6 +3,11 @@
 	{
 		"Module.PrototypeProject.cpp.obj": [
 			"BP_EnemyCharacter.cpp.obj",
+			"ChasePlayer.cpp.obj",
+			"FindPlayerLocation.cpp.obj",
+			"FindRandomLoc.cpp.obj",
+			"EnemyController.cpp.obj",
+			"Enemy_Controller.cpp.obj",
 			"Zipline.cpp.obj",
 			"KatanaWeapon.cpp.obj",
 			"AbilityProjectile.cpp.obj",
@@ -42,7 +47,12 @@
 		"Module.PrototypeProject.gen.cpp.obj": [
 			"AbilityProjectile.gen.cpp.obj",
 			"BP_EnemyCharacter.gen.cpp.obj",
+			"ChasePlayer.gen.cpp.obj",
 			"CombatComponent.gen.cpp.obj",
+			"EnemyController.gen.cpp.obj",
+			"Enemy_Controller.gen.cpp.obj",
+			"FindPlayerLocation.gen.cpp.obj",
+			"FindRandomLoc.gen.cpp.obj",
 			"GASAbilitySystemComponent.gen.cpp.obj",
 			"GASAttributeSet.gen.cpp.obj",
 			"GASGameplayAbility.gen.cpp.obj",

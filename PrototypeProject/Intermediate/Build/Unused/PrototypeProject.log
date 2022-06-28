@@ -1,9 +1,15 @@
 ﻿  Using bundled DotNet SDK
   Log file: C:\Users\GenTl\AppData\Local\UnrealBuildTool\Log.txt
   Using 'git status' to determine working set for adaptive non-unity build (C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project).
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-8152.dll
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-8152.pdb
-  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-8152.lib
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2609.dll
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-2609.pdb
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9019.dll
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9019.pdb
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9162.dll
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Binaries\Win64\UnrealEditor-PrototypeProject-9162.pdb
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-2609.lib
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9019.lib
+  Deleted hot-reload file: C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject-9162.lib
   Building PrototypeProjectEditor...
   Using Visual Studio 2019 14.29.30143 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22000.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Determining max actions to execute in parallel (8 physical cores, 16 logical cores)
@@ -15,4 +21,4 @@
      Creating library C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.lib and object C:\Users\GenTl\OneDrive\Documents\GitHub\Prototype-Project\PrototypeProject\Intermediate\Build\Win64\UnrealEditor\Development\PrototypeProject\UnrealEditor-PrototypeProject.suppressed.exp
   [3/3] WriteMetadata PrototypeProjectEditor.target
   Total time in Parallel executor: 0.90 seconds
-  Total execution time: 1.43 seconds
+  Total execution time: 1.46 seconds

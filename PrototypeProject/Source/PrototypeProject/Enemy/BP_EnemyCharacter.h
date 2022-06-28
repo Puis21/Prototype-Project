@@ -23,7 +23,12 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+private:
 
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AlowPrivateAccess = "true"))
+	class UBehaviorTree* BehaviorTree;
+
+public:
+
+	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }
 };
