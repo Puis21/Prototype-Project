@@ -37,6 +37,22 @@ void EmptyLinkFunctionForGeneratedCodeFindPlayerLocation() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SearchRadius_MetaData[];
 #endif
 		static const UECodeGen_Private::FFloatPropertyParams NewProp_SearchRadius;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fMaxRangeFromPlayer_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fMaxRangeFromPlayer;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fMinRangeFromPlayer_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fMinRangeFromPlayer;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_fMinDistanceToCover_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_m_fMinDistanceToCover;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_m_iMaxIterations_MetaData[];
+#endif
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_m_iMaxIterations;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -75,9 +91,57 @@ void EmptyLinkFunctionForGeneratedCodeFindPlayerLocation() {}
 	};
 #endif
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_SearchRadius = { "SearchRadius", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFindPlayerLocation, SearchRadius), METADATA_PARAMS(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_SearchRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_SearchRadius_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMaxRangeFromPlayer_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "AI" },
+		{ "Comment", "// How far away we are willing to look for a random position to move to, in range of the player\n" },
+		{ "DisplayName", "Max Range From Player" },
+		{ "ModuleRelativePath", "Enemy/BTTasks/FindPlayerLocation.h" },
+		{ "ToolTip", "How far away we are willing to look for a random position to move to, in range of the player" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMaxRangeFromPlayer = { "m_fMaxRangeFromPlayer", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFindPlayerLocation, m_fMaxRangeFromPlayer), METADATA_PARAMS(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMaxRangeFromPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMaxRangeFromPlayer_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinRangeFromPlayer_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "AI" },
+		{ "Comment", "// How close we are willing to look for a random position to move to, in range of the player\n" },
+		{ "DisplayName", "Min Range From Player" },
+		{ "ModuleRelativePath", "Enemy/BTTasks/FindPlayerLocation.h" },
+		{ "ToolTip", "How close we are willing to look for a random position to move to, in range of the player" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinRangeFromPlayer = { "m_fMinRangeFromPlayer", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFindPlayerLocation, m_fMinRangeFromPlayer), METADATA_PARAMS(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinRangeFromPlayer_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinRangeFromPlayer_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinDistanceToCover_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "AI" },
+		{ "Comment", "// How far this new target location needs to be from our current location\n" },
+		{ "DisplayName", "Min Distance To Cover" },
+		{ "ModuleRelativePath", "Enemy/BTTasks/FindPlayerLocation.h" },
+		{ "ToolTip", "How far this new target location needs to be from our current location" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinDistanceToCover = { "m_fMinDistanceToCover", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFindPlayerLocation, m_fMinDistanceToCover), METADATA_PARAMS(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinDistanceToCover_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinDistanceToCover_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_iMaxIterations_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "AI" },
+		{ "Comment", "// Amount of times that we attempt to get a random location\n" },
+		{ "DisplayName", "Max Iterations" },
+		{ "ModuleRelativePath", "Enemy/BTTasks/FindPlayerLocation.h" },
+		{ "ToolTip", "Amount of times that we attempt to get a random location" },
+	};
+#endif
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_iMaxIterations = { "m_iMaxIterations", nullptr, (EPropertyFlags)0x0020080000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFindPlayerLocation, m_iMaxIterations), METADATA_PARAMS(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_iMaxIterations_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_iMaxIterations_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFindPlayerLocation_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_SearchRandom,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_SearchRadius,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMaxRangeFromPlayer,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinRangeFromPlayer,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_fMinDistanceToCover,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFindPlayerLocation_Statics::NewProp_m_iMaxIterations,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UFindPlayerLocation_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UFindPlayerLocation>::IsAbstract,
@@ -115,9 +179,9 @@ void EmptyLinkFunctionForGeneratedCodeFindPlayerLocation() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BTTasks_FindPlayerLocation_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UFindPlayerLocation, UFindPlayerLocation::StaticClass, TEXT("UFindPlayerLocation"), &Z_Registration_Info_UClass_UFindPlayerLocation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFindPlayerLocation), 2670936538U) },
+		{ Z_Construct_UClass_UFindPlayerLocation, UFindPlayerLocation::StaticClass, TEXT("UFindPlayerLocation"), &Z_Registration_Info_UClass_UFindPlayerLocation, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFindPlayerLocation), 2745091512U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BTTasks_FindPlayerLocation_h_1740203248(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BTTasks_FindPlayerLocation_h_2540532613(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BTTasks_FindPlayerLocation_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_Enemy_BTTasks_FindPlayerLocation_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -109,6 +109,12 @@
     <ClInclude Include="..\..\Source\PrototypeProject\Enemy\EnemyController.h">
       <Filter>Source\PrototypeProject\Enemy</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\Enemy_AnimInstance.cpp">
+      <Filter>Source\PrototypeProject\Enemy</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\Enemy_AnimInstance.h">
+      <Filter>Source\PrototypeProject\Enemy</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Enemy\Enemy_Controller.cpp">
       <Filter>Source\PrototypeProject\Enemy</Filter>
     </ClCompile>
@@ -118,16 +124,16 @@
     <Filter Include="Source\PrototypeProject\Enemy\BTTasks">
       <UniqueIdentifier>{F2CD3AB4-3B96-33BB-8E91-87FF3287D8AF}</UniqueIdentifier>
     </Filter>
-    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\BTTasks\BP_ChasePlayer.cpp">
-      <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\BTTasks\BP_ChasePlayer.h">
-      <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Enemy\BTTasks\ChasePlayer.cpp">
       <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Enemy\BTTasks\ChasePlayer.h">
+      <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\BTTasks\CirclePlayer.cpp">
+      <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\BTTasks\CirclePlayer.h">
       <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\Enemy\BTTasks\FindPlayerLocation.cpp">
@@ -141,6 +147,27 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PrototypeProject\Enemy\BTTasks\FindRandomLoc.h">
       <Filter>Source\PrototypeProject\Enemy\BTTasks</Filter>
+    </ClInclude>
+    <Filter Include="Source\PrototypeProject\Enemy\Notifies">
+      <UniqueIdentifier>{7AC08CA5-9B27-335B-906E-0A8C81C93B25}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyCanDamage.cpp">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyCanDamage.h">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyCombo.cpp">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyCombo.h">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyEndAttack.cpp">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\Enemy\Notifies\EnemyEndAttack.h">
+      <Filter>Source\PrototypeProject\Enemy\Notifies</Filter>
     </ClInclude>
     <Filter Include="Source\PrototypeProject\Interactables">
       <UniqueIdentifier>{9E2068FE-B268-384C-9D64-A8708350C284}</UniqueIdentifier>
