@@ -4,9 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "AbilitySystemInterface.h"
 #include "GameplayTagContainer.h"
 #include "GameplayEffectTypes.h"
+#include "PrototypeProject/Player/Components/InteractionInterface.h"
+
 #include "PlayerCharacter.generated.h"
 
 class UInputComponent;
@@ -61,6 +64,8 @@ public:
 	UPROPERTY()
 	UGASAttributeSet* Attributes;
 
+	IInteractionInterface* Interact;
+
 protected:
 
 	virtual void BeginPlay();
@@ -99,6 +104,8 @@ protected:
 	void CrouchButtonPressed();
 
 	void GrappleButtonPressed();
+
+	void OnInteractPressed();
 
 	void LMBPressed();
 

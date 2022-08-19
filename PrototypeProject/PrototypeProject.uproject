@@ -12,7 +12,8 @@
 				"Engine",
 				"CableComponent",
 				"GameplayAbilities",
-				"AIModule"
+				"AIModule",
+				"UMG"
 			]
 		}
 	],

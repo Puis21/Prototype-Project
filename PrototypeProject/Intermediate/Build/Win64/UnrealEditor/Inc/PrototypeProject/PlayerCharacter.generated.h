@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define PROTOTYPEPROJECT_PlayerCharacter_generated_h
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_SPARSE_DATA
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_RPC_WRAPPERS
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_INCLASS_NO_PURE_DECLS \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_SPARSE_DATA
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_RPC_WRAPPERS
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -26,7 +26,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacter*>(this); }
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_INCLASS \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_INCLASS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
@@ -36,7 +36,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<APlayerCharacter*>(this); }
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_STANDARD_CONSTRUCTORS \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APlayerCharacter(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerCharacter) \
@@ -49,7 +49,7 @@ private: \
 public:
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_ENHANCED_CONSTRUCTORS \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APlayerCharacter(APlayerCharacter&&); \
@@ -60,25 +60,25 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APlayerCharacter)
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_27_PROLOG
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_GENERATED_BODY_LEGACY \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_PROLOG
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_SPARSE_DATA \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_RPC_WRAPPERS \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_INCLASS \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_STANDARD_CONSTRUCTORS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_SPARSE_DATA \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_RPC_WRAPPERS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_INCLASS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_GENERATED_BODY \
+#define FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_SPARSE_DATA \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_INCLASS_NO_PURE_DECLS \
-	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_30_ENHANCED_CONSTRUCTORS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_SPARSE_DATA \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_INCLASS_NO_PURE_DECLS \
+	FID_PrototypeProject_Source_PrototypeProject_Player_PlayerCharacter_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

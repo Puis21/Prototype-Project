@@ -16,6 +16,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "Perception/AIPerceptionStimuliSourceComponent.h"
 #include "Perception/AISense_Sight.h"
+#include "Kismet/GameplayStatics.h"
 
 #include "PrototypeProject/Player/GAS/GASAbilitySystemComponent.h"
 #include "PrototypeProject/Player/GAS/GASGameplayAbility.h"
@@ -155,6 +156,64 @@ void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	FVector2D ViewportSize;
+	if (GEngine && GEngine->GameViewport)
+	{
+		GEngine->GameViewport->GetViewportSize(ViewportSize);
+	}
+
+	FVector2D CrosshairLocation(ViewportSize.X / 2.f, ViewportSize.Y / 2.f);
+	FVector CrosshairWorldPosition;
+	FVector CrosshairWorldDirection;
+	bool bScreenToWorld = UGameplayStatics::DeprojectScreenToWorld(
+		UGameplayStatics::GetPlayerController(this, 0),
+		CrosshairLocation,
+		CrosshairWorldPosition,
+		CrosshairWorldDirection
+	);
+
+	if (bScreenToWorld)
+	{
+		FHitResult HitResult;
+		FVector Start = CrosshairWorldPosition;
+		FVector End = Start + CrosshairWorldDirection * 100.f;
+		FCollisionQueryParams QueryParams;
+		//QueryParams.AddIgnoredActor(this);
+		
+		//ECC_GameTraceChannel12 = Interactable
+		GetWorld()->LineTraceSingleByChannel(
+			HitResult,
+			Start,
+			End,
+			ECollisionChannel::ECC_GameTraceChannel2,
+			QueryParams
+		);
+
+		DrawDebugLine(
+			GetWorld(),
+			Start, 
+			End, 
+			FColor::Orange,
+			false,
+			.1f
+		);
+
+		if (HitResult.bBlockingHit)
+		{
+			//UE_LOG(LogTemp, Log, TEXT("Interact1 %s"), *HitResult.GetActor()->GetName());
+			Interact = Cast<IInteractionInterface>(HitResult.GetActor());	
+			if (Interact)
+			{
+				Interact->ShowInteractionWidget();
+			}
+		}
+		else
+		{
+			//Interact->HideInteractionWidget();
+			Interact = nullptr;
+		}
+	}
+
 }
 
 // Called to bind functionality to input
@@ -184,6 +243,9 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 
 	//Grapple
 	PlayerInputComponent->BindAction("Grapple", IE_Pressed, this, &APlayerCharacter::GrappleButtonPressed);
+
+	//Interact
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &APlayerCharacter::OnInteractPressed);
 
 	//Sprint Event
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &APlayerCharacter::SprintButtonPressed);
@@ -290,6 +352,14 @@ void APlayerCharacter::GrappleButtonPressed()
 	if (m_ACGrapplingHookComponent)
 	{
 		m_ACGrapplingHookComponent->AttemptGrapple();
+	}
+}
+
+void APlayerCharacter::OnInteractPressed()
+{
+	if (Interact)
+	{
+		Interact->InteractPure();
 	}
 }
 
