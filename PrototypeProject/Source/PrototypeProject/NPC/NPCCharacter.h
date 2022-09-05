@@ -10,6 +10,7 @@
 
 class UNPCDialogueComponent;
 class UWidgetComponent;
+class ANPCController;
 
 UCLASS()
 class PROTOTYPEPROJECT_API ANPCCharacter : public ACharacter, public IInteractionInterface
@@ -26,6 +27,11 @@ public:
 	UPROPERTY(Category = Interaction, EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Interaction Widget")
 	UWidgetComponent* InteractionWidget;
 
+	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AlowPrivateAccess = "true"))
+	class UBehaviorTree* BehaviorTree;
+
+	ANPCController* NPCController;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -39,5 +45,9 @@ public:
 	virtual void InteractPure() override; // C++ only function
 	virtual void ShowInteractionWidget() override;
 	virtual void HideInteractionWidget() override;
+
+public:
+
+	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }
 
 };

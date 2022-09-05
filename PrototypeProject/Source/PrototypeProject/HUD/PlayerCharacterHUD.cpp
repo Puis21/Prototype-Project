@@ -3,6 +3,8 @@
 
 #include "PlayerCharacterHUD.h"
 #include "GameFramework/PlayerController.h"
+#include "Blueprint/WidgetLayoutLibrary.h"
+#include "DialogueWidget.h"
 #include "InteractWidget.h"
 
 void APlayerCharacterHUD::DrawHUD()
@@ -17,12 +19,30 @@ void APlayerCharacterHUD::BeginPlay()
 	Super::BeginPlay();
 
 	//AddInteractionOverlay();
+	//AddDialogueOverlay();
+}
+
+void APlayerCharacterHUD::AddDialogueOverlay()
+{
+	APlayerController* PlayerController = GetOwningPlayerController();
+	if (PlayerController && DialogueWidgetClass && InteractionWidget)
+	{
+		DialogueWidget = CreateWidget<UDialogueWidget>(PlayerController, DialogueWidgetClass);
+		UWidgetLayoutLibrary::RemoveAllWidgets(InteractionWidget);
+		DialogueWidget->AddToViewport();
+		PlayerController->SetInputMode(FInputModeUIOnly());
+		PlayerController->SetShowMouseCursor(true);
+	}
 }
 
 void APlayerCharacterHUD::RemoveInteractionOverlay()
 {
 	//UE_LOG(LogTemp, Log, TEXT("Hidden"));
-	InteractionWidget->RemoveFromParent();
+	if (InteractionWidget)
+	{
+		UWidgetLayoutLibrary::RemoveAllWidgets(InteractionWidget);
+		//InteractionWidget->RemoveFromViewport();
+	}
 }
 
 void APlayerCharacterHUD::AddInteractionOverlay()
@@ -32,6 +52,6 @@ void APlayerCharacterHUD::AddInteractionOverlay()
 	{
 		InteractionWidget = CreateWidget<UInteractWidget>(PlayerController, InteractionWidgetClass);
 		InteractionWidget->AddToViewport();
-
 	}
+	
 }

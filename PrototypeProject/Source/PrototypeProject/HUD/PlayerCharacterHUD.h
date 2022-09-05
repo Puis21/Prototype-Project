@@ -19,12 +19,19 @@ public:
 	UPROPERTY(EditAnywhere, Category = Interaction)
 	TSubclassOf<class UUserWidget> InteractionWidgetClass;
 
+	UPROPERTY(EditAnywhere, Category = Dialogue)
+	TSubclassOf<class UUserWidget> DialogueWidgetClass;
+
 	class UInteractWidget* InteractionWidget;
+
+	class UDialogueWidget* DialogueWidget;
 	
 	virtual void DrawHUD() override;
 
 	void AddInteractionOverlay();
 	void RemoveInteractionOverlay();
+
+	void AddDialogueOverlay();
 
 protected:
 	

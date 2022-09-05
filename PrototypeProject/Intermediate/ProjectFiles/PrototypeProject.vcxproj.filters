@@ -172,6 +172,12 @@
     <Filter Include="Source\PrototypeProject\HUD">
       <UniqueIdentifier>{57A13378-2BAF-3CA2-A12D-697EB8086210}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\PrototypeProject\HUD\DialogueWidget.cpp">
+      <Filter>Source\PrototypeProject\HUD</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\HUD\DialogueWidget.h">
+      <Filter>Source\PrototypeProject\HUD</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\PrototypeProject\HUD\InteractWidget.cpp">
       <Filter>Source\PrototypeProject\HUD</Filter>
     </ClCompile>

@@ -34,6 +34,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacterHUD() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_InteractionWidgetClass_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_InteractionWidgetClass;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DialogueWidgetClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DialogueWidgetClass;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -58,8 +62,16 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacterHUD() {}
 	};
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_InteractionWidgetClass = { "InteractionWidgetClass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacterHUD, InteractionWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_InteractionWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_InteractionWidgetClass_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_DialogueWidgetClass_MetaData[] = {
+		{ "Category", "Dialogue" },
+		{ "ModuleRelativePath", "HUD/PlayerCharacterHUD.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_DialogueWidgetClass = { "DialogueWidgetClass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacterHUD, DialogueWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_DialogueWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_DialogueWidgetClass_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerCharacterHUD_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_InteractionWidgetClass,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacterHUD_Statics::NewProp_DialogueWidgetClass,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APlayerCharacterHUD_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APlayerCharacterHUD>::IsAbstract,
@@ -97,9 +109,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacterHUD() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_HUD_PlayerCharacterHUD_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APlayerCharacterHUD, APlayerCharacterHUD::StaticClass, TEXT("APlayerCharacterHUD"), &Z_Registration_Info_UClass_APlayerCharacterHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacterHUD), 3837030797U) },
+		{ Z_Construct_UClass_APlayerCharacterHUD, APlayerCharacterHUD::StaticClass, TEXT("APlayerCharacterHUD"), &Z_Registration_Info_UClass_APlayerCharacterHUD, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APlayerCharacterHUD), 4231499448U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_HUD_PlayerCharacterHUD_h_577356108(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_HUD_PlayerCharacterHUD_h_967288146(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_HUD_PlayerCharacterHUD_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_HUD_PlayerCharacterHUD_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

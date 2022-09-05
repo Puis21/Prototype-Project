@@ -7,6 +7,7 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePrototypeProject_init() {}
+	PROTOTYPEPROJECT_API UFunction* Z_Construct_UDelegateFunction_PrototypeProject_OnExitDelegate__DelegateSignature();
 	PROTOTYPEPROJECT_API UFunction* Z_Construct_UDelegateFunction_PrototypeProject_OnPickUp__DelegateSignature();
 	PROTOTYPEPROJECT_API UFunction* Z_Construct_UDelegateFunction_PrototypeProject_OnUseItem__DelegateSignature();
 	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_PrototypeProject;
@@ -15,6 +16,7 @@ void EmptyLinkFunctionForGeneratedCodePrototypeProject_init() {}
 		if (!Z_Registration_Info_UPackage__Script_PrototypeProject.OuterSingleton)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_PrototypeProject_OnExitDelegate__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_PrototypeProject_OnPickUp__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_PrototypeProject_OnUseItem__DelegateSignature,
 			};
@@ -23,13 +25,13 @@ void EmptyLinkFunctionForGeneratedCodePrototypeProject_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x96BF687B,
-				0xDE94FC5B,
+				0x7857396C,
+				0x0E898D22,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_PrototypeProject.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_PrototypeProject.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_PrototypeProject(Z_Construct_UPackage__Script_PrototypeProject, TEXT("/Script/PrototypeProject"), Z_Registration_Info_UPackage__Script_PrototypeProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x96BF687B, 0xDE94FC5B));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_PrototypeProject(Z_Construct_UPackage__Script_PrototypeProject, TEXT("/Script/PrototypeProject"), Z_Registration_Info_UPackage__Script_PrototypeProject, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x7857396C, 0x0E898D22));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

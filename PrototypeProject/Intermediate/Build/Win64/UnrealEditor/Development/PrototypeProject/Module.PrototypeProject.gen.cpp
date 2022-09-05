@@ -4,6 +4,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/ChasePlayer.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/CirclePlayer.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/CombatComponent.gen.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/DialogueWidget.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/EnemyCanDamage.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/EnemyCombo.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/EnemyController.gen.cpp"

@@ -10,6 +10,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Enemy/Notifies/EnemyCanDamage.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Enemy/Notifies/EnemyCombo.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Enemy/Notifies/EnemyEndAttack.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/HUD/DialogueWidget.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/HUD/InteractWidget.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/HUD/PlayerCharacterHUD.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Interactables/Zipline.cpp"

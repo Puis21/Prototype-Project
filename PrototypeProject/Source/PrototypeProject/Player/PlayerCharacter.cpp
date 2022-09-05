@@ -209,8 +209,11 @@ void APlayerCharacter::Tick(float DeltaTime)
 		}
 		else
 		{
-			//Interact->HideInteractionWidget();
-			Interact = nullptr;
+			if (Interact)
+			{
+				Interact->HideInteractionWidget();
+				Interact = nullptr;
+			}
 		}
 	}
 

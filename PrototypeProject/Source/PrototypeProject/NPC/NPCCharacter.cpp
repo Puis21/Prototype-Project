@@ -3,6 +3,7 @@
 
 #include "NPCCharacter.h"
 #include "PrototypeProject/NPC/Components/NPCDialogueComponent.h"
+#include "PrototypeProject/NPC/NPCController.h"
 #include "Components/WidgetComponent.h"
 #include "PrototypeProject/HUD/PlayerCharacterHUD.h"
 #include "Kismet/GameplayStatics.h"
@@ -21,6 +22,9 @@ ANPCCharacter::ANPCCharacter()
 void ANPCCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	FActorSpawnParameters SpawnParams;
+	NPCController = GetWorld()->SpawnActor<ANPCController>(SpawnParams);
 	
 }
 
@@ -38,7 +42,13 @@ void ANPCCharacter::Interact_Implementation()
 
 void ANPCCharacter::InteractPure()
 {
-	UE_LOG(LogTemp, Log, TEXT("Pure"));
+	APlayerCharacterHUD* HUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
+	if (HUD)
+	{
+		HUD->AddDialogueOverlay();
+		//NPCController->StartBehaviorTree();
+		UE_LOG(LogTemp, Log, TEXT("Interacted"));
+	}
 }
 
 void ANPCCharacter::ShowInteractionWidget()

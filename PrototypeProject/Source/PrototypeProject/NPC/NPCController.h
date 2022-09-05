@@ -23,6 +23,21 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+	void StartBehaviorTree();
+
+public:
+
+	UPROPERTY(BlueprintReadWrite, Category = " NPC Behavior", meta = (AlowPrivateAccess = "true"))
+	class UBlackboardComponent* BlackboardComponent;
+
+	UPROPERTY(BlueprintReadWrite, Category = " NPC Behavior", meta = (AlowPrivateAccess = "true"))
+	class UBehaviorTreeComponent* BehaviorTreeComponent;
+
 	class ANPCCharacter* NPC;
+
+public:
+
+	FORCEINLINE UBlackboardComponent* GetBlackboardComponent() const { return BlackboardComponent; }
+	FORCEINLINE ANPCCharacter* GetNPC() const { return NPC; }
 	
 };
