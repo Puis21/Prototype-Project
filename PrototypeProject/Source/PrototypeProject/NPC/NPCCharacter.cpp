@@ -3,6 +3,8 @@
 
 #include "NPCCharacter.h"
 #include "PrototypeProject/NPC/Components/NPCDialogueComponent.h"
+#include "BehaviorTree/BlackboardComponent.h" //mby not needed :)
+#include "BehaviorTree/BehaviorTree.h"
 #include "PrototypeProject/NPC/NPCController.h"
 #include "Components/WidgetComponent.h"
 #include "PrototypeProject/HUD/PlayerCharacterHUD.h"
@@ -25,7 +27,6 @@ void ANPCCharacter::BeginPlay()
 
 	FActorSpawnParameters SpawnParams;
 	NPCController = GetWorld()->SpawnActor<ANPCController>(SpawnParams);
-	
 }
 
 // Called every frame
@@ -35,37 +36,42 @@ void ANPCCharacter::Tick(float DeltaTime)
 
 }
 
-void ANPCCharacter::Interact_Implementation()
+void ANPCCharacter::InteractBP_Implementation(APlayerCharacter* PlayerChar)
 {
 	UE_LOG(LogTemp, Log, TEXT("Implementation"));
 }
 
 void ANPCCharacter::InteractPure()
 {
-	APlayerCharacterHUD* HUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
-	if (HUD)
+	PlayerHUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
+	if (PlayerHUD && NPCController)
 	{
-		HUD->AddDialogueOverlay();
+		PlayerHUD->AddDialogueOverlay();
+		//PlayerHUD->RemoveInteractionOverlay();
 		//NPCController->StartBehaviorTree();
+		NPCController->GetBlackboardComponent()->InitializeBlackboard(*(BehaviorTree->BlackboardAsset));
+		NPCController->RunBehaviorTree(BehaviorTree);
+		//NPCController->UseBlackboard(BlackBoard, NPCController->GetBlackboardComponent());
+		NPCController->GetBlackboardComponent()->SetValueAsObject(TEXT("DialogueWidget"), PlayerHUD->GetDialogueWidget());
 		UE_LOG(LogTemp, Log, TEXT("Interacted"));
 	}
 }
 
 void ANPCCharacter::ShowInteractionWidget()
 {
-	APlayerCharacterHUD* HUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
-	if (HUD)
+	PlayerHUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
+	if (PlayerHUD)
 	{
-		HUD->AddInteractionOverlay();
+		PlayerHUD->AddInteractionOverlay();
 	}
 }
 
 void ANPCCharacter::HideInteractionWidget()
 {
-	APlayerCharacterHUD* HUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
-	if (HUD)
+	PlayerHUD = Cast<APlayerCharacterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
+	if (PlayerHUD)
 	{
-		HUD->RemoveInteractionOverlay();
+		PlayerHUD->RemoveInteractionOverlay();
 	}
 }
 

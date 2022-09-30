@@ -32,6 +32,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/NPCCharacter.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/NPCController.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/NPCDialogueComponent.gen.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/NPCSpeakTask.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/ParkourMovementComponent.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerAnimInstance.gen.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Intermediate/Build/Win64/UnrealEditor/Inc/PrototypeProject/PlayerCameraComponent.gen.cpp"

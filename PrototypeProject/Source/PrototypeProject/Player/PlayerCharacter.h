@@ -150,16 +150,16 @@ private:
 
 	void SetupStimulus();
 
+	FHitResult HitResultInteraction;
+
 public:
 
-	/** Returns Mesh1P subobject **/
-	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
-	/** Returns FirstPersonCameraComponent subobject **/
-	UPlayerCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
-	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
-	UVautingComponent* GetVaultingComponent() const { return m_ACVaultComponent; }
-	UCombatComponent* GetCombatComponent() const { return m_ACCombatComponent; }
-
-	UPlayerMovementComponent* GetCustomMovementComponent() const { return m_ACPlayerMovementComponent; }
+	//GETTERS
+	FORCEINLINE USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
+	FORCEINLINE UPlayerCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
+	FORCEINLINE	USlideComponent* GetSlideComponent() const {return m_ACSlideComponent; }
+	FORCEINLINE	UVautingComponent* GetVaultingComponent() const { return m_ACVaultComponent; }
+	FORCEINLINE	UCombatComponent* GetCombatComponent() const { return m_ACCombatComponent; }
+	FORCEINLINE	UPlayerMovementComponent* GetCustomMovementComponent() const { return m_ACPlayerMovementComponent; }
 
 };

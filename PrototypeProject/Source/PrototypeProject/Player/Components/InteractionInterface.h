@@ -24,7 +24,7 @@ class PROTOTYPEPROJECT_API IInteractionInterface
 public:
 
 	UFUNCTION(BlueprintNativeEvent, Category = "Interact")
-	void Interact();
+	void InteractBP(APlayerCharacter* PlayerChar);
 	
 	UFUNCTION()
 	virtual void InteractPure();

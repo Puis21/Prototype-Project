@@ -28,7 +28,6 @@ void APlayerCharacterHUD::AddDialogueOverlay()
 	if (PlayerController && DialogueWidgetClass && InteractionWidget)
 	{
 		DialogueWidget = CreateWidget<UDialogueWidget>(PlayerController, DialogueWidgetClass);
-		UWidgetLayoutLibrary::RemoveAllWidgets(InteractionWidget);
 		DialogueWidget->AddToViewport();
 		PlayerController->SetInputMode(FInputModeUIOnly());
 		PlayerController->SetShowMouseCursor(true);

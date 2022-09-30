@@ -18,6 +18,7 @@
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/NPC/Components/NPCDialogueComponent.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/NPC/NPCCharacter.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/NPC/NPCController.cpp"
+#include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/NPC/NPCSpeakTask.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Abilities/Ability1/AbilityProjectile.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Abilities/Ability1/ThrownProjectile.cpp"
 #include "C:/Users/GenTl/OneDrive/Documents/GitHub/Prototype-Project/PrototypeProject/Source/PrototypeProject/Player/Camera/CameraShakes/MovingCameraShake.cpp"

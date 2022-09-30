@@ -174,7 +174,7 @@ void APlayerCharacter::Tick(float DeltaTime)
 
 	if (bScreenToWorld)
 	{
-		FHitResult HitResult;
+	
 		FVector Start = CrosshairWorldPosition;
 		FVector End = Start + CrosshairWorldDirection * 100.f;
 		FCollisionQueryParams QueryParams;
@@ -182,7 +182,7 @@ void APlayerCharacter::Tick(float DeltaTime)
 		
 		//ECC_GameTraceChannel12 = Interactable
 		GetWorld()->LineTraceSingleByChannel(
-			HitResult,
+			HitResultInteraction,
 			Start,
 			End,
 			ECollisionChannel::ECC_GameTraceChannel2,
@@ -198,10 +198,10 @@ void APlayerCharacter::Tick(float DeltaTime)
 			.1f
 		);
 
-		if (HitResult.bBlockingHit)
+		if (HitResultInteraction.bBlockingHit)
 		{
 			//UE_LOG(LogTemp, Log, TEXT("Interact1 %s"), *HitResult.GetActor()->GetName());
-			Interact = Cast<IInteractionInterface>(HitResult.GetActor());	
+			Interact = Cast<IInteractionInterface>(HitResultInteraction.GetActor());
 			if (Interact)
 			{
 				Interact->ShowInteractionWidget();
@@ -363,6 +363,7 @@ void APlayerCharacter::OnInteractPressed()
 	if (Interact)
 	{
 		Interact->InteractPure();
+		//Interact->Execute_InteractBP(HitResultInteraction.GetActor(), this);
 	}
 }
 

@@ -14,8 +14,11 @@ void EmptyLinkFunctionForGeneratedCodeNPCCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_PrototypeProject();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UNPCDialogueComponent_NoRegister();
-	UMG_API UClass* Z_Construct_UClass_UWidgetComponent_NoRegister();
+	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UInteractWidget_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	UMG_API UClass* Z_Construct_UClass_UUserWidget_NoRegister();
 	AIMODULE_API UClass* Z_Construct_UClass_UBehaviorTree_NoRegister();
+	AIMODULE_API UClass* Z_Construct_UClass_UBlackboardData_NoRegister();
 	PROTOTYPEPROJECT_API UClass* Z_Construct_UClass_UInteractionInterface_NoRegister();
 // End Cross Module References
 	void ANPCCharacter::StaticRegisterNativesANPCCharacter()
@@ -41,9 +44,17 @@ void EmptyLinkFunctionForGeneratedCodeNPCCharacter() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_InteractionWidget;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DialogueWidgetClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_DialogueWidgetClass;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BehaviorTree_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BehaviorTree;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BlackBoard_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BlackBoard;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UECodeGen_Private::FImplementedInterfaceParams InterfaceParams[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
@@ -73,28 +84,45 @@ void EmptyLinkFunctionForGeneratedCodeNPCCharacter() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget_MetaData[] = {
 		{ "AllowPrivateAccess", "true" },
-		{ "Category", "Interaction" },
+		{ "Category", "Dialogue" },
 		{ "DisplayName", "Interaction Widget" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "NPC/NPCCharacter.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget = { "InteractionWidget", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANPCCharacter, InteractionWidget), Z_Construct_UClass_UWidgetComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget = { "InteractionWidget", nullptr, (EPropertyFlags)0x001000000008001d, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANPCCharacter, InteractionWidget), Z_Construct_UClass_UInteractWidget_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANPCCharacter_Statics::NewProp_DialogueWidgetClass_MetaData[] = {
+		{ "Category", "Dialogue" },
+		{ "ModuleRelativePath", "NPC/NPCCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_ANPCCharacter_Statics::NewProp_DialogueWidgetClass = { "DialogueWidgetClass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANPCCharacter, DialogueWidgetClass), Z_Construct_UClass_UUserWidget_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_DialogueWidgetClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_DialogueWidgetClass_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BehaviorTree_MetaData[] = {
 		{ "AlowPrivateAccess", "true" },
-		{ "Category", "Behavior Tree" },
+		{ "Category", "AI" },
 		{ "ModuleRelativePath", "NPC/NPCCharacter.h" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BehaviorTree = { "BehaviorTree", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANPCCharacter, BehaviorTree), Z_Construct_UClass_UBehaviorTree_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BehaviorTree_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BehaviorTree_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BlackBoard_MetaData[] = {
+		{ "AlowPrivateAccess", "true" },
+		{ "Category", "AI" },
+		{ "ModuleRelativePath", "NPC/NPCCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BlackBoard = { "BlackBoard", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANPCCharacter, BlackBoard), Z_Construct_UClass_UBlackboardData_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BlackBoard_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BlackBoard_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANPCCharacter_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCCharacter_Statics::NewProp_m_ACNPCDialogueComponent,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCCharacter_Statics::NewProp_InteractionWidget,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCCharacter_Statics::NewProp_DialogueWidgetClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BehaviorTree,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANPCCharacter_Statics::NewProp_BlackBoard,
 	};
 		const UECodeGen_Private::FImplementedInterfaceParams Z_Construct_UClass_ANPCCharacter_Statics::InterfaceParams[] = {
-			{ Z_Construct_UClass_UInteractionInterface_NoRegister, (int32)VTABLE_OFFSET(ANPCCharacter, IInteractionInterface), false },  // 234393287
+			{ Z_Construct_UClass_UInteractionInterface_NoRegister, (int32)VTABLE_OFFSET(ANPCCharacter, IInteractionInterface), false },  // 2797880530
 		};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANPCCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANPCCharacter>::IsAbstract,
@@ -132,9 +160,9 @@ void EmptyLinkFunctionForGeneratedCodeNPCCharacter() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_NPC_NPCCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ANPCCharacter, ANPCCharacter::StaticClass, TEXT("ANPCCharacter"), &Z_Registration_Info_UClass_ANPCCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANPCCharacter), 391479604U) },
+		{ Z_Construct_UClass_ANPCCharacter, ANPCCharacter::StaticClass, TEXT("ANPCCharacter"), &Z_Registration_Info_UClass_ANPCCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ANPCCharacter), 3016428830U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_NPC_NPCCharacter_h_2517577116(TEXT("/Script/PrototypeProject"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_NPC_NPCCharacter_h_3884099079(TEXT("/Script/PrototypeProject"),
 		Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_NPC_NPCCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_PrototypeProject_Source_PrototypeProject_NPC_NPCCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

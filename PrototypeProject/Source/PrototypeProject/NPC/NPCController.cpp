@@ -36,17 +36,29 @@ void ANPCController::OnPossess(APawn* InPawn)
 	if (InPawn == nullptr) return;
 
 	NPC = Cast<ANPCCharacter>(InPawn);
-
+	if (NPC)
+	{
+		/*if (NPC->GetBehaviorTree())
+		{
+			RunBehaviorTree(NPC->GetBehaviorTree());
+			UseBlackboard(NPC->GetBlackboard(), BlackboardComponent);
+			BlackboardComponent->SetValueAsObject(TEXT("DialogueWidget"), NPC->GetDialogueWidget());
+		}*/
+	}
 }
 
 void ANPCController::StartBehaviorTree()
 {
+	UE_LOG(LogTemp, Log, TEXT("BehaviorTree"));
 	if (NPC)
 	{
 		if (NPC->GetBehaviorTree())
 		{
 			BlackboardComponent->InitializeBlackboard(*(NPC->GetBehaviorTree()->BlackboardAsset));
 			RunBehaviorTree(NPC->GetBehaviorTree());
+			UseBlackboard(NPC->GetBlackboard(), BlackboardComponent);
+			BlackboardComponent->SetValueAsObject(TEXT("DialogueWidget"), NPC->GetDialogueWidget());
+			UE_LOG(LogTemp, Log, TEXT("BehaviorTree2"));
 		}
 	}
 }

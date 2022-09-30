@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class APlayerCharacter;
 #ifdef PROTOTYPEPROJECT_InteractionInterface_generated_h
 #error "InteractionInterface.generated.h already included, missing '#pragma once' in InteractionInterface.h"
 #endif
@@ -15,20 +16,26 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_SPARSE_DATA
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_RPC_WRAPPERS \
-	virtual void Interact_Implementation() {}; \
+	virtual void InteractBP_Implementation(APlayerCharacter* PlayerChar) {}; \
  \
 	DECLARE_FUNCTION(execInteractPure); \
-	DECLARE_FUNCTION(execInteract);
+	DECLARE_FUNCTION(execInteractBP);
 
 
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void Interact_Implementation() {}; \
+	virtual void InteractBP_Implementation(APlayerCharacter* PlayerChar) {}; \
  \
 	DECLARE_FUNCTION(execInteractPure); \
-	DECLARE_FUNCTION(execInteract);
+	DECLARE_FUNCTION(execInteractBP);
 
 
-#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_EVENT_PARMS
+#define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_EVENT_PARMS \
+	struct InteractionInterface_eventInteractBP_Parms \
+	{ \
+		APlayerCharacter* PlayerChar; \
+	};
+
+
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_CALLBACK_WRAPPERS
 #define FID_PrototypeProject_Source_PrototypeProject_Player_Components_InteractionInterface_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
@@ -86,7 +93,7 @@ protected: \
 public: \
 	typedef UInteractionInterface UClassType; \
 	typedef IInteractionInterface ThisClass; \
-	static void Execute_Interact(UObject* O); \
+	static void Execute_InteractBP(UObject* O, APlayerCharacter* PlayerChar); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 
@@ -96,7 +103,7 @@ protected: \
 public: \
 	typedef UInteractionInterface UClassType; \
 	typedef IInteractionInterface ThisClass; \
-	static void Execute_Interact(UObject* O); \
+	static void Execute_InteractBP(UObject* O, APlayerCharacter* PlayerChar); \
 	virtual UObject* _getUObject() const { return nullptr; }
 
 

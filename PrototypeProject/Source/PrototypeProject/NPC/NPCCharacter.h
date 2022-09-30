@@ -9,8 +9,10 @@
 #include "NPCCharacter.generated.h"
 
 class UNPCDialogueComponent;
-class UWidgetComponent;
+class UInteractWidget;
+class UDialogueWidget;
 class ANPCController;
+class APlayerCharacterHUD;
 
 UCLASS()
 class PROTOTYPEPROJECT_API ANPCCharacter : public ACharacter, public IInteractionInterface
@@ -24,13 +26,23 @@ public:
 	UPROPERTY(Category = NPC, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Dialogue Component")
 	UNPCDialogueComponent* m_ACNPCDialogueComponent;
 
-	UPROPERTY(Category = Interaction, EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Interaction Widget")
-	UWidgetComponent* InteractionWidget;
+	UPROPERTY(Category = Dialogue, EditAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), DisplayName = "Interaction Widget")
+	UInteractWidget* InteractionWidget;
 
-	UPROPERTY(EditAnywhere, Category = "Behavior Tree", meta = (AlowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, Category = Dialogue)
+	TSubclassOf<class UUserWidget> DialogueWidgetClass;
+
+	class UDialogueWidget* DialogueWidget;
+
+	UPROPERTY(EditAnywhere, Category = "AI", meta = (AlowPrivateAccess = "true"))
 	class UBehaviorTree* BehaviorTree;
 
+	UPROPERTY(EditAnywhere, Category = "AI", meta = (AlowPrivateAccess = "true"))
+	class UBlackboardData* BlackBoard;
+
 	ANPCController* NPCController;
+
+	APlayerCharacterHUD* PlayerHUD;
 
 protected:
 	// Called when the game starts or when spawned
@@ -40,7 +52,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void Interact_Implementation() override; // Also include a blueprint function
+	void InteractBP_Implementation(APlayerCharacter* PlayerChar) override; // Also include a blueprint function
 
 	virtual void InteractPure() override; // C++ only function
 	virtual void ShowInteractionWidget() override;
@@ -49,5 +61,7 @@ public:
 public:
 
 	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }
+	FORCEINLINE UBlackboardData* GetBlackboard() const { return BlackBoard; }
+	FORCEINLINE UDialogueWidget* GetDialogueWidget() const { return DialogueWidget; }
 
 };

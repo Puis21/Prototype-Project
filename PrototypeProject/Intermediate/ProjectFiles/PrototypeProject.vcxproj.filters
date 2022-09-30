@@ -214,6 +214,12 @@
     <ClInclude Include="..\..\Source\PrototypeProject\NPC\NPCController.h">
       <Filter>Source\PrototypeProject\NPC</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\PrototypeProject\NPC\NPCSpeakTask.cpp">
+      <Filter>Source\PrototypeProject\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\PrototypeProject\NPC\NPCSpeakTask.h">
+      <Filter>Source\PrototypeProject\NPC</Filter>
+    </ClInclude>
     <Filter Include="Source\PrototypeProject\NPC\Components">
       <UniqueIdentifier>{B7BB7C4A-01C9-34C2-AE46-91B2A2D30CC6}</UniqueIdentifier>
     </Filter>
